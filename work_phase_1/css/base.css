@@ -1,0 +1,48 @@
+body {
+    font-family: "Urbanist", sans-serif;
+    font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: 2rem; /* 32px */
+}
+p {
+    font-size: 1rem; /* 16px */
+}
+
+h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.5rem; /* ~24px */
+    font-weight: 600;
+}
+
+.libertinus-sans-regular {
+    font-family: "Libertinus Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.libertinus-sans-bold {
+    font-family: "Libertinus Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.libertinus-sans-regular-italic {
+    font-family: "Libertinus Sans", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
