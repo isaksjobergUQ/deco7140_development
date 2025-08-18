@@ -1,16 +1,44 @@
 .container {
-    height: 100vh;
-    width: 80vw;
+    max-width: 960px;
     margin: 0 auto;
-    background-color: lightgreen;
+    padding: 2rem 1rem;
+    background: transparent;
 }
 
-/* Larger screens (e.g., tablets or desktops) */
 @media (min-width: 768px) {
     body {
         font-size: 18px;
     }
-    .container {
-        width: 60vw;
+}
+
+/* ===== Typography Cards (mobile-first) ===== */
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.simple-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .card-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .simple-card {
+        width: auto;
+        flex: 1 1 280px;
     }
 }

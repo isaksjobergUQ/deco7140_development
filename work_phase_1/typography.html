@@ -4,41 +4,76 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <title>Style Guide - Colour Scheme</title>
+        <!-- Google Fonts: Urbanist -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- CSS Linking -->
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/base.css" />
-        <link rel="stylesheet" href="css/components.css" />
         <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/components.css" />
+        <title>Style Guide - Typography</title>
     </head>
-    <header></header>
+    <body>
+        <header></header>
 
-    <div class="container">
-        <header>
-            <h1>Welcome to My Website</h1>
-            <nav>
-                <ul>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <section id="home">
-                <h2>Home</h2>
-                <p>This is the home section of the website.</p>
-            </section>
-            <section id="about">
-                <h2>About</h2>
-                <p>This section contains information about the website.</p>
-            </section>
-        </main>
-        <section>
-            <h2>Links</h2>
-            <a href="../index.html">Home</a>
-        </section>
-        <footer>
-            <p>&copy; 2025 My Website</p>
-        </footer>
-    </div>
+        <div class="container">
+            <section>
+                <h1>Typography</h1>
 
-    <script type="module" src="js/typography.js"></script>
+                <div class="card-container">
+                    <div class="simple-card">
+                        <h1>H1 Heading Example</h1>
+                        <p>Font Family: Urbanist, sans-serif</p>
+                        <p>Font Size: 4rem (64px)</p>
+                        <p>Color: var(--color-primary)</p>
+                    </div>
+
+                    <div class="simple-card">
+                        <h2>H2 Heading Example</h2>
+                        <p>Font Family: Urbanist, sans-serif</p>
+                        <p>Font Size: 3rem (48px)</p>
+                    </div>
+
+                    <div class="simple-card">
+                        <h3>H3 Heading Example</h3>
+                        <p>Font Family: Urbanist, sans-serif</p>
+                        <p>Font Size: 1.5rem (24px)</p>
+                    </div>
+
+                    <div class="simple-card">
+                        <h4>H4 Heading Example</h4>
+                        <p>Font Family: Urbanist, sans-serif</p>
+                        <p>Font Size: 1rem (16px)</p>
+                        <p>Font Weight: bold</p>
+                    </div>
+
+                    <div class="simple-card">
+                        <h5>H5 Heading Example</h5>
+                        <p>Font Family: Urbanist, sans-serif</p>
+                        <p>Font Size: 0.75rem (12px)</p>
+                        <p>Font Weight: bold</p>
+                    </div>
+
+                    <div class="simple-card">
+                        <p>Paragraph example</p>
+                        <p>Font Family: Urbanist, sans-serif</p>
+                        <p>Font Size: 1rem (16px)</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>Links</h2>
+                <a class="button button-primary" href="index.html">WP1 Home</a>
+                <a class="button button-secondary" href="components.html"
+                    >Typography</a
+                >
+            </section>
+        </div>
+    </body>
 </html>
