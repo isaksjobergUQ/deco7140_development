@@ -9,7 +9,7 @@ import { logMessage } from "./modules/logging.js";
  * Define values that don't change e.g. page titles, URLs, etc.
  * */
 
-const PAGE_NAME = "index.js";
+const PAGE_NAME = "spacing.js";
 /**
  * VARIABLES
  * Define values that will change e.g. user inputs, counters, etc.
