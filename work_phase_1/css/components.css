@@ -32,7 +32,6 @@
     color: black;
 }
 
-/* Hover Effect for Buttons (from brief) */
 .button:hover {
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* subtle shadow */
     transform: translateY(-2px); /* slight lift */

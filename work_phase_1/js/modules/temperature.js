@@ -9,9 +9,8 @@ function fetchTemperature() {
     // This is the information for our location (Brisbane, Australia)
     const latitude = -27.4705;
     const longitude = 153.026;
-    const apiUrl = `https://api.open-
-    meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}¤t_
-    weather=true`;
+
+    const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`;
     fetch(apiUrl)
         .then((response) => {
             if (!response.ok) {
