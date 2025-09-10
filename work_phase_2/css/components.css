@@ -47,7 +47,7 @@
   left: 0;
   bottom: calc(100% + var(--tooltip-gap));
   max-width: var(--tooltip-maxw);
-  background: var(--tooltip-bg);
+  background: red;
   color: var(--tooltip-fg);
   padding: var(--tooltip-pad-y) var(--tooltip-pad-x);
   border-radius: var(--tooltip-radius);

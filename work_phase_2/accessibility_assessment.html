@@ -45,27 +45,118 @@
                 </p>
             </header>
 
-            <section aria-labelledby="relevance">
-                <h2 id="relevance">
-                    Which Criteria Are Most Relevant (and Why)
-                </h2>
-                <ul>
-                    <li>
-                        <strong>Priya (mobile/low data):</strong> 1.1.1, 1.4.3,
-                        1.4.4, 3.2.3, 3.3.2 – lightweight, readable, consistent,
-                        minimal fields.
-                    </li>
-                    <li>
-                        <strong>Hana (low digital literacy):</strong> 1.4.1,
-                        2.4.7, 3.1.5, 3.2.4, 3.3.1 – clear cues, visible focus,
-                        plain language, consistent UI, friendly errors.
-                    </li>
-                    <li>
-                        <strong>Ava (local participant):</strong> 1.3.2, 1.4.3,
-                        3.2.3, 3.3.4 – predictable order, contrast, consistent
-                        nav, easy recovery.
-                    </li>
-                </ul>
+            <!-- Top 3 focus criteria – one per persona (flip cards) -->
+            <section aria-labelledby="focus-top3">
+                <h2 id="focus-top3">Top 3 Focus Criteria</h2>
+                <div class="flip-card-container" aria-describedby="focus-top3">
+                    <!-- Priya: 1.4.3 Perceivable Text Contrast -->
+                    <div
+                        class="flip-card"
+                        tabindex="0"
+                        aria-label="Priya — 1.4.3 Perceivable Text Contrast"
+                    >
+                        <div class="flip-card-inner">
+                            <div class="flip-card-side flip-card-front">
+                                <span class="card-number">Priya</span>
+                                <h4>WCAG 1.4.3 Perceivable Text Contrast</h4>
+                                <p>
+                                    High contrast text that’s easy to read on
+                                    mobile.
+                                </p>
+                            </div>
+                            <div class="flip-card-side flip-card-back">
+                                <span class="card-number">Priya</span>
+                                <h4>Why it matters</h4>
+                                <p>
+                                    Phone-only and often outdoors — needs clear
+                                    text at a glance.
+                                </p>
+                                <ul>
+                                    <li>
+                                        Body text ≥ 4.5:1; large text ≥ 3:1.
+                                    </li>
+                                    <li>
+                                        Avoid text over busy images; use
+                                        solid/backdrop.
+                                    </li>
+                                    <li>
+                                        Lock palette in CSS variables; test
+                                        dark/light states.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hana: 3.2.3 Consistent Navigation (predictable wayfinding) -->
+                    <div
+                        class="flip-card"
+                        tabindex="0"
+                        aria-label="Hana — 3.2.3 Consistent Navigation"
+                    >
+                        <div class="flip-card-inner">
+                            <div class="flip-card-side flip-card-front">
+                                <span class="card-number">Hana</span>
+                                <h4>WCAG 3.2.3 Consistent Navigation</h4>
+                                <p>Predictable menus, labels, and placement.</p>
+                            </div>
+                            <div class="flip-card-side flip-card-back">
+                                <span class="card-number">Hana</span>
+                                <h4>Why it matters</h4>
+                                <p>
+                                    Low digital literacy — stable
+                                    labels/locations reduce anxiety.
+                                </p>
+                                <ul>
+                                    <li>
+                                        Same menu order & wording on every page.
+                                    </li>
+                                    <li>Clear headings and simple labels.</li>
+                                    <li>
+                                        Breadcrumbs help recovery when lost.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ava: 1.3.2 Meaningful Sequence -->
+                    <div
+                        class="flip-card"
+                        tabindex="0"
+                        aria-label="Ava — 1.3.2 Meaningful Sequence"
+                    >
+                        <div class="flip-card-inner">
+                            <div class="flip-card-side flip-card-front">
+                                <span class="card-number">Ava</span>
+                                <h4>WCAG 1.3.2 Meaningful Sequence</h4>
+                                <p>Reading order matches the visual order.</p>
+                            </div>
+                            <div class="flip-card-side flip-card-back">
+                                <span class="card-number">Ava</span>
+                                <h4>Why it matters</h4>
+                                <p>
+                                    Ensures etiquette, host, time, and location
+                                    aren’t buried.
+                                </p>
+                                <ul>
+                                    <li>
+                                        DOM order = visual order (no CSS
+                                        re-order traps).
+                                    </li>
+                                    <li>
+                                        Use semantic structure (h1–h3, lists,
+                                        tables correctly).
+                                    </li>
+                                    <li>
+                                        Keep key details (audience, access,
+                                        transport) early.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <section aria-labelledby="perceivable">
@@ -284,14 +375,6 @@
                         </li>
                     </ul>
                 </details>
-            </section>
-
-            <section aria-labelledby="sharing">
-                <h2 id="sharing">Sharing and Feedback</h2>
-                <p>
-                    We’ll share these summaries with peers for critique and
-                    incorporate suggestions before submission.
-                </p>
             </section>
         </main>
 
