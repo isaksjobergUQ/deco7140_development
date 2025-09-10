@@ -13,161 +13,288 @@
     <body>
         <nav class="site-nav" aria-label="Main">
             <div class="site-nav__inner">
-                <a class="brand" href="index.html">WP2</a>
+                <a class="brand" href="/index.html">WP2</a>
                 <input id="nav-toggle" class="nav-toggle" type="checkbox" />
-                <label for="nav-toggle" class="nav-toggle-btn" aria-label="Toggle menu">
+                <label
+                    for="nav-toggle"
+                    class="nav-toggle-btn"
+                    aria-label="Toggle menu"
+                >
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
                 </label>
                 <div class="site-nav__links">
-                    <a href="client_needs_analysis.html">Client Needs</a>
-                    <a href="user_stories.html">User Stories</a>
-                    <a href="accessibility_assessment.html" aria-current="page">Accessibility</a>
-                    <a href="ethics_analysis.html">Ethics</a>
-                    <a href="genai_mt_acknowledgement.html">GenAI/MT</a>
+                    <a href="/client_needs_analysis.html">Client Needs</a>
+                    <a href="/user_stories.html">User Stories</a>
+                    <a href="/accessibility_assessment.html" aria-current="page"
+                        >Accessibility</a
+                    >
+                    <a href="/ethics_analysis.html">Ethics</a>
+                    <a href="/genai_mt_acknowledgement.html">GenAI/MT</a>
                 </div>
             </div>
         </nav>
 
         <main class="container">
             <header>
-              <h1>Accessibility Assessment</h1>
-              <p>Summary of 13 WCAG 2.2 success criteria we’re focusing on, with actions tailored to our client and users.</p>
+                <h1>Accessibility Assessment</h1>
+                <p>
+                    Summary of 13 WCAG 2.2 success criteria we’re focusing on,
+                    with actions tailored to our client and users.
+                </p>
             </header>
-          
+
             <section aria-labelledby="relevance">
-              <h2 id="relevance">Which Criteria Are Most Relevant (and Why)</h2>
-              <ul>
-                <li><strong>Priya (mobile/low data):</strong> 1.1.1, 1.4.3, 1.4.4, 3.2.3, 3.3.2 – lightweight, readable, consistent, minimal fields.</li>
-                <li><strong>Hana (low digital literacy):</strong> 1.4.1, 2.4.7, 3.1.5, 3.2.4, 3.3.1 – clear cues, visible focus, plain language, consistent UI, friendly errors.</li>
-                <li><strong>Ava (local participant):</strong> 1.3.2, 1.4.3, 3.2.3, 3.3.4 – predictable order, contrast, consistent nav, easy recovery.</li>
-              </ul>
+                <h2 id="relevance">
+                    Which Criteria Are Most Relevant (and Why)
+                </h2>
+                <ul>
+                    <li>
+                        <strong>Priya (mobile/low data):</strong> 1.1.1, 1.4.3,
+                        1.4.4, 3.2.3, 3.3.2 – lightweight, readable, consistent,
+                        minimal fields.
+                    </li>
+                    <li>
+                        <strong>Hana (low digital literacy):</strong> 1.4.1,
+                        2.4.7, 3.1.5, 3.2.4, 3.3.1 – clear cues, visible focus,
+                        plain language, consistent UI, friendly errors.
+                    </li>
+                    <li>
+                        <strong>Ava (local participant):</strong> 1.3.2, 1.4.3,
+                        3.2.3, 3.3.4 – predictable order, contrast, consistent
+                        nav, easy recovery.
+                    </li>
+                </ul>
             </section>
-          
+
             <section aria-labelledby="perceivable">
-              <h2 id="perceivable">Perceivable</h2>
-          
-              <details>
-                <summary><strong>1.1.1 Alternative Text for Non-text Content</strong></summary>
-                <p><em>Definition:</em> Provide text alternatives for images/icons so content is accessible and usable on low bandwidth.</p>
-                <ul>
-                  <li>Meaningful <code>alt</code> for informative images; <code>alt=""</code> for decorative.</li>
-                  <li>Prefer real text to text-in-images; captions/transcripts for media.</li>
-                </ul>
-              </details>
-          
-              <details>
-                <summary><strong>1.3.2 Meaningful Sequence</strong></summary>
-                <p><em>Definition:</em> Reading order matches visual order.</p>
-                <ul>
-                  <li>Semantic structure; logical DOM order; avoid CSS re-order traps.</li>
-                </ul>
-              </details>
-          
-              <details>
-                <summary><strong>1.4.1 Avoid Color-only Cues</strong></summary>
-                <p><em>Definition:</em> Don’t rely on colour alone for meaning.</p>
-                <ul>
-                  <li>Add labels/icons; underline links; text explanations for statuses/errors.</li>
-                </ul>
-              </details>
-          
-              <details>
-                <summary><strong>1.4.3 Perceivable Text Contrast</strong></summary>
-                <p><em>Definition:</em> Ensure sufficient text contrast.</p>
-                <ul>
-                  <li>Body 4.5:1, large text 3:1; avoid photo-overlays; use design tokens.</li>
-                </ul>
-              </details>
-          
-              <details>
-                <summary><strong>1.4.4 Resize Text without Loss</strong></summary>
-                <p><em>Definition:</em> Zoom to 200% without loss of content/function.</p>
-                <ul>
-                  <li>Use rem/em; allow wrapping; avoid fixed-height containers.</li>
-                </ul>
-              </details>
+                <h2 id="perceivable">Perceivable</h2>
+
+                <details>
+                    <summary>
+                        <strong
+                            >1.1.1 Alternative Text for Non-text Content</strong
+                        >
+                    </summary>
+                    <p>
+                        <em>Definition:</em> Provide text alternatives for
+                        images/icons so content is accessible and usable on low
+                        bandwidth.
+                    </p>
+                    <ul>
+                        <li>
+                            Meaningful <code>alt</code> for informative images;
+                            <code>alt=""</code> for decorative.
+                        </li>
+                        <li>
+                            Prefer real text to text-in-images;
+                            captions/transcripts for media.
+                        </li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>
+                        <strong>1.3.2 Meaningful Sequence</strong>
+                    </summary>
+                    <p>
+                        <em>Definition:</em> Reading order matches visual order.
+                    </p>
+                    <ul>
+                        <li>
+                            Semantic structure; logical DOM order; avoid CSS
+                            re-order traps.
+                        </li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>
+                        <strong>1.4.1 Avoid Color-only Cues</strong>
+                    </summary>
+                    <p>
+                        <em>Definition:</em> Don’t rely on colour alone for
+                        meaning.
+                    </p>
+                    <ul>
+                        <li>
+                            Add labels/icons; underline links; text explanations
+                            for statuses/errors.
+                        </li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>
+                        <strong>1.4.3 Perceivable Text Contrast</strong>
+                    </summary>
+                    <p><em>Definition:</em> Ensure sufficient text contrast.</p>
+                    <ul>
+                        <li>
+                            Body 4.5:1, large text 3:1; avoid photo-overlays;
+                            use design tokens.
+                        </li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>
+                        <strong>1.4.4 Resize Text without Loss</strong>
+                    </summary>
+                    <p>
+                        <em>Definition:</em> Zoom to 200% without loss of
+                        content/function.
+                    </p>
+                    <ul>
+                        <li>
+                            Use rem/em; allow wrapping; avoid fixed-height
+                            containers.
+                        </li>
+                    </ul>
+                </details>
             </section>
-          
+
             <section aria-labelledby="operable">
-              <h2 id="operable">Operable</h2>
-          
-              <details>
-                <summary><strong>2.1.1 Keyboard Navigability</strong></summary>
-                <p><em>Definition:</em> All functionality works via keyboard.</p>
-                <ul>
-                  <li>TAB/ENTER/SPACE support; no focus traps; keyboard events.</li>
-                </ul>
-              </details>
-          
-              <details>
-                <summary><strong>2.4.7 Focus Visible</strong></summary>
-                <p><em>Definition:</em> Focus indicator is always visible.</p>
-                <ul>
-                  <li>High-contrast outlines; consistent focus order; don’t remove outlines.</li>
-                </ul>
-              </details>
+                <h2 id="operable">Operable</h2>
+
+                <details>
+                    <summary>
+                        <strong>2.1.1 Keyboard Navigability</strong>
+                    </summary>
+                    <p>
+                        <em>Definition:</em> All functionality works via
+                        keyboard.
+                    </p>
+                    <ul>
+                        <li>
+                            TAB/ENTER/SPACE support; no focus traps; keyboard
+                            events.
+                        </li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary><strong>2.4.7 Focus Visible</strong></summary>
+                    <p>
+                        <em>Definition:</em> Focus indicator is always visible.
+                    </p>
+                    <ul>
+                        <li>
+                            High-contrast outlines; consistent focus order;
+                            don’t remove outlines.
+                        </li>
+                    </ul>
+                </details>
             </section>
-          
+
             <section aria-labelledby="understandable">
-              <h2 id="understandable">Understandable</h2>
-          
-              <details>
-                <summary><strong>3.1.5 Reading Level</strong></summary>
-                <p><em>Definition:</em> Provide lower-secondary reading level or simplified summaries.</p>
-                <ul>
-                  <li>Plain headings; short sentences; glossary for visa/health terms.</li>
-                </ul>
-              </details>
-          
-              <details>
-                <summary><strong>3.2.3 Consistent Navigation</strong></summary>
-                <p><em>Definition:</em> Navigation is consistent across pages.</p>
-                <ul>
-                  <li>Same menu order; same mobile menu; consistent breadcrumbs.</li>
-                </ul>
-              </details>
-          
-              <details>
-                <summary><strong>3.2.4 Consistent Identification</strong></summary>
-                <p><em>Definition:</em> Same components look/behave the same.</p>
-                <ul>
-                  <li>Standardise cards/buttons/icons; consistent action labels.</li>
-                </ul>
-              </details>
-          
-              <details>
-                <summary><strong>3.3.1 Error Identification (&amp; Suggestions)</strong></summary>
-                <p><em>Definition:</em> Errors are clearly shown and described.</p>
-                <ul>
-                  <li>Inline text next to field; icon + text; <code>aria-live="polite"</code>.</li>
-                </ul>
-              </details>
-          
-              <details>
-                <summary><strong>3.3.2 Labels (&amp; Instructions)</strong></summary>
-                <p><em>Definition:</em> Inputs have clear labels/instructions.</p>
-                <ul>
-                  <li><code>&lt;label for&gt;</code>; helper text; mark optional vs required; minimise fields.</li>
-                </ul>
-              </details>
-          
-              <details>
-                <summary><strong>3.3.4 Error Prevention and Recovery</strong></summary>
-                <p><em>Definition:</em> Prevent errors; easy recovery.</p>
-                <ul>
-                  <li>Confirm critical actions; undo where possible; don’t wipe forms on error.</li>
-                </ul>
-              </details>
+                <h2 id="understandable">Understandable</h2>
+
+                <details>
+                    <summary><strong>3.1.5 Reading Level</strong></summary>
+                    <p>
+                        <em>Definition:</em> Provide lower-secondary reading
+                        level or simplified summaries.
+                    </p>
+                    <ul>
+                        <li>
+                            Plain headings; short sentences; glossary for
+                            visa/health terms.
+                        </li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>
+                        <strong>3.2.3 Consistent Navigation</strong>
+                    </summary>
+                    <p>
+                        <em>Definition:</em> Navigation is consistent across
+                        pages.
+                    </p>
+                    <ul>
+                        <li>
+                            Same menu order; same mobile menu; consistent
+                            breadcrumbs.
+                        </li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>
+                        <strong>3.2.4 Consistent Identification</strong>
+                    </summary>
+                    <p>
+                        <em>Definition:</em> Same components look/behave the
+                        same.
+                    </p>
+                    <ul>
+                        <li>
+                            Standardise cards/buttons/icons; consistent action
+                            labels.
+                        </li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>
+                        <strong
+                            >3.3.1 Error Identification (&amp;
+                            Suggestions)</strong
+                        >
+                    </summary>
+                    <p>
+                        <em>Definition:</em> Errors are clearly shown and
+                        described.
+                    </p>
+                    <ul>
+                        <li>
+                            Inline text next to field; icon + text;
+                            <code>aria-live="polite"</code>.
+                        </li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>
+                        <strong>3.3.2 Labels (&amp; Instructions)</strong>
+                    </summary>
+                    <p>
+                        <em>Definition:</em> Inputs have clear
+                        labels/instructions.
+                    </p>
+                    <ul>
+                        <li>
+                            <code>&lt;label for&gt;</code>; helper text; mark
+                            optional vs required; minimise fields.
+                        </li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>
+                        <strong>3.3.4 Error Prevention and Recovery</strong>
+                    </summary>
+                    <p><em>Definition:</em> Prevent errors; easy recovery.</p>
+                    <ul>
+                        <li>
+                            Confirm critical actions; undo where possible; don’t
+                            wipe forms on error.
+                        </li>
+                    </ul>
+                </details>
             </section>
-          
+
             <section aria-labelledby="sharing">
-              <h2 id="sharing">Sharing and Feedback</h2>
-              <p>We’ll share these summaries with peers for critique and incorporate suggestions before submission.</p>
+                <h2 id="sharing">Sharing and Feedback</h2>
+                <p>
+                    We’ll share these summaries with peers for critique and
+                    incorporate suggestions before submission.
+                </p>
             </section>
-          </main>
-          
-    <script type="module" src="js/accessibility.js"></script>
+        </main>
+
+        <script type="module" src="/js/accessibility.js"></script>
     </body>
 </html>
