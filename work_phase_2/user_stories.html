@@ -1,26 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!-- CSS Linking -->
-        <link rel="stylesheet" href="css/reset.css" />
-        <link rel="stylesheet" href="css/base.css" />
-        <link rel="stylesheet" href="css/layout.css" />
-        <link rel="stylesheet" href="css/components.css" />
-        <title>Work Phase 2</title>
-    </head>
-    <body>
-        <header>
-            <h1>Pete's Work Phase 2</h1>
-        </header>
-        <section>
-            <h2>What's in this website?</h2>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>User Stories – WP2</title>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <style>
+      .user-story {
+        border-left: 4px solid var(--accent, #3b82f6);
+        padding: .5rem .75rem;
+        margin-top: .75rem;
+        font-style: italic;
+        background: rgba(59,130,246,.06);
+      }
+      .user-story small { display:block; opacity:.75; font-style:normal; }
+    </style>
+  </head>
+  <body>
+    <nav class="site-nav" aria-label="Main">
+      <div class="site-nav__inner">
+        <a class="brand" href="index.html">WP2</a>
+        <input id="nav-toggle" class="nav-toggle" type="checkbox" />
+        <label for="nav-toggle" class="nav-toggle-btn" aria-label="Toggle menu">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </label>
+        <div class="site-nav__links">
+          <a href="client_needs_analysis.html">Client Needs</a>
+          <a href="user_stories.html" aria-current="page">User Stories</a>
+          <a href="accessibility_assessment.html">Accessibility</a>
+          <a href="ethics_analysis.html">Ethics</a>
+          <a href="genai_mt_acknowledgement.html">GenAI/MT</a>
+        </div>
+      </div>
+    </nav>
+
+    <header id="top" class="m-b-3 container">
+      <h1>User Stories</h1>
+      <p class="muted">Personas presented individually: Prompt → Four Questions → Answers → Mapped User Story.</p>
+    </header>
+
+    <main class="interviews-wrap">
+      <!-- ====================== Persona: Priya ====================== -->
+      <section id="priya" class="m-b-5">
+        <details class="interview p-2" open>
+          <summary>
+            <h5 class="user-name">Priya (22, India) — UQ undergrad, mobile-only, low bandwidth</h5>
+          </summary>
+
+          <!-- Prompt -->
+          <p class="initial-prompt">
+            <strong>Prompt:</strong>
+            Act as Priya, 22, from India. Context: International Students in Brisbane.
+            Traits: mobile-only, low bandwidth, relies on WhatsApp groups; moderate English; part-time job.
+            You’re evaluating a community site for international students with events/resources/story sharing (no commerce),
+            WCAG 2.2 AA, mobile-first, and a newsletter plug-in that requests extensive personal data.
+            Answer as first person. Use “think aloud” style when I ask you to navigate. Be specific with examples from your
+            daily life in Brisbane. If I ask for constraints (e.g., slow network), incorporate them realistically.
+            Acknowledge uncertainties instead of guessing. Ready? I’ll ask questions one by one.
+          </p>
+
+          <!-- Q1 -->
+          <h6 class="question m-y-2">1) Discovery &amp; goals</h6>
+          <div class="response p-x-3">
             <p>
-                This is the second phase of my work. I will be completing A2
-                Design Research during this page. But all of that assessment
-                will be created as pages in this website.
+              Last weekend I was trying to find a Diwali meetup and maybe a part-time job fair near St Lucia or Toowong.
+              I first asked in my WhatsApp groups (UQ Indians, my course cohort, flatmates), then Googled
+              “Brisbane international student events today.” On my prepaid plan I avoid heavy sites; some pages time out on 4G
+              when I’m on the 412 bus. If a site loads fast and shows the date/time at the top (e.g., “Fri 7pm, UQ Lakes”), I trust it.
+              If I can’t tell whether it’s student-relevant or it’s too far late at night, I skip because I work early shifts in Indooroopilly.
             </p>
-        </section>
-    </body>
+            <p><strong>Hard parts:</strong></p>
+            <ul>
+              <li>Slow pages and giant hero images that eat data.</li>
+              <li>Event details hidden in PDFs (I won’t download on mobile).</li>
+              <li>Vague “Community” wording — is it social, volunteering, or support?</li>
+            </ul>
+            <p><strong>What helps:</strong></p>
+            <ul>
+              <li>“International Students” label with tags like “New to Brisbane,” “Part-time jobs,” “Cultural festivals.”</li>
+              <li>One-tap WhatsApp share so I can ask, “Anyone going?”</li>
+            </ul>
+            <div class="user-story interactive-highlight-stories us-compact" aria-label="Mapped user story"
+                 data-id="US-P1"
+                 data-userstory="As a student with limited data, I want lightweight event lists, so that I can check details without wasting data.">
+              As a student with limited data, I want lightweight event lists, so that I can check details without wasting data.
+              <small>— Priya user story</small>
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <h6 class="question m-y-2">2) Navigation &amp; wayfinding (think-aloud)</h6>
+          <div class="response p-x-3">
+            <p>
+              On mobile data I look for a big “Events” entry and a calendar set to “This week.” I filter by “Near UQ” or
+              “South Bank/City,” and by time (“Evening, 6–9pm”). A hamburger with 10+ items is overwhelming — I want three:
+              <em>Events</em>, <em>Resources (jobs/visa/health)</em>, <em>Stories</em>. I try search (“Diwali,” “job fair”);
+              results should render text first and lazy-load images. If the page jumps as images load, I lose my place.
+              In an event I expect time, price (free?), location (Google Maps link), and a WhatsApp/share icon; if RSVP needs a login, I bail.
+            </p>
+            <ul>
+              <li><strong>Confusing labels:</strong> “Community,” “Get Involved,” “Opportunities.”</li>
+              <li><strong>Clear labels:</strong> “Events,” “Jobs &amp; Volunteering,” “Help with Visa/Health,” “Stories from Students.”</li>
+            </ul>
+            <div class="user-story" aria-label="Mapped user story">
+              As a new international student, I want plain English headings, so that I can understand where to find things.
+              <small>— Priya user story</small>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <h6 class="question m-y-2">3) Accessibility &amp; inclusion</h6>
+          <div class="response p-x-3">
+            <ul>
+              <li>Low-bandwidth mode: compressed images, no autoplay, minimal scripts.</li>
+              <li>Plain English with brief definitions (e.g., Medicare/OSHC).</li>
+              <li>Location clarity: “15 min by bus from UQ St Lucia (routes 412/411).”</li>
+              <li>Cultural comfort: mixed-group photos; note “beginner-friendly”; “come alone, meet people.”</li>
+              <li>WhatsApp/WeChat share that actually works on mobile.</li>
+              <li><strong>Must-haves:</strong> fast pages, clear dates/times, Google Maps link, WhatsApp share.</li>
+              <li><strong>Nice-to-haves:</strong> “Student budget” tag; estimated crowd size; dress code.</li>
+            </ul>
+            <div class="user-story" aria-label="Mapped user story">
+              As a mobile-only user, I want large, tap-friendly buttons, so that I don’t need to zoom or scroll sideways.
+              <small>— Priya user story</small>
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <h6 class="question m-y-2">4) Privacy &amp; the newsletter plug-in</h6>
+          <div class="response p-x-3">
+            <p>
+              If the form asks for income or sexuality, I stop. I’m okay with email + first name and topic preferences.
+              I expect: a short reason for each field, data minimisation (only email required), frequency control (weekly/fortnightly),
+              one-click unsubscribe, no sharing with sponsors without consent, and a double opt-in confirmation.
+              <strong>Deal-breakers:</strong> mandatory sensitive fields, unclear purpose, or “we sell data.”
+            </p>
+            <div class="user-story" aria-label="Mapped user story">
+              As a cautious subscriber, I want the newsletter to only need name and email, so that I feel safe signing up.
+              <small>— Priya user story</small>
+            </div>
+          </div>
+        </details>
+      </section>
+
+      <!-- ====================== Persona: Hana ====================== -->
+      <section id="hana" class="m-b-5">
+        <details class="interview p-2">
+          <summary>
+            <h5 class="user-name">Hana (19, Japan) — exchange student, shy, low digital literacy</h5>
+          </summary>
+
+          <!-- Prompt -->
+          <p class="initial-prompt">
+            <strong>Prompt:</strong>
+            Act as Hana, 19, from Japan. Context: International Students in Brisbane.
+            Traits: exchange student, shy, low digital literacy; mostly uses campus Wi-Fi; needs simple wayfinding.
+            You’re evaluating a community site for international students with events/resources/story sharing (no commerce),
+            WCAG 2.2 AA, mobile-first, and a newsletter plug-in that requests extensive personal data.
+            Answer as first person. Use “think aloud” style when I ask you to navigate.
+            Be specific with examples from your daily life in Brisbane. If I ask for constraints (e.g., confusing navigation),
+            incorporate them realistically. Acknowledge uncertainties instead of guessing. Ready? I’ll ask questions one by one.
+          </p>
+
+          <!-- Q1 -->
+          <h6 class="question m-y-2">1) Discovery &amp; goals</h6>
+          <div class="response p-x-3">
+            <p>
+              I wanted to find welcome/orientation events and Japanese language exchange groups.
+              I waited until I had campus Wi-Fi and searched “UQ club event beginners.”
+              Too many links or small text makes me forget where I was and give up.
+              I like when an event says “First-timers welcome” and shows a simple schedule like
+              “Meet at UQ Great Court, 4:00 pm.”
+            </p>
+            <p><strong>Hard parts:</strong></p>
+            <ul>
+              <li>Pages with many menus and small text.</li>
+              <li>Map links that don’t show an exact meeting point.</li>
+              <li>Events that assume I already know the club or place.</li>
+            </ul>
+            <p><strong>What helps:</strong></p>
+            <ul>
+              <li>“Start here” page for exchange students.</li>
+              <li>Meeting-point photo with a pin (e.g., outside UQ Lakes bus station).</li>
+              <li>Short checklist: bring student ID, water, casual clothes.</li>
+            </ul>
+            <div class="user-story interactive-highlight-stories us-compact" aria-label="Mapped user story"
+                 data-id="US-H2"
+                 data-userstory="As an exchange student, I want events shown as picture cards with clear dates, so that I can quickly understand what’s happening.">
+              As an exchange student, I want events shown as picture cards with clear dates, so that I can quickly understand what’s happening.
+              <small>— Hana user story</small>
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <h6 class="question m-y-2">2) Navigation &amp; wayfinding (think-aloud)</h6>
+          <div class="response p-x-3">
+            <p>
+              I prefer big buttons: <em>Events</em>, <em>Maps</em>, <em>New Students</em>.
+              I sort by “Beginner-friendly,” and like list view with today/tomorrow first plus a small map icon.
+              When I open an event, I want a photo of the exact meeting point and a note like
+              “If you get lost, message us on Instagram/WhatsApp.” Abstract words like “Engage” or “Community”
+              confuse me; breadcrumbs help me go back.
+            </p>
+            <p><strong>Think-aloud:</strong> “Okay, I see Events, good. I tap Orientation… now I see a map…
+              The meeting point says ‘Great Court Lawn’ with an arrow. I can do that.”</p>
+            <div class="user-story" aria-label="Mapped user story">
+              As a low digital literacy user, I want big, simple buttons, so that I can navigate without stress.
+              <small>— Hana user story</small>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <h6 class="question m-y-2">3) Accessibility &amp; inclusion</h6>
+          <div class="response p-x-3">
+            <ul>
+              <li>Simple language and icons with labels.</li>
+              <li>Large tap targets and breadcrumbs.</li>
+              <li>Photo cues and a Google Maps pin.</li>
+              <li>“Come alone, it’s okay!” messaging for shy users.</li>
+              <li><strong>Must-haves:</strong> exact meeting photo + pin, times, what to bring.</li>
+              <li><strong>Nice-to-haves:</strong> quiet corner, buddy/volunteer icon, “ask us if confused.”</li>
+            </ul>
+            <div class="user-story" aria-label="Mapped user story">
+              As a shy participant, I want clear directions/maps, so that I don’t feel lost going to events.
+              <small>— Hana user story</small>
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <h6 class="question m-y-2">4) Privacy &amp; the newsletter plug-in</h6>
+          <div class="response p-x-3">
+            <p>
+              I’m comfortable giving only email; I don’t understand why income or sexuality is needed for a newsletter.
+              I want a tiny form (email only; name optional), a clear purpose line (“We only use your email to send event updates.
+              Unsubscribe anytime.”), no forced account creation, and a preview of the newsletter.
+              If I see many required fields, I feel anxious and close the page.
+            </p>
+            <div class="user-story" aria-label="Mapped user story">
+              As a cautious student, I want newsletters to only ask for email, so that I don’t feel exposed.
+              <small>— Hana user story</small>
+            </div>
+          </div>
+        </details>
+      </section>
+
+      <!-- ====================== Persona: Ava ====================== -->
+      <section id="ava" class="m-b-5">
+        <details class="interview p-2">
+          <summary>
+            <h5 class="user-name">Ava (27, local Brisbane) — wants to learn &amp; join respectfully</h5>
+          </summary>
+
+          <!-- Prompt -->
+          <p class="initial-prompt">
+            <strong>Prompt:</strong>
+            Act as Ava, 27, from Australia. Context: International Students in Brisbane.
+            Traits: local Brisbane resident; wants to learn about international student culture/events; needs easy, respectful participation.
+            You’re evaluating a community site for international students with events/resources/story sharing (no commerce),
+            WCAG 2.2 AA, mobile-first, and a newsletter plug-in that requests extensive personal data.
+            Answer as first person. Use “think aloud” style when I ask you to navigate. Be specific with examples from your daily life in Brisbane.
+            If I ask for constraints (e.g., outsider perspective), incorporate them realistically. Acknowledge uncertainties instead of guessing.
+            Ready? I’ll ask questions one by one.
+          </p>
+
+          <!-- Q1 -->
+          <h6 class="question m-y-2">1) Discovery &amp; goals</h6>
+          <div class="response p-x-3">
+            <p>
+              I’m a local in West End and I love multicultural festivals and student-led events (South Bank markets,
+              cultural nights around the CBD, language exchanges near Queen Street). My goal is to participate respectfully —
+              not take up spaces meant for students only, and maybe bring friends. I usually start with Facebook events,
+              the Brisbane City Council “What’s On,” and student society pages. Pain points: details buried in PDFs, unclear if
+              non-students are welcome, and RSVP processes that require a university login.
+            </p>
+            <p><strong>What helps:</strong></p>
+            <ul>
+              <li>Clear “All welcome / Public welcome” tags.</li>
+              <li>Accessibility notes (seating, step-free access).</li>
+              <li>Transport cues: “8 min walk from South Bank Station.”</li>
+            </ul>
+            <div class="user-story interactive-highlight-stories us-compact" aria-label="Mapped user story"
+                 data-id="US-A1"
+                 data-userstory="As a Brisbane local, I want events marked as ‘open to public,’ so that I know I’m welcome to attend.">
+              As a Brisbane local, I want events marked as “open to public,” so that I know I’m welcome to attend.
+              <small>— Ava user story</small>
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <h6 class="question m-y-2">2) Navigation &amp; wayfinding (think-aloud)</h6>
+          <div class="response p-x-3">
+            <p>
+              Landing on the site, I look for <em>What’s On / Events</em> straight away and filter for public events.
+              I scan event cards for title, date, blurb, and tags (“Public,” “All ages,” “Free”).
+              Opening an event, I expect: who’s hosting (student club/community org), intended audience,
+              cultural etiquette (e.g., dress respectfully; no flash during performances), and RSVP that doesn’t force campus login.
+              If this is buried under jargon like “engagement activation,” I bounce.
+            </p>
+            <div class="user-story" aria-label="Mapped user story">
+              As a curious participant, I want cultural stories/videos, so that I can learn more before joining.
+              <small>— Ava user story</small>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <h6 class="question m-y-2">3) Accessibility &amp; inclusion</h6>
+          <div class="response p-x-3">
+            <ul>
+              <li>Plain language; avoid insider acronyms.</li>
+              <li>Respectful framing: highlight student leadership and cultural significance.</li>
+              <li>Inclusive photos: locals + international students together.</li>
+              <li>Practical: live status, weather plan, noise level, kids okay?</li>
+              <li>Access notes: step-free route, quiet area, contact for accommodations.</li>
+            </ul>
+            <div class="user-story" aria-label="Mapped user story">
+              As a respectful visitor, I want dietary/accessibility details, so that I can join without excluding friends.
+              <small>— Ava user story</small>
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <h6 class="question m-y-2">4) Privacy &amp; the newsletter plug-in</h6>
+          <div class="response p-x-3">
+            <p>
+              I’m fine sharing name + email and choosing topics (festivals, language exchanges, volunteering).
+              I won’t share sexuality or income — not relevant. I expect data minimisation (only email required),
+              purpose statements next to fields, frequency control and one-click unsubscribe, no selling data,
+              consent for photos if newsletters include attendee images, and a short privacy summary with a link to the full policy.
+              <strong>Deal-breakers:</strong> mandatory sensitive fields, hidden opt-out, or requiring a uni login for a “public” newsletter.
+            </p>
+            <div class="user-story" aria-label="Mapped user story">
+              As a new attendee, I want maps and directions, so that I don’t get lost on campus.
+              <small>— Ava user story</small>
+            </div>
+          </div>
+        </details>
+      </section>
+    </main>
+
+    <footer class="m-t-5">
+      <a href="#top" class="p-1">Back to top</a>
+    </footer>
+  </body>
 </html>

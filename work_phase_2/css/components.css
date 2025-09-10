@@ -1,49 +1,160 @@
-/* Base Highlight Style */
-.interactive-highlight {
-    position: relative; /* needed for the positioned tooltip */
-    background-color: rgba(255, 215, 0, 0.3); /* light yellow */
-    cursor: pointer;
-    padding: 2px 5px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, opacity 0.3s ease;
+/* ===============================
+   TOOLTIP — HIGHLIGHTED TEXT / USER STORIES
+   =============================== */
+
+/* Theme tokens (tweak as you like) */
+:root{
+  --tooltip-bg: #0f172a;         /* slate-900 */
+  --tooltip-fg: #ffffff;
+  --tooltip-shadow: 0 10px 30px rgba(2,6,23,.25);
+  --tooltip-radius: 12px;
+  --tooltip-pad-y: .5rem;
+  --tooltip-pad-x: .65rem;
+  --tooltip-maxw: clamp(16ch, 42vw, 36ch);
+  --tooltip-gap: .5rem;          /* offset from trigger */
 }
 
-/* Visible focus for accessibility */
-.interactive-highlight:focus-visible {
-    outline: 2px solid var(--accent-color);
-    outline-offset: 2px;
+/* Base highlight style (keep yours if you like; this softens slightly) */
+.interactive-highlight,
+.interactive-highlight-stories{
+  position: relative;
+  background-color: rgba(255, 215, 0, 0.25);
+  padding: 2px 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color .2s ease;
+}
+.interactive-highlight:hover,
+.interactive-highlight-stories:hover{
+  background-color: rgba(255, 215, 0, 0.35);
 }
 
-/* Tooltip Styling for Highlighted Text */
-.interactive-highlight::after {
-    content: attr(data-card); /* pulls text from data-card attribute */
-    position: absolute;
-    top: -5px;
-    right: -15px;
-    background: var(--accent-color);
-    color: #fff;
-    font-size: 0.8rem;
-    font-weight: bold;
-    width: 120px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10%;
-    opacity: 0; /* hidden by default */
-    transition: opacity 0.3s ease;
+/* Accessible focus */
+.interactive-highlight:focus-visible,
+.interactive-highlight-stories:focus-visible{
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+  border-radius: 8px;
 }
+
+/* Tooltip body (auto-size, multi-line) */
+.interactive-highlight::after,
+.interactive-highlight-stories::after{
+  /* Prefer data-userstory for stories; fallback to data-card for generic badges */
+  content: attr(data-userstory) attr(data-card);
+  position: absolute;
+  z-index: 40;
+  left: 0;
+  bottom: calc(100% + var(--tooltip-gap));
+  max-width: var(--tooltip-maxw);
+  background: var(--tooltip-bg);
+  color: var(--tooltip-fg);
+  padding: var(--tooltip-pad-y) var(--tooltip-pad-x);
+  border-radius: var(--tooltip-radius);
+  box-shadow: var(--tooltip-shadow);
+  font-size: .925rem;
+  line-height: 1.35;
+  white-space: normal;
+  pointer-events: none;
+
+  opacity: 0;
+  transform: translateY(4px) scale(.98);
+  transform-origin: bottom left;
+  transition: opacity .18s ease, transform .18s ease;
+}
+
+/* Tooltip arrow */
+.interactive-highlight::before,
+.interactive-highlight-stories::before{
+  content: "";
+  position: absolute;
+  z-index: 39;
+  left: 14px; /* align with bubble */
+  bottom: calc(100% + var(--tooltip-gap) - 6px);
+  width: 10px; height: 10px;
+  background: var(--tooltip-bg);
+  transform: rotate(45deg);
+  border-radius: 2px;
+
+  opacity: 0;
+  transition: opacity .18s ease;
+}
+
+/* Show on hover (pointer devices) */
+@media (hover: hover){
+  .interactive-highlight:hover::after,
+  .interactive-highlight-stories:hover::after,
+  .interactive-highlight:hover::before,
+  .interactive-highlight-stories:hover::before{
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Show on focus/tap (keyboard + touch) */
+.interactive-highlight:focus::after,
+.interactive-highlight:active::after,
+.interactive-highlight-stories:focus::after,
+.interactive-highlight-stories:active::after,
+.interactive-highlight:focus::before,
+.interactive-highlight:active::before,
+.interactive-highlight-stories:focus::before,
+.interactive-highlight-stories:active::before{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Mobile-friendly placement: place BELOW on narrow screens */
+@media (max-width: 640px){
+  .interactive-highlight::after,
+  .interactive-highlight-stories::after{
+    top: calc(100% + var(--tooltip-gap));
+    bottom: auto;
+    transform-origin: top left;
+  }
+  .interactive-highlight::before,
+  .interactive-highlight-stories::before{
+    top: calc(100% + var(--tooltip-gap) - 6px);
+    bottom: auto;
+  }
+}
+
+/* Compact badge variant (keeps your small ID pill) */
+.interactive-highlight-stories.us-compact::after{
+  content: attr(data-id);       /* show short ID */
+  max-width: none;
+  white-space: nowrap;
+  padding: .25rem .6rem;
+  font-weight: 700;
+  font-size: .8rem;
+  border-radius: 999px;
+}
+.interactive-highlight-stories.us-compact::before{
+  display: none;                /* no arrow on tiny pill */
+}
+
+/* Motion safety */
+@media (prefers-reduced-motion: reduce){
+  .interactive-highlight::after,
+  .interactive-highlight-stories::after{
+    transition: none;
+  }
+}
+
 
 /* Show Number on Hover (Desktop/Laptop) */
 @media (hover: hover) {
-    .interactive-highlight:hover::after {
+    .interactive-highlight:hover::after,
+    .interactive-highlight-stories:hover::after {
         opacity: 1;
     }
 }
 
 /* Show Number on Tap (Mobile) + Keyboard navigation */
 .interactive-highlight:focus::after,
-.interactive-highlight:active::after {
+.interactive-highlight:active::after,
+.interactive-highlight-stories:focus::after,
+.interactive-highlight-stories:active::after {
     opacity: 1;
 }
 
@@ -168,3 +279,202 @@
         transition: none;
     }
 }
+
+/* ===============================
+   SITE NAV (global)
+   =============================== */
+/* ===============================
+   SITE NAV (global) — mobile-first, pushes page down
+   =============================== */
+   .site-nav {
+    background: var(--primary-color);
+    color: #fff;
+    box-shadow: var(--shadow-sm);
+    width: 100%;
+  }
+  
+  .site-nav__inner {
+    /* grid lets brand+toggle sit on row 1, links span full width below */
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: .5rem;
+    position: relative;
+    padding: .5rem .75rem;
+  }
+  
+  .site-nav a {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding: .45rem .7rem;
+    border-radius: 999px;
+    border: 1px solid color-mix(in srgb, #fff 14%, transparent);
+  }
+  .site-nav a:hover,
+  .site-nav a:focus-visible { background: var(--secondary-color); color: #fff; border-color: transparent; }
+  .site-nav .brand { font-weight: 800; letter-spacing: .2px; border-color: transparent; }
+  .site-nav a[aria-current="page"] { background: var(--secondary-color); border-color: transparent; }
+  
+  /* Hamburger (CSS-only) */
+  .nav-toggle { display: none; } /* keep it out of layout; label controls it */
+  .nav-toggle-btn {
+    grid-column: 2;
+    grid-row: 1;
+    margin-left: .25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid color-mix(in srgb, #fff 20%, transparent);
+  }
+  .nav-toggle-btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  .nav-toggle-btn .bar {
+    display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px;
+    transition: transform .25s ease, opacity .2s ease;
+  }
+  
+  /* LINKS: in normal flow on mobile, collapsed by default */
+  .site-nav__links {
+    grid-column: 1 / -1;   /* span full width below brand+toggle */
+    grid-row: 2;
+    display: block;
+    overflow: hidden;
+    max-height: 0;         /* collapsed */
+    transition: max-height .28s ease;
+    background: var(--primary-color);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    padding: 0 .25rem;     /* inner padding only when open (set below) */
+  }
+  .site-nav__links a { display: block; margin: .25rem 0; }
+  
+  /* OPEN STATE: animate and push layout down */
+  .nav-toggle:checked ~ .nav-toggle-btn { background: var(--secondary-color); border-color: transparent; }
+  .nav-toggle:checked ~ .nav-toggle-btn .bar:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .nav-toggle:checked ~ .nav-toggle-btn .bar:nth-child(2) { opacity: 0; }
+  .nav-toggle:checked ~ .nav-toggle-btn .bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+  .nav-toggle:checked ~ .site-nav__links {
+    padding: .5rem;           /* add breathing room when open */
+    max-height: 60vh;         /* enough to show all items and allow scroll if long */
+  }
+  
+  /* Desktop layout */
+  @media (min-width: 768px) {
+    .site-nav__inner {
+      display: flex; align-items: center; gap: .4rem;
+    }
+    .nav-toggle-btn { display: none; }
+    .site-nav__links {
+      display: flex !important;
+      overflow: visible; max-height: none; padding: 0;
+      background: transparent; box-shadow: none; border-radius: 0; margin-left: auto;
+      position: static;        /* ensure inline in header */
+      min-width: unset; gap: .4rem;
+    }
+    .site-nav__links a { display: inline-block; margin: 0; }
+  }
+  
+  /* Motion safety */
+  @media (prefers-reduced-motion: reduce) {
+    .site-nav__links { transition: none; }
+    .nav-toggle-btn .bar { transition: none; }
+  }
+  
+
+/* Desktop layout */
+@media (min-width: 768px){
+  .nav-toggle-btn{display:none}
+  .site-nav__links{position:static; display:flex !important; background:transparent; box-shadow:none; padding:0; min-width:unset; gap:.4rem; margin-left:auto}
+  .site-nav__links a{display:inline-block; margin:0}
+}
+
+/* ===============================
+   "On this page" NAV
+   =============================== */
+.page-nav {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--background-color) 70%, #fff);
+  border-bottom: 1px solid rgba(0,0,0,.06);
+  padding: .5rem .75rem;
+  margin-block-end: 1rem;
+  overflow:auto; white-space: nowrap;
+}
+.page-nav a{
+  display:inline-block; text-decoration:none;
+  color: var(--primary-color);
+  padding:.4rem .7rem; margin-right:.4rem;
+  border-radius:999px; border:1px solid rgba(0,0,0,.08);
+}
+.page-nav a:focus-visible, .page-nav a:hover{
+  background: var(--secondary-color); color:#fff;
+}
+
+/* ===============================
+   Interview component
+   =============================== */
+.interviews-wrap{max-width:72rem;margin-inline:auto}
+.interview{
+  border:1px solid rgba(0,0,0,.08);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  background:#fff;
+}
+.interview summary{
+  list-style:none; cursor:pointer; user-select:none;
+  padding: .85rem 1rem; border-bottom:1px solid rgba(0,0,0,.06);
+  display:flex; align-items:center; gap:.6rem;
+}
+.interview summary::-webkit-details-marker{display:none}
+.interview[open] summary{background: color-mix(in srgb, var(--secondary-color) 8%, #fff)}
+.user-name{margin:0; color: var(--primary-color); font-weight:700}
+.initial-prompt{margin:.3rem 0 0; opacity:.75; font-size:.95rem}
+.question{font-weight:700; margin:.75rem 0 .25rem}
+.response{
+  border-left: 3px solid var(--secondary-color);
+  background-color: color-mix(in srgb, var(--secondary-color) 10%, transparent);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  padding: .75rem 1rem;
+}
+.interview ul{margin:.5rem 0 .5rem 1rem; padding:0}
+.interview ul li{margin:.25rem 0}
+
+/* Fancy list markers on wide screens */
+@media (min-width: 768px){
+  .interview ul li::marker{content:"🥕 "; font-size:1.2em}
+}
+
+/* ===============================
+   INTERACTIVE HIGHLIGHT – USER STORIES
+   (longer text; multi-line tooltip; reuses base .interactive-highlight)
+   =============================== */
+.interactive-highlight-stories{
+  background-color: rgba(52,152,219,.12); /* tie to secondary, softer */
+  border-bottom: 2px dotted var(--secondary-color);
+}
+.interactive-highlight-stories::after{
+  /* show full user story; multi-line tooltip */
+  content: attr(data-userstory);
+  white-space: normal;
+  width: min(34ch, 92vw); height: auto; min-height: 30px;
+  line-height: 1.3; padding: .35rem .5rem;
+  border-radius: .5rem;
+  right: auto; left: 0; top: -0.5rem; transform: translateY(-100%);
+}
+
+/* Optional compact badge variant for user stories (shows short ID) */
+.interactive-highlight-stories.us-compact::after{
+  content: attr(data-id);
+  white-space: nowrap;
+  width: auto; min-width: 84px; height: 26px;
+  padding: 0 .6rem; border-radius: 999px;
+  right: -15px; left: auto; top: -5px; transform: none;
+}
+
+/* ===============================
+   Details reset for accessibility
+   =============================== */
+details:focus-within{outline:2px solid color-mix(in srgb, var(--accent-color) 35%, transparent); outline-offset:2px}

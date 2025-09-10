@@ -5,16 +5,34 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!-- CSS Linking -->
         <link rel="stylesheet" href="css/reset.css" />
-        <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/components.css" />
         <title>Work Phase 2</title>
     </head>
     <body>
-        <header>
+        <nav class="site-nav" aria-label="Main">
+            <div class="site-nav__inner">
+                <a class="brand" href="index.html">WP2</a>
+                <input id="nav-toggle" class="nav-toggle" type="checkbox" />
+                <label for="nav-toggle" class="nav-toggle-btn" aria-label="Toggle menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </label>
+                <div class="site-nav__links">
+                    <a href="client_needs_analysis.html">Client Needs</a>
+                    <a href="user_stories.html">User Stories</a>
+                    <a href="accessibility_assessment.html">Accessibility</a>
+                    <a href="ethics_analysis.html">Ethics</a>
+                    <a href="genai_mt_acknowledgement.html" aria-current="page">GenAI/MT</a>
+                </div>
+            </div>
+        </nav>
+        <header class="container">
             <h1>Pete's Work Phase 2</h1>
         </header>
-        <section>
+        <section class="container">
             <h2>What's in this website?</h2>
             <p>
                 This is the second phase of my work. I will be completing A2

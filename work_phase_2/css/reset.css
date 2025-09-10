@@ -11,12 +11,14 @@
     padding: 0;
 }
 
-/* 2) Kill animations & transitions everywhere */
-*,
-*::before,
-*::after {
-    animation: none !important;
-    transition: none !important;
+/* 2) Respect reduced-motion preference for animations/transitions */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
 }
 
 /* 3) Document & base text */
