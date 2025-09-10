@@ -1,26 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!-- CSS Linking -->
-        <link rel="stylesheet" href="css/reset.css" />
-        <link rel="stylesheet" href="css/base.css" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Client Needs Analysis – WP2</title>
+
+        <!-- Order: variables → base → components -->
         <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/components.css" />
-        <title>Work Phase 2</title>
     </head>
     <body>
         <header>
-            <h1>Pete's Work Phase 2</h1>
+            <h1>Client Needs Analysis</h1>
+            <p>Values → Needs → Features</p>
         </header>
-        <section>
-            <h2>What's in this website?</h2>
-            <p>
-                This is the second phase of my work. I will be completing A2
-                Design Research during this page. But all of that assessment
-                will be created as pages in this website.
-            </p>
-        </section>
+
+        <main>
+            <!-- Section 1: Client Brief (HTML so we can highlight parts) -->
+            <section aria-labelledby="brief-heading">
+                <h2 id="brief-heading">The Client Brief</h2>
+
+                <h3>About Us</h3>
+                <p>
+                    We are a non-profit organisation dedicated to fostering
+                    social cohesion by empowering diverse communities to share
+                    their stories, connect with others, and access resources
+                    that enhance their visibility and influence. Our mission is
+                    to strengthen societal bonds by creating platforms that
+                    celebrate and support the unique identities of communities
+                    across Australia.
+                </p>
+                <p>
+                    This brief has been prepared for the internal design teams
+                    at Connect Communities Initiative (CCI). Each design team is
+                    tasked with developing individual concepts and prototypes
+                    for dynamic websites that align with CCI’s mission and
+                    vision. Our mission is to strengthen societal bonds by
+                    creating platforms that celebrate and support the unique
+                    identities of communities across Australia.
+                </p>
+
+                <h3>Project Overview</h3>
+                <p>
+                    We are commissioning the development of dynamic,
+                    user-friendly websites that represent and support different
+                    communities. Each website should serve as a central hub
+                    where community members can
+                    <span
+                        class="interactive-highlight"
+                        data-card="Card 3"
+                        tabindex="0"
+                        >share resources</span
+                    >,
+                    <span
+                        class="interactive-highlight"
+                        data-card="Card 4"
+                        tabindex="0"
+                        >highlight events</span
+                    >, and foster meaningful connections. The websites must
+                    <span
+                        class="interactive-highlight"
+                        data-card="Card 6"
+                        tabindex="0"
+                        >not include any form of commercial activity</span
+                    >, such as advertising or selling products. However, it is
+                    acceptable to promote resources, events, or services that
+                    are directly beneficial to the community.
+                </p>
+                <p>
+                    The websites must be
+                    <span
+                        class="interactive-highlight"
+                        data-card="Card 2"
+                        tabindex="0"
+                        >accessible, mobile-friendly</span
+                    >, and reflect the diverse needs of the selected community
+                    focus area while adhering to our mission of
+                    <span
+                        class="interactive-highlight"
+                        data-card="Card 1"
+                        tabindex="0"
+                        >inclusivity</span
+                    >, accessibility, and
+                    <span
+                        class="interactive-highlight"
+                        data-card="Card 5"
+                        tabindex="0"
+                        >ethical design</span
+                    >. Each website should also celebrate the unique
+                    characteristics of its chosen community and support
+                    meaningful interaction and engagement.
+                </p>
+
+                <h3>Community Focus Areas</h3>
+                <ul>
+                    <li>Cultural and Heritage Communities</li>
+                    <li>Academic and Professional Communities</li>
+                    <li>Wellness and Mental Health Communities</li>
+                    <li>Social and Environmental Advocacy Communities</li>
+                    <li>Regional or International Communities</li>
+                    <li>Creative Arts and Media Communities</li>
+                    <li>Lived Experience Communities</li>
+                    <li>Food and Culinary Communities</li>
+                    <li>Tech and Innovation Communities</li>
+                </ul>
+
+                <h3>Additional Information</h3>
+                <p><strong>Target Audience</strong></p>
+                <p>Each website must serve two key groups:</p>
+                <ol>
+                    <li>
+                        Community Members: Individuals within the selected
+                        community who seek representation, resources, and
+                        connection.
+                    </li>
+                    <li>
+                        General Audience: Broader society, who can use the
+                        website to learn about the community and its
+                        contributions.
+                    </li>
+                </ol>
+                <p>
+                    Accessibility must be prioritised to ensure seamless
+                    interaction for all users, including those relying on
+                    assistive technologies.
+                </p>
+
+                <p><strong>Project Goals</strong></p>
+                <ol>
+                    <li>
+                        Represent and celebrate the identity of the chosen
+                        community, recognising and representing the diversity
+                        within the community rather than relying on stereotypes.
+                    </li>
+                    <li>
+                        Provide clear, accessible information and resources to
+                        users.
+                    </li>
+                    <li>
+                        Foster meaningful connections and support within the
+                        community.
+                    </li>
+                    <li>
+                        Ensure
+                        <span
+                            class="interactive-highlight"
+                            data-card="Card 5"
+                            tabindex="0"
+                        >
+                            ethical, inclusive, and culturally sensitive design
+                            principles
+                        </span>
+                        are upheld.
+                    </li>
+                </ol>
+            </section>
+
+            <!-- Section 2: Values, Needs & Features (Flip-cards) -->
+            <!-- VALUE GROUP 1 -->
+            <div class="value-box" role="group" aria-labelledby="value-1-title">
+                <h3 id="value-1-title">Value 1: Inclusivity & Accessibility</h3>
+                <p>
+                    Links to highlights like <em>inclusive</em>,
+                    <em>accessible, mobile-friendly</em>, and
+                    <em>ethical design</em>.
+                </p>
+            </div>
+            <div class="flip-card-container" aria-describedby="value-1-title">
+                <!-- Card 1 -->
+                <div
+                    class="flip-card"
+                    data-card="Card 1"
+                    tabindex="0"
+                    aria-label="Card 1: Need and Feature"
+                >
+                    <div class="flip-card-inner">
+                        <div class="flip-card-side flip-card-front">
+                            <span class="card-number">Card 1</span>
+                            <h4>Need</h4>
+                            <p>
+                                Users need inclusive, multilingual content in
+                                plain language.
+                            </p>
+                        </div>
+                        <div class="flip-card-side flip-card-back">
+                            <span class="card-number">Card 1</span>
+                            <h4>Feature</h4>
+                            <p>
+                                Language switcher, alt text, captions, ARIA
+                                labels, readable copy (WCAG 2.2 AA).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="flip-card"
+                    data-card="Card 2"
+                    tabindex="0"
+                    aria-label="Card 2: Need and Feature"
+                >
+                    <div class="flip-card-inner">
+                        <div class="flip-card-side flip-card-front">
+                            <span class="card-number">Card 2</span>
+                            <h4>Need</h4>
+                            <p>
+                                Users need fast mobile access on low bandwidth.
+                            </p>
+                        </div>
+                        <div class="flip-card-side flip-card-back">
+                            <span class="card-number">Card 2</span>
+                            <h4>Feature</h4>
+                            <p>
+                                Responsive images, lazy-loading, compressed
+                                assets, offline-friendly basics.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VALUE GROUP 2 -->
+            <div class="value-box" role="group" aria-labelledby="value-2-title">
+                <h3 id="value-2-title">Value 2: Community Connection</h3>
+                <p>
+                    Links to highlights like <em>share resources</em> and
+                    <em>highlight events</em>.
+                </p>
+            </div>
+            <div class="flip-card-container" aria-describedby="value-2-title">
+                <!-- Card 3 -->
+                <div
+                    class="flip-card"
+                    data-card="Card 3"
+                    tabindex="0"
+                    aria-label="Card 3: Need and Feature"
+                >
+                    <div class="flip-card-inner">
+                        <div class="flip-card-side flip-card-front">
+                            <span class="card-number">Card 3</span>
+                            <h4>Need</h4>
+                            <p>
+                                Users need an easy way to share stories,
+                                resources, and events.
+                            </p>
+                        </div>
+                        <div class="flip-card-side flip-card-back">
+                            <span class="card-number">Card 3</span>
+                            <h4>Feature</h4>
+                            <p>
+                                Submission form with moderation; taggable
+                                resource library; event creation flow.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div
+                    class="flip-card"
+                    data-card="Card 4"
+                    tabindex="0"
+                    aria-label="Card 4: Need and Feature"
+                >
+                    <div class="flip-card-inner">
+                        <div class="flip-card-side flip-card-front">
+                            <span class="card-number">Card 4</span>
+                            <h4>Need</h4>
+                            <p>
+                                Users need to discover events/resources quickly
+                                on mobile.
+                            </p>
+                        </div>
+                        <div class="flip-card-side flip-card-back">
+                            <span class="card-number">Card 4</span>
+                            <h4>Feature</h4>
+                            <p>
+                                Mobile-first listings with filters/search, “save
+                                to calendar”, map/list toggle.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VALUE GROUP 3 -->
+            <div class="value-box" role="group" aria-labelledby="value-3-title">
+                <h3 id="value-3-title">
+                    Value 3: Trust, Ethics & Non-Commercial
+                </h3>
+                <p>
+                    Links to highlights like <em>ethical design</em>,
+                    <em>privacy</em>, and <em>no commercial activity</em>.
+                </p>
+            </div>
+            <div class="flip-card-container" aria-describedby="value-3-title">
+                <!-- Card 5 -->
+                <div
+                    class="flip-card"
+                    data-card="Card 5"
+                    tabindex="0"
+                    aria-label="Card 5: Need and Feature"
+                >
+                    <div class="flip-card-inner">
+                        <div class="flip-card-side flip-card-front">
+                            <span class="card-number">Card 5</span>
+                            <h4>Need</h4>
+                            <p>
+                                Users need transparent data use and privacy when
+                                subscribing.
+                            </p>
+                        </div>
+                        <div class="flip-card-side flip-card-back">
+                            <span class="card-number">Card 5</span>
+                            <h4>Feature</h4>
+                            <p>
+                                Minimal newsletter fields; explicit consent;
+                                clear privacy notice; easy opt-out.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div
+                    class="flip-card"
+                    data-card="Card 6"
+                    tabindex="0"
+                    aria-label="Card 6: Need and Feature"
+                >
+                    <div class="flip-card-inner">
+                        <div class="flip-card-side flip-card-front">
+                            <span class="card-number">Card 6</span>
+                            <h4>Need</h4>
+                            <p>
+                                The client needs a non-commercial, culturally
+                                sensitive site.
+                            </p>
+                        </div>
+                        <div class="flip-card-side flip-card-back">
+                            <span class="card-number">Card 6</span>
+                            <h4>Feature</h4>
+                            <p>
+                                No ads/sales; content guidelines; inclusive
+                                imagery; moderated discussions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
     </body>
 </html>
