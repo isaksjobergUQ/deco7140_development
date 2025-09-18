@@ -14,16 +14,12 @@
     </head>
     <body>
         <!-- START: PAGE STRUCTURE -->
-        <nav class="site-nav" aria-label="Main Navigation">
+        <!-- Desktop Navigation (Top) -->
+        <nav id="nav-desktop" aria-label="Main Navigation">
             <div class="site-nav__inner">
                 <a class="brand" href="index.html">WP3</a>
-                <input id="nav-toggle" class="nav-toggle" type="checkbox" />
-                <label for="nav-toggle" class="nav-toggle-btn" aria-label="Toggle menu">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </label>
                 <div class="site-nav__links">
+                    <a href="index.html">Home</a>
                     <a href="site_map.html">Site Map</a>
                     <a href="style_guide.html">Style Guide</a>
                     <a href="visceral_design.html">Visceral Design</a>
@@ -34,15 +30,31 @@
                 </div>
             </div>
         </nav>
-        <div class="container">
-            <h1>Behavioural Design</h1>
-            <h2>What's in this website?</h2>
-            <p>
-                This is the third phase of my work. I will be completing A3
-                Design Proposal during this phase. All of the assessment
-                content will be created as pages in this website.
-            </p>
-        </div>
+
+        <!-- Mobile Navigation (Bottom) -->
+        <nav id="nav-mobile" aria-label="Main Navigation">
+            <ul>
+                <li><a href="index.html"><span class="icon">🏠</span></a></li>
+                <li><a href="site_map.html"><span class="icon">🗺️</span></a></li>
+                <li><a href="style_guide.html"><span class="icon">🎨</span></a></li>
+                <li><a href="visceral_design.html"><span class="icon">❤️</span></a></li>
+                <li><a href="behavioural_design.html"><span class="icon">⚡</span></a></li>
+                <li><a href="reflective_design.html"><span class="icon">🤔</span></a></li>
+                <li><a href="ethical_response.html"><span class="icon">⚖️</span></a></li>
+                <li><a href="genai_mt_acknowledgement.html"><span class="icon">🤖</span></a></li>
+            </ul>
+        </nav>
+        <main>
+            <div class="container">
+                <h1>Behavioural Design</h1>
+                <h2>What's in this website?</h2>
+                <p>
+                    This is the third phase of my work. I will be completing A3
+                    Design Proposal during this phase. All of the assessment
+                    content will be created as pages in this website.
+                </p>
+            </div>
+        </main>
         <!-- END: PAGE STRUCTURE -->
     </body>
     <script type="module" src="/js/index.js"></script>
