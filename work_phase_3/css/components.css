@@ -1,0 +1,149 @@
+/* ===============================
+   SITE NAV (global) — mobile-first, pushes page down
+   =============================== */
+.site-nav {
+    background: var(--primary-color);
+    color: #fff;
+    box-shadow: var(--shadow-sm);
+    width: 100%;
+}
+
+.site-nav__inner {
+    /* grid lets brand+toggle sit on row 1, links span full width below */
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.5rem;
+    position: relative;
+    padding: 0.5rem 0.75rem;
+}
+
+.site-nav a {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.45rem 0.7rem;
+    border-radius: 999px;
+    border: 1px solid color-mix(in srgb, #fff 14%, transparent);
+}
+.site-nav a:hover,
+.site-nav a:focus-visible {
+    background: var(--secondary-color);
+    color: #fff;
+    border-color: transparent;
+}
+.site-nav .brand {
+    font-weight: 800;
+    letter-spacing: 0.2px;
+    border-color: transparent;
+}
+.site-nav a[aria-current="page"] {
+    background: var(--secondary-color);
+    border-color: transparent;
+}
+
+/* Hamburger (CSS-only) */
+.nav-toggle {
+    display: none;
+} /* keep it out of layout; label controls it */
+.nav-toggle-btn {
+    grid-column: 2;
+    grid-row: 1;
+    margin-left: 0.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid color-mix(in srgb, #fff 20%, transparent);
+}
+.nav-toggle-btn:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+.nav-toggle-btn .bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+/* LINKS: in normal flow on mobile, collapsed by default */
+.site-nav__links {
+    grid-column: 1 / -1; /* span full width below brand+toggle */
+    grid-row: 2;
+    display: block;
+    overflow: hidden;
+    max-height: 0; /* collapsed */
+    transition: max-height 0.28s ease;
+    background: var(--primary-color);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    padding: 0 0.25rem; /* inner padding only when open (set below) */
+}
+.site-nav__links a {
+    display: block;
+    margin: 0.25rem 0;
+}
+
+/* OPEN STATE: animate and push layout down */
+.nav-toggle:checked ~ .nav-toggle-btn {
+    background: var(--secondary-color);
+    border-color: transparent;
+}
+.nav-toggle:checked ~ .nav-toggle-btn .bar:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+.nav-toggle:checked ~ .nav-toggle-btn .bar:nth-child(2) {
+    opacity: 0;
+}
+.nav-toggle:checked ~ .nav-toggle-btn .bar:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+.nav-toggle:checked ~ .site-nav__links {
+    padding: 0.5rem; /* add breathing room when open */
+    max-height: 60vh; /* enough to show all items and allow scroll if long */
+}
+
+/* Desktop layout */
+@media (min-width: 768px) {
+    .site-nav__inner {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+    }
+    .nav-toggle-btn {
+        display: none;
+    }
+    .site-nav__links {
+        display: flex !important;
+        overflow: visible;
+        max-height: none;
+        padding: 0;
+        background: transparent;
+        box-shadow: none;
+        border-radius: 0;
+        margin-left: auto;
+        position: static; /* ensure inline in header */
+        min-width: unset;
+        gap: 0.4rem;
+    }
+    .site-nav__links a {
+        display: inline-block;
+        margin: 0;
+    }
+}
+
+/* Motion safety */
+@media (prefers-reduced-motion: reduce) {
+    .site-nav__links {
+        transition: none;
+    }
+    .nav-toggle-btn .bar {
+        transition: none;
+    }
+}
