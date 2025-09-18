@@ -39,7 +39,7 @@
         <nav id="nav-mobile" aria-label="Main Navigation">
             <ul>
                 <li><a href="index.html"><span class="icon">🏠</span></a></li>
-                <li><a href="site_map.html"><span class="icon">🗺️</span></a></li>
+                <li><a href="site_map.html" aria-current="page"><span class="icon">🗺️</span></a></li>
                 <li><a href="style_guide.html"><span class="icon">🎨</span></a></li>
                 <li><a href="visceral_design.html"><span class="icon">❤️</span></a></li>
                 <li><a href="behavioural_design.html"><span class="icon">⚡</span></a></li>
@@ -56,88 +56,193 @@
                 <h2>Card Sorting Process</h2>
                 <p>I began by listing all content and features based on client needs and user stories, then organized them into logical groups.</p>
                 
-                <h3>Content and Features Identified:</h3>
-                <div class="content-groups">
-                    <div class="content-group">
-                        <h4>🏠 Home & Welcome</h4>
-                        <ul>
-                            <li>Welcome message for international students</li>
-                            <li>Platform overview and benefits</li>
-                            <li>Quick access to popular features</li>
-                            <li>Recent community updates</li>
-                        </ul>
+                <!-- Site Map Image -->
+                <div class="site-map-image">
+                    <img src="assets/site-map-photo.png" alt="Card sorting site map showing organized content groups" class="responsive-img" />
+                    <p class="image-caption">Photo of card sorting activity showing content organization</p>
+                </div>
+                
+                <h3>Interactive Site Map</h3>
+                <p>Click on each section to explore the content structure:</p>
+                
+                <!-- Accordion Structure -->
+                <div class="accordion" id="site-map-accordion">
+                    <!-- Home Section -->
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="home-content">
+                            <span class="accordion-icon">🏠</span>
+                            <span class="accordion-title">Home</span>
+                            <span class="accordion-toggle">+</span>
+                        </button>
+                        <div class="accordion-content" id="home-content">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>Welcome message for international students</li>
+                                    <li>Platform overview and benefits</li>
+                                    <li>Quick access to popular features</li>
+                                    <li>Recent community updates</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div class="content-group">
-                        <h4>💡 Tips & Advice</h4>
-                        <ul>
-                            <li>Academic tips (studying, assignments, exams)</li>
-                            <li>Living tips (housing, transportation, shopping)</li>
-                            <li>Cultural adaptation advice</li>
-                            <li>Language learning resources</li>
-                            <li>Financial management tips</li>
-                            <li>Health and wellness guidance</li>
-                        </ul>
+
+                    <!-- Tips Section -->
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="tips-content">
+                            <span class="accordion-icon">💡</span>
+                            <span class="accordion-title">Tips</span>
+                            <span class="accordion-toggle">+</span>
+                        </button>
+                        <div class="accordion-content" id="tips-content">
+                            <div class="accordion-body">
+                                <p class="m-y-3">Central hub for international students to access practical advice and tips. Supports the client's goal of providing comprehensive support and addresses user stories like "As an international student, I want to find study tips so that I can succeed academically."</p>
+                                
+                                <!-- Nested Accordion for Sub-pages -->
+                                <div class="accordion nested">
+                                    <div class="accordion-item">
+                                        <button class="accordion-header" aria-expanded="false" aria-controls="academic-tips-content">
+                                            <span class="accordion-icon">📚</span>
+                                            <span class="accordion-title">Academic Tips</span>
+                                            <span class="accordion-toggle">+</span>
+                                        </button>
+                                        <div class="accordion-content" id="academic-tips-content">
+                                            <div class="accordion-body">
+                                                <p class="m-y-3">Study techniques, assignment help, and exam preparation strategies. Addresses user need for academic success and supports client goal of student retention.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="accordion-item">
+                                        <button class="accordion-header" aria-expanded="false" aria-controls="living-tips-content">
+                                            <span class="accordion-icon">🏠</span>
+                                            <span class="accordion-title">Living Tips</span>
+                                            <span class="accordion-toggle">+</span>
+                                        </button>
+                                        <div class="accordion-content" id="living-tips-content">
+                                            <div class="accordion-body">
+                                                <p class="m-y-3">Housing, transportation, and shopping guides. Supports user story "As an international student, I want practical living advice so that I can adapt to my new environment."</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="accordion-item">
+                                        <button class="accordion-header" aria-expanded="false" aria-controls="cultural-tips-content">
+                                            <span class="accordion-icon">🌍</span>
+                                            <span class="accordion-title">Cultural Adaptation</span>
+                                            <span class="accordion-toggle">+</span>
+                                        </button>
+                                        <div class="accordion-content" id="cultural-tips-content">
+                                            <div class="accordion-body">
+                                                <p class="m-y-3">Understanding local customs and traditions. Addresses accessibility principle of cultural sensitivity and supports client goal of inclusive community building.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="accordion-item">
+                                        <button class="accordion-header" aria-expanded="false" aria-controls="language-tips-content">
+                                            <span class="accordion-icon">🗣️</span>
+                                            <span class="accordion-title">Language Learning</span>
+                                            <span class="accordion-toggle">+</span>
+                                        </button>
+                                        <div class="accordion-content" id="language-tips-content">
+                                            <div class="accordion-body">
+                                                <p class="m-y-3">English improvement resources and practice opportunities. Supports user story "As a non-native English speaker, I want language learning resources so that I can communicate effectively."</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="accordion-item">
+                                        <button class="accordion-header" aria-expanded="false" aria-controls="health-tips-content">
+                                            <span class="accordion-icon">🏥</span>
+                                            <span class="accordion-title">Health & Wellness</span>
+                                            <span class="accordion-toggle">+</span>
+                                        </button>
+                                        <div class="accordion-content" id="health-tips-content">
+                                            <div class="accordion-body">
+                                                <p class="m-y-3">Healthcare access, wellness tips, and mental health support. Addresses accessibility principle of health equity and supports client goal of student wellbeing.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div class="content-group">
-                        <h4>🎉 Events & Activities</h4>
-                        <ul>
-                            <li>Cultural events calendar</li>
-                            <li>University events and activities</li>
-                            <li>Community meetups</li>
-                            <li>Language exchange sessions</li>
-                            <li>Festival celebrations</li>
-                            <li>Sports and recreation activities</li>
-                        </ul>
+
+                    <!-- Events Section -->
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="events-content">
+                            <span class="accordion-icon">🎉</span>
+                            <span class="accordion-title">Events</span>
+                            <span class="accordion-toggle">+</span>
+                        </button>
+                        <div class="accordion-content" id="events-content">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li><strong>Cultural:</strong> Cultural festivals and celebrations</li>
+                                    <li><strong>University Activities:</strong> Campus events and academic activities</li>
+                                    <li><strong>Community Meetups:</strong> Student gatherings and networking</li>
+                                    <li><strong>Festivals:</strong> Local and international celebrations</li>
+                                    <li><strong>Sports:</strong> Recreational activities and team sports</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div class="content-group">
-                        <h4>📚 Resources</h4>
-                        <ul>
-                            <li>Essential documents checklist</li>
-                            <li>University services directory</li>
-                            <li>Immigration and visa information</li>
-                            <li>Banking and financial services</li>
-                            <li>Healthcare and insurance guides</li>
-                            <li>Transportation options</li>
-                            <li>Emergency contacts</li>
-                        </ul>
+
+                    <!-- Resources Section -->
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="resources-content">
+                            <span class="accordion-icon">📚</span>
+                            <span class="accordion-title">Resources</span>
+                            <span class="accordion-toggle">+</span>
+                        </button>
+                        <div class="accordion-content" id="resources-content">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li><strong>Essential Documents:</strong> Checklist for required paperwork</li>
+                                    <li><strong>University Services:</strong> Campus resources and support services</li>
+                                    <li><strong>Immigration Info:</strong> Visa requirements and processes</li>
+                                    <li><strong>Bank & Finance:</strong> Banking setup and financial management</li>
+                                    <li><strong>Healthcare:</strong> Medical services and insurance information</li>
+                                    <li><strong>Transportation:</strong> Public transport and travel options</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div class="content-group">
-                        <h4>🤝 Community</h4>
-                        <ul>
-                            <li>Student profiles and introductions</li>
-                            <li>Discussion forums</li>
-                            <li>Peer-to-peer Q&A</li>
-                            <li>Study groups and partnerships</li>
-                            <li>Mentorship programs</li>
-                            <li>Success stories and testimonials</li>
-                        </ul>
+
+                    <!-- Community Section -->
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="community-content">
+                            <span class="accordion-icon">🤝</span>
+                            <span class="accordion-title">Community</span>
+                            <span class="accordion-toggle">+</span>
+                        </button>
+                        <div class="accordion-content" id="community-content">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li><strong>Study Groups:</strong> Collaborative learning and study partnerships</li>
+                                    <li><strong>Discussion Forums:</strong> Q&A and peer support</li>
+                                    <li><strong>Student Profiles:</strong> Connect with fellow international students</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div class="content-group">
-                        <h4>🌍 Language Support</h4>
-                        <ul>
-                            <li>Multi-language interface options</li>
-                            <li>Translation tools</li>
-                            <li>Language learning resources</li>
-                            <li>Common phrases and expressions</li>
-                            <li>Cultural communication tips</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="content-group">
-                        <h4>📱 User Features</h4>
-                        <ul>
-                            <li>User registration and profiles</li>
-                            <li>Content submission and sharing</li>
-                            <li>Bookmarking and favorites</li>
-                            <li>Notifications and updates</li>
-                            <li>Search functionality</li>
-                            <li>Mobile app access</li>
-                        </ul>
+
+                    <!-- Language Section -->
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" aria-controls="language-content">
+                            <span class="accordion-icon">🌍</span>
+                            <span class="accordion-title">Language</span>
+                            <span class="accordion-toggle">+</span>
+                        </button>
+                        <div class="accordion-content" id="language-content">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li><strong>Interface Language:</strong> Multi-language platform options</li>
+                                    <li><strong>Translation Tools:</strong> Built-in translation features</li>
+                                    <li><strong>Cultural Communication:</strong> Understanding communication styles</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
@@ -224,5 +329,5 @@
         </main>
         <!-- END: PAGE STRUCTURE -->
     </body>
-    <script type="module" src="/js/index.js"></script>
+    <script type="module" src="js/site_map.js"></script>
 </html>

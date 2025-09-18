@@ -1,0 +1,109 @@
+/* Accordion component skeleton */
+
+/* Styling the .accordion element */
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Styling the .accordion-item element */
+.accordion-item {
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid var(--light-gray);
+    background-color: var(--white);
+}
+
+/* Accordion Header */
+.accordion-header {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+    background-color: var(--secondary-color);
+}
+
+.accordion-header:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Accordion Icon and Title */
+.accordion-icon {
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+.accordion-title {
+    flex: 1;
+    text-align: left;
+}
+
+.accordion-toggle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+/* Accordion Content */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.accordion-content.open {
+    max-height: 1000px;
+    opacity: 1;
+}
+
+.accordion-body {
+    padding: 1rem;
+    background-color: var(--background-color);
+}
+
+/* Nested Accordion Styling */
+.accordion.nested {
+    margin-left: 1rem;
+    border-left: 3px solid var(--primary-color);
+    padding-left: 1rem;
+    margin-top: 1rem;
+}
+
+.accordion.nested .accordion-header {
+    background-color: var(--secondary-color);
+    font-size: 1rem;
+    padding: 0.75rem;
+}
+
+.accordion.nested .accordion-header:hover {
+    background-color: var(--accent-color);
+}
+
+.accordion.nested .accordion-content {
+    background-color: var(--light-gray);
+}
+
+/* Active State */
+.accordion-item.active .accordion-toggle {
+    transform: rotate(45deg);
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 1000px;
+    opacity: 1;
+}
