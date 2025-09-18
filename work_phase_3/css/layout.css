@@ -14,16 +14,19 @@
   --shadow-sm: 0 2px 10px rgba(0,0,0,.06);
 }
 
-/* Page container sizing */
-:root{
-  --container-max: 72rem;
-  --container-gutter: clamp(1rem, 2vw, 2rem);
+/* PAGE CONTAINER */
+/* Mobile */
+.container {
+    min-height: 100vh;
+    width: 90vw;
+    margin: 0 auto;
 }
 
-.container{
-  max-width: var(--container-max);
-  margin-inline: auto;
-  padding-inline: var(--container-gutter);
+/* Desktop */
+@media (min-width: 768px) {
+    .container {
+        width: 70vw;
+    }
 }
 
 /* ===============================

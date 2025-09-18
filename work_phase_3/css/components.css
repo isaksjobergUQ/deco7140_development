@@ -1,11 +1,29 @@
 /* ===============================
-   SITE NAV (global) — mobile-first, pushes page down
+   SITE NAV (global) — mobile bottom, desktop top
    =============================== */
 .site-nav {
     background: var(--primary-color);
     color: #fff;
     box-shadow: var(--shadow-sm);
     width: 100%;
+}
+
+/* Mobile Navigation (Bottom) */
+#nav-mobile {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+/* Desktop Navigation (Top) */
+#nav-desktop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
 }
 
 .site-nav__inner {
@@ -109,8 +127,25 @@
     max-height: 60vh; /* enough to show all items and allow scroll if long */
 }
 
+/* Show/Hide Navigation based on screen size */
+#nav-mobile {
+    display: block;
+}
+
+#nav-desktop {
+    display: none;
+}
+
 /* Desktop layout */
 @media (min-width: 768px) {
+    #nav-mobile {
+        display: none;
+    }
+    
+    #nav-desktop {
+        display: block;
+    }
+    
     .site-nav__inner {
         display: flex;
         align-items: center;
@@ -138,6 +173,18 @@
     }
 }
 
+/* Add padding to main content to account for fixed navigation */
+main {
+    padding-top: 60px; /* Space for desktop top nav */
+    padding-bottom: 60px; /* Space for mobile bottom nav */
+}
+
+@media (min-width: 768px) {
+    main {
+        padding-bottom: 0; /* No bottom padding on desktop */
+    }
+}
+
 /* Motion safety */
 @media (prefers-reduced-motion: reduce) {
     .site-nav__links {
@@ -145,5 +192,39 @@
     }
     .nav-toggle-btn .bar {
         transition: none;
+    }
+}
+
+/* ===============================
+   PAGE TITLE COMPONENT
+   =============================== */
+.page-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+    .page-title {
+        text-align: left;
+    }
+}
+
+/* ===============================
+   HERO TEXT COMPONENT
+   =============================== */
+.hero-text {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+    .hero-text {
+        font-size: 1.75rem;
+        text-align: left;
     }
 }
