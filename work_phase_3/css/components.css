@@ -251,6 +251,102 @@ main {
 }
 
 /* ===============================
+   SITEMAP STYLING
+   =============================== */
+.content-groups {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+@media (min-width: 768px) {
+    .content-groups {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.content-group {
+    background: var(--white);
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.content-group h4 {
+    margin: 0 0 1rem 0;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.content-group ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.content-group li {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.sitemap-visual {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+@media (min-width: 768px) {
+    .sitemap-visual {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .sitemap-visual {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.sitemap-level-1 {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sitemap-level-1 h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.sitemap-level-1 > p {
+    margin: 0 0 1rem 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.sitemap-level-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sitemap-level-2 p {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* ===============================
    RESPONSIVE MENUS
    =============================== */
 /* MENUS */
