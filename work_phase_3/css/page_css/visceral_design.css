@@ -1,0 +1,37 @@
+/* Visceral Design page specific styles */
+
+/* Import skeleton components */
+@import url("../component_skeletons/gallery.css");
+@import url("../component_skeletons/viewer.css");
+
+/* Breadcrumb Navigation */
+.breadcrumb {
+    margin-bottom: 1rem;
+}
+
+.breadcrumb ol {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 0.5rem;
+}
+
+.breadcrumb li {
+    color: var(--text-color);
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: "›";
+    margin-left: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.breadcrumb a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}

@@ -5,9 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!-- CSS Linking -->
         <link rel="stylesheet" href="css/reset.css" />
-        <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/components.css" />
+        <link rel="stylesheet" href="css/utilities.css" />
+        <link rel="stylesheet" href="css/page_css/visceral_design.css" />
         <!-- NEW -->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
         <title>Visceral Design - Work Phase 3</title>
@@ -22,9 +24,6 @@
                     <a href="index.html">Home</a>
                     <a href="site_map.html">Site Map</a>
                     <a href="style_guide.html">Style Guide</a>
-                    <a href="visceral_design.html" aria-current="page">Visceral Design</a>
-                    <a href="behavioural_design.html">Behavioural Design</a>
-                    <a href="reflective_design.html">Reflective Design</a>
                     <a href="ethical_response.html">Ethical Response</a>
                     <a href="genai_mt_acknowledgement.html">GenAI/MT</a>
                 </div>
@@ -37,25 +36,53 @@
                 <li><a href="index.html"><span class="icon">🏠</span></a></li>
                 <li><a href="site_map.html"><span class="icon">🗺️</span></a></li>
                 <li><a href="style_guide.html"><span class="icon">🎨</span></a></li>
-                <li><a href="visceral_design.html"><span class="icon">❤️</span></a></li>
-                <li><a href="behavioural_design.html"><span class="icon">⚡</span></a></li>
-                <li><a href="reflective_design.html"><span class="icon">🤔</span></a></li>
                 <li><a href="ethical_response.html"><span class="icon">⚖️</span></a></li>
                 <li><a href="genai_mt_acknowledgement.html"><span class="icon">🤖</span></a></li>
             </ul>
         </nav>
-        <main>
+        <main id="main-content">
             <div class="container">
-                <h1>Visceral Design</h1>
-                <h2>What's in this website?</h2>
-                <p>
-                    This is the third phase of my work. I will be completing A3
-                    Design Proposal during this phase. All of the assessment
-                    content will be created as pages in this website.
-                </p>
+                <!-- Breadcrumb Navigation -->
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <ol>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="style_guide.html">Style Guide</a></li>
+                        <li aria-current="page">Visceral Design</li>
+                    </ol>
+                </nav>
+
+                <h1 class="page-title m-y-5">Visceral Design</h1>
+                <p class="hero-text">First impressions and emotional responses through visual design, typography, and color schemes</p>
+                
+                <h2>Design Philosophy</h2>
+                <p>Visceral design focuses on the immediate emotional response users have when they first encounter the international student platform. The design decisions prioritize warmth, inclusivity, and cultural sensitivity to create a welcoming environment for students from diverse backgrounds.</p>
+                
+                <p>This approach supports the client's goal of creating an inclusive platform and addresses user stories like "As a new international student, I want to feel welcomed and supported so that I can confidently navigate my new environment."</p>
+                
+                <!-- Page Layouts Section -->
+                <article>
+                    <h2 class="m-t-3">Page Layouts</h2>
+                    <p>Wireframes demonstrate the visual hierarchy and layout structure for key pages. These layouts prioritize clarity and accessibility while maintaining cultural inclusivity.</p>
+                    
+                    <!-- Gallery of small images -->
+                    <section class="gallery m-t-3" aria-label="Layout thumbnails">
+                        <!-- Use meaningful ALT text; add loading="lazy" -->
+                        <img src="assets/homewf.png" alt="Homepage wireframe: Welcome message, featured content, and quick access to key features for international students" loading="lazy" width="640" height="360" tabindex="0" />
+                        <img src="assets/tipswf.png" alt="Tips page wireframe: Academic and living tips organized by categories with search functionality" loading="lazy" width="640" height="360" tabindex="0" />
+                        <img src="assets/eventswf.png" alt="Events page wireframe: Cultural events calendar, community meetups, and language exchange sessions" loading="lazy" width="1200" height="800" tabindex="0" />
+                                </section>
+                    
+                    <!-- Large Image Viewer -->
+                    <aside class="viewer" id="viewer" aria-hidden="true" aria-label="Large image viewer">
+                        <button id="close-viewer" aria-label="Close image viewer">✖</button>
+                        <img id="viewer-img" src="" alt="" />
+                        <p id="viewer-caption"></p>
+                    </aside>
+                </article>
             </div>
         </main>
         <!-- END: PAGE STRUCTURE -->
-    </body>
-    <script type="module" src="/js/index.js"></script>
+        
+        <!-- JavaScript -->
+        <script type="module" src="js/visceral_design.js"></script>
 </html>

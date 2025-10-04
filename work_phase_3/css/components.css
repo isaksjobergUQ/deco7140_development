@@ -1,4 +1,25 @@
 @import './component_skeletons/accordion.css';
+@import './component_skeletons/card.css';
+
+/* ===============================
+   CARD CONTAINER (global) — mobile column, desktop row
+   =============================== */
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+@media (min-width: 768px) {
+    .card-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center; /* Center the cards */
+        gap: 2rem; /* Increased gap for better spacing */
+        align-items: stretch; /* Make all cards same height */
+    }
+}
 
 /* ===============================
    SITE NAV (global) — mobile bottom, desktop top
@@ -164,7 +185,7 @@
         background: transparent;
         box-shadow: none;
         border-radius: 0;
-        margin-left: auto;
+        margin: 0 auto; /* Center the navigation */
         position: static; /* ensure inline in header */
         min-width: unset;
         gap: 0.4rem;
@@ -411,7 +432,7 @@ nav ul {
 }
 
 #nav-desktop .brand {
-    font-size: 1.25rem;
+    font-size: 1.4rem; /* Bigger brand text */
     font-weight: 700;
     color: var(--white);
     text-decoration: none;
@@ -419,14 +440,16 @@ nav ul {
 
 #nav-desktop .site-nav__links {
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem; /* Increased gap for better spacing */
     align-items: center;
+    justify-content: space-between; /* Equal spacing between all elements */
+    flex: 1; /* Take up remaining space */
 }
 
 #nav-desktop .site-nav__links a {
     display: block;
-    padding: 0.4rem 0.8rem;
-    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem; /* Increased padding */
+    font-size: 1.1rem; /* Bigger text */
     font-weight: 500;
     text-decoration: none;
     color: var(--white);
