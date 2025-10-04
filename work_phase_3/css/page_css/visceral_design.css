@@ -1,9 +1,5 @@
 /* Visceral Design page specific styles */
 
-/* Import skeleton components */
-@import url("../component_skeletons/gallery.css");
-@import url("../component_skeletons/viewer.css");
-
 /* Breadcrumb Navigation */
 .breadcrumb {
     margin-bottom: 1rem;
