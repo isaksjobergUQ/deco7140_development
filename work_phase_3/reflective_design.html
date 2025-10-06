@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/components.css" />
-        <link rel="stylesheet" href="css/utilities.css" />
+        <link rel="stylesheet" href="css/page_css/reflective_design.css" />
         <!-- NEW -->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
         <title>Reflective Design - Work Phase 3</title>
@@ -33,33 +33,297 @@
         <nav id="nav-mobile" aria-label="Main Navigation">
             <ul>
                 <li><a href="index.html"><span class="icon">🏠</span></a></li>
-                <li><a href="site_map.html"><span class="icon">🗺️</span></a></li>
+                <li><a href="site_map.html"><span class="icon">🧭</span></a></li>
                 <li><a href="style_guide.html"><span class="icon">🎨</span></a></li>
                 <li><a href="ethical_response.html"><span class="icon">⚖️</span></a></li>
                 <li><a href="genai_mt_acknowledgement.html"><span class="icon">🤖</span></a></li>
             </ul>
         </nav>
-        <main>
-            <div class="container">
-                <!-- Breadcrumb Navigation -->
-                <nav class="breadcrumb" aria-label="Breadcrumb">
-                    <ol>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="style_guide.html">Style Guide</a></li>
-                        <li aria-current="page">Reflective Design</li>
-                    </ol>
-                </nav>
-
-                <h1>Reflective Design</h1>
-                <h2>What's in this website?</h2>
-                <p>
-                    This is the third phase of my work. I will be completing A3
-                    Design Proposal during this phase. All of the assessment
-                    content will be created as pages in this website.
+        <main class="container">
+            <div>
+                <h1 class="page-title">Reflective Design</h1>
+                <p class="hero-text">
+                    Design decisions that connect with identity, values, and long-term meaning for international students, creating a sense of belonging and community.
                 </p>
+
+                <!-- Overview Section -->
+                <section>
+                    <h2 class="m-t-3">Overview</h2>
+                    <p>
+                        Reflective design goes beyond functionality and usability to address the deeper meaning and identity that users derive from their interactions with the platform. For international students, this means creating a space that reflects their values, supports their sense of belonging, and helps them see themselves represented in the community.
+                    </p>
+                    <p>
+                        This level of design connects users not just to a website, but to a sense of shared identity, cultural understanding, and long-term community engagement that aligns with CCI's mission of fostering social cohesion and celebrating diverse communities.
+                    </p>
+                </section>
+
+                <!-- Values Mapping Section -->
+                <section>
+                    <h2 class="m-t-3">Values Mapping</h2>
+                    <p>
+                        My A2 research revealed critical insights about international students' needs and challenges in Brisbane. Through comprehensive client needs analysis, I identified three core value groups: <strong>Inclusivity & Accessibility</strong>, <strong>Community Connection</strong>, and <strong>Trust, Ethics & Non-Commercial</strong>. User research with three distinct personas—Priya (mobile-only, low bandwidth), Hana (shy, low digital literacy), and Ava (local Brisbane resident)—uncovered specific pain points around data usage, navigation complexity, and cultural sensitivity.
+                    </p>
+                    <p>
+                        The ethics analysis highlighted significant concerns about excessive data collection in newsletter subscriptions, with all personas expressing discomfort about mandatory sensitive fields. Accessibility assessments revealed the critical importance of mobile-first design, plain language, and inclusive imagery. These findings directly informed the development of design principles that prioritize user agency, cultural respect, and transparent data practices.
+                    </p>
+                    <p>
+                        Based on this comprehensive research and user analysis, I have identified key values that should guide all design decisions for the international student platform:
+                    </p>
+                    
+                    <div class="values-table-container">
+                        <table class="values-table">
+                            <thead>
+                                <tr>
+                                    <th>Value</th>
+                                    <th>Design Implication</th>
+                                    <th>Specific Element</th>
+                                    <th>Annotation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Belonging</strong></td>
+                                    <td>Show diverse groups interacting positively and authentically</td>
+                                    <td>Homepage hero image with diverse international students engaged in activities</td>
+                                    <td>Belonging is core to reducing social isolation among international students. Authentic imagery of diverse groups creates immediate visual inclusion, helping users see themselves represented and feel part of a welcoming community.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Empowerment</strong></td>
+                                    <td>Use action-driven, confident language that promotes agency</td>
+                                    <td>Call-to-action buttons like "Share Your Story" and "Connect with Peers"</td>
+                                    <td>Empowerment reflects giving users agency in their new environment. Confident, action-oriented language motivates active engagement rather than passive consumption, supporting students' autonomy and pride in their journey.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Respect</strong></td>
+                                    <td>Use inclusive, affirming language that honors cultural diversity</td>
+                                    <td>Welcome message: "Connecting International Students Across Cultures"</td>
+                                    <td>Respect is shown through language that avoids stereotypes and celebrates cultural diversity. Person-first, inclusive language demonstrates genuine respect for students' backgrounds and experiences.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Trust</strong></td>
+                                    <td>Provide transparent information and clear community guidelines</td>
+                                    <td>Clear privacy policy, community guidelines, and peer verification systems</td>
+                                    <td>Trust is essential for vulnerable international students. Transparent policies and peer verification create safety, while clear guidelines help users understand community expectations and feel secure in their interactions.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Accessibility</strong></td>
+                                    <td>Ensure inclusive design that accommodates diverse abilities and languages</td>
+                                    <td>Multi-language support, clear navigation, and WCAG 2.2 AA compliance</td>
+                                    <td>Accessibility ensures no student is excluded due to language barriers or different abilities. Inclusive design demonstrates the platform's commitment to serving all international students equitably.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Imagery & Tone Section -->
+                <section>
+                    <h2 class="m-t-3">Imagery & Tone</h2>
+                    
+                    <div class="tone-definition">
+                        <h3>Site Identity & Emotional Tone</h3>
+                        <p>
+                            <strong>Intended Identity:</strong> The platform projects an identity of <em>belonging, empowerment, and cultural celebration</em>. It positions itself as a bridge between cultures, a supportive community hub, and a space where international students can thrive.
+                        </p>
+                        <p>
+                            <strong>Emotional Tone:</strong> The tone is <em>welcoming, supportive, and confident</em> - acknowledging the challenges international students face while celebrating their resilience and cultural richness.
+                        </p>
+                    </div>
+
+                    <div class="imagery-examples">
+                        <h3>Homepage Imagery Examples</h3>
+                        
+                        <div class="image-grid">
+                            <div class="image-example">
+                                <div class="image-placeholder">
+                                    <p>Diverse group of international students studying together in a campus library</p>
+                                </div>
+                                <p class="image-caption">
+                                    <strong>Academic Community:</strong> Shows authentic peer support and collaborative learning, reinforcing the value of belonging through shared academic experiences.
+                                </p>
+                            </div>
+                            
+                            <div class="image-example">
+                                <div class="image-placeholder">
+                                    <p>International students sharing cultural food and stories at a community event</p>
+                                </div>
+                                <p class="image-caption">
+                                    <strong>Cultural Exchange:</strong> Celebrates cultural diversity and mutual respect, supporting the value of cultural celebration and authentic community building.
+                                </p>
+                            </div>
+                            
+                            <div class="image-example">
+                                <div class="image-placeholder">
+                                    <p>Confident international student presenting at a university event</p>
+                                </div>
+                                <p class="image-caption">
+                                    <strong>Student Success:</strong> Demonstrates empowerment and achievement, showing international students as active contributors to campus life rather than passive observers.
+                                </p>
+                            </div>
+                            
+                            <div class="image-example">
+                                <div class="image-placeholder">
+                                    <p>International students exploring Brisbane landmarks together</p>
+                                </div>
+                                <p class="image-caption">
+                                    <strong>Local Integration:</strong> Shows students actively engaging with their new environment, supporting empowerment and belonging through local community connection.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="homepage-text-example">
+                        <h3>Homepage Welcome Text</h3>
+                        <div class="text-example">
+                            <h4>Original Version:</h4>
+                            <p class="original-text">
+                                "Welcome to the International Student Community Platform. Find tips, connect with peers, and access resources to help you succeed in Brisbane."
+                            </p>
+                            
+                            <h4>Refined Version:</h4>
+                            <p class="refined-text">
+                                "Welcome to your community hub for international students in Brisbane. Share your journey, connect with peers across cultures, and discover resources that celebrate your unique experience while helping you thrive in your new home."
+                            </p>
+                            
+                            <div class="text-annotation">
+                                <h4>Annotation:</h4>
+                                <p>
+                                    The refined version emphasizes <em>community</em> and <em>belonging</em> through "your community hub" and "your journey." It celebrates cultural diversity with "across cultures" and "unique experience," while "thrive in your new home" creates emotional connection and empowerment. The language is more personal and affirming, supporting the values of respect, empowerment, and belonging.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Language & Expression Section -->
+                <section>
+                    <h2 class="m-t-3">Language & Expression</h2>
+                    
+                    <div class="inclusive-language-checklist">
+                        <h3>Inclusive Language Checklist</h3>
+                        <p>Based on the Australian Government Style Manual and WCAG 2.2 guidelines:</p>
+                        
+                        <div class="checklist-grid">
+                            <div class="checklist-item">
+                                <h4>✓ Person-First Language</h4>
+                                <p>Use "international students" not "foreigners" or "overseas students"</p>
+                            </div>
+                            
+                            <div class="checklist-item">
+                                <h4>✓ Cultural Respect</h4>
+                                <p>Avoid stereotypes and celebrate cultural diversity authentically</p>
+                            </div>
+                            
+                            <div class="checklist-item">
+                                <h4>✓ Plain Language</h4>
+                                <p>Use clear, simple sentences (WCAG 3.1.1) with defined jargon</p>
+                            </div>
+                            
+                            <div class="checklist-item">
+                                <h4>✓ Gender Inclusive</h4>
+                                <p>Use inclusive phrasing and avoid unnecessary gendering</p>
+                            </div>
+                            
+                            <div class="checklist-item">
+                                <h4>✓ Ability Inclusive</h4>
+                                <p>Use "people with disabilities" and avoid ableist language</p>
+                            </div>
+                            
+                            <div class="checklist-item">
+                                <h4>✓ Empowering Tone</h4>
+                                <p>Use confident, action-oriented language that promotes agency</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="language-comparison">
+                        <h3>Language Revision Example</h3>
+                        
+                        <div class="comparison-container">
+                            <div class="text-version">
+                                <h4>Original Text:</h4>
+                                <p>
+                                    "International students often struggle with language barriers and cultural differences. Our platform helps them adapt to Australian life by providing essential resources and connecting them with local students who can offer guidance."
+                                </p>
+                            </div>
+                            
+                            <div class="text-version">
+                                <h4>Revised Text:</h4>
+                                <p>
+                                    "International students bring rich cultural perspectives and valuable experiences to our community. Our platform celebrates this diversity while providing resources and peer connections that support students' success in their new environment."
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="revision-annotation">
+                            <h4>Revision Annotation:</h4>
+                            <p>
+                                The revised text transforms a deficit-focused narrative into a strength-based approach. Instead of "struggle" and "barriers," it emphasizes "rich cultural perspectives" and "valuable experiences." This supports the values of <em>respect</em> and <em>empowerment</em> by positioning international students as contributors rather than problems to solve. The language is more inclusive, respectful, and aligned with WCAG 3.1.1 plain language guidelines.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Dynamic Content Section -->
+                <section>
+                    <h2 class="m-t-3">Seeing Ourselves in the Interface</h2>
+                    <p>
+                        Dynamic content allows users to see themselves and their community represented through real contributions, supporting identity, belonging, and trust. This section demonstrates how community data from the API creates meaningful connections.
+                    </p>
+                    
+                    <div class="dynamic-content-container">
+                        <h3>Community Contributions</h3>
+                        <p>Real stories and experiences from international students in Brisbane:</p>
+                        
+                        <div id="community-list" aria-live="polite">
+                            <!-- Dynamic content will be loaded here -->
+                            <div class="loading-message">
+                                <p>Loading community stories...</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Ethical Response Section -->
+                <section>
+                    <h2 class="m-t-3">Ethical Response: Newsletter Subscription Plugin</h2>
+                    
+                    <div class="ethical-response">
+                        <h3>Introduction</h3>
+                        <p>
+                            I acknowledge the client's goal of implementing a newsletter subscription plugin to increase user engagement and community retention. This is a valuable objective for building long-term relationships with international students.
+                        </p>
+                        
+                        <h3>Ethical Reasoning</h3>
+                        <p>Key ethical risks identified through ACS Code analysis:</p>
+                        <ul>
+                            <li><strong>Privacy Violations:</strong> Excessive data collection beyond what's necessary for newsletter functionality</li>
+                            <li><strong>Consent Issues:</strong> Complex consent mechanisms that may confuse users with varying digital literacy</li>
+                            <li><strong>Data Security:</strong> Increased breach risks from collecting extensive personal information</li>
+                            <li><strong>User Coercion:</strong> Pressure on vulnerable international students to provide sensitive data</li>
+                            <li><strong>Dark Patterns:</strong> Potential for manipulative design that undermines genuine user choice</li>
+                        </ul>
+                        
+                        <h3>Recommendation</h3>
+                        <p>I recommend implementing a minimal, privacy-focused approach:</p>
+                        <ul>
+                            <li>Collect only essential information (email address and first name)</li>
+                            <li>Implement double opt-in confirmation for genuine consent</li>
+                            <li>Provide granular frequency control (weekly/fortnightly options)</li>
+                            <li>Include one-click unsubscribe functionality</li>
+                            <li>Ensure transparent data practices with no third-party sharing</li>
+                            <li>Offer clear data deletion options</li>
+                        </ul>
+                        
+                        <h3>Client Benefits</h3>
+                        <p>
+                            This approach builds trust and brand reputation while ensuring compliance with privacy regulations. Higher-quality subscribers who genuinely want to engage will result in better open rates and community participation. The simplified process actually increases subscription rates by reducing barriers and building user confidence.
+                        </p>
+                    </div>
+                </section>
             </div>
         </main>
         <!-- END: PAGE STRUCTURE -->
     </body>
-    <script type="module" src="/js/index.js"></script>
+    <script type="module" src="js/reflective_design.js"></script>
 </html>
