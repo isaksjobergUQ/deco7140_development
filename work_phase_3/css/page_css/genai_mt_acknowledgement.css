@@ -1,0 +1,212 @@
+/* GenAI/MT Acknowledgement Page Specific Styles */
+
+/* Checklist Container */
+.checklist-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.checklist-item {
+    background: var(--white);
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.checklist-item.completed {
+    border-left: 4px solid var(--secondary-color);
+}
+
+.checklist-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.checklist-item h3 {
+    color: var(--secondary-color);
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.checklist-item p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Reflection Sections */
+.reflection-section {
+    background: var(--white);
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.reflection-section h3 {
+    color: var(--primary-color);
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.reflection-section p {
+    margin: 0 0 1rem 0;
+    line-height: 1.6;
+}
+
+.reflection-section p:last-child {
+    margin-bottom: 0;
+}
+
+/* Framework Requirements */
+.framework-requirements {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.requirement-item {
+    background: var(--white);
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.requirement-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.requirement-item h3 {
+    color: var(--primary-color);
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.requirement-item p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Usage Grid */
+.usage-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.usage-card {
+    background: var(--background-color);
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.usage-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.usage-card h3 {
+    color: var(--accent-color);
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.usage-card p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Learning List */
+.learning-list {
+    background: var(--white);
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.learning-list li {
+    margin: 0.75rem 0;
+    line-height: 1.6;
+    padding-left: 0.5rem;
+}
+
+/* Integrity Statement */
+.integrity-statement {
+    background: var(--white);
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.integrity-statement p {
+    margin: 0 0 1rem 0;
+    line-height: 1.6;
+}
+
+.integrity-statement p:last-child {
+    margin-bottom: 0;
+}
+
+.integrity-statement ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.integrity-statement li {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .checklist-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .framework-requirements {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .usage-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .reflection-section {
+        padding: 2rem;
+    }
+    
+    .integrity-statement {
+        padding: 2.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .checklist-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .framework-requirements {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .usage-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
