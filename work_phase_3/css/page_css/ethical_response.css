@@ -1,0 +1,196 @@
+/* Ethical Response Page Specific Styles */
+
+/* Concerns Grid */
+.concerns-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.concern-card {
+    background: var(--white);
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.concern-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.concern-card h3 {
+    color: var(--accent-color);
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.concern-card p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Framework Analysis */
+.framework-analysis {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.framework-principle {
+    background: var(--white);
+    border-left: 4px solid var(--primary-color);
+    padding: 1.5rem;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.framework-principle h3 {
+    color: var(--primary-color);
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.framework-principle p {
+    margin: 0 0 0.5rem 0;
+    line-height: 1.6;
+}
+
+.framework-principle p:last-child {
+    margin-bottom: 0;
+}
+
+/* Persona Impact */
+.persona-impact {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.persona-analysis {
+    background: var(--background-color);
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.persona-analysis h3 {
+    color: var(--secondary-color);
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.persona-analysis p {
+    margin: 0 0 0.5rem 0;
+    line-height: 1.6;
+}
+
+.persona-analysis p:last-child {
+    margin-bottom: 0;
+}
+
+/* Recommendations */
+.recommendations {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.recommendation-item {
+    background: var(--white);
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.recommendation-item h3 {
+    color: var(--primary-color);
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.recommendation-item ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.recommendation-item li {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+}
+
+/* Client Response */
+.client-response {
+    background: var(--white);
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+.client-response p {
+    margin: 0 0 1rem 0;
+}
+
+.client-response p:last-child {
+    margin-bottom: 0;
+}
+
+.client-response ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.client-response li {
+    margin: 0.5rem 0;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .concerns-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .framework-analysis {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .persona-impact {
+        grid-template-columns: 1fr;
+    }
+    
+    .recommendations {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .client-response {
+        padding: 2.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .concerns-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .framework-analysis {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .recommendations {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
