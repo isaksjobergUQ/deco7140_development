@@ -221,6 +221,7 @@ main {
    =============================== */
 .page-title {
     text-align: center;
+    margin-top: 3rem; /* consistent spacing below fixed navbar */
     margin-bottom: 2rem;
 }
 

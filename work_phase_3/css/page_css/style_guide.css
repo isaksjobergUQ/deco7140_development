@@ -9,6 +9,8 @@
     transition: all 0.3s ease;
     overflow: hidden;
     position: relative;
+    display: flex; /* allow body to fill and button to align bottom */
+    flex-direction: column;
 }
 
 .card::before {
@@ -58,6 +60,9 @@
 
 .card-body {
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* take remaining space so button can push to bottom */
 }
 
 .card-body p {
@@ -118,10 +123,7 @@
 
     .card-body {
         padding: 1.8rem;
-        display: flex;
-        flex-direction: column;
         justify-content: space-between;
-        flex-grow: 1;
     }
 
     .learn-more-btn {
