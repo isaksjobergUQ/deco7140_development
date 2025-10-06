@@ -179,19 +179,19 @@
     .checklist-container {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .framework-requirements {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .usage-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .reflection-section {
         padding: 2rem;
     }
-    
+
     .integrity-statement {
         padding: 2.5rem;
     }
@@ -201,11 +201,11 @@
     .checklist-container {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .framework-requirements {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .usage-grid {
         grid-template-columns: repeat(2, 1fr);
     }

@@ -24,10 +24,10 @@
  * */
 
 // when the page fully loads
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
     // Initialize GenAI/MT acknowledgement page functionality
-    console.log('GenAI/MT Acknowledgement page loaded');
-    
+    console.log("GenAI/MT Acknowledgement page loaded");
+
     // Add any interactive elements or functionality here
     // For example: smooth scrolling, animations, etc.
 });

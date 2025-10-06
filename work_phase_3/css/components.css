@@ -161,11 +161,11 @@
     #nav-mobile {
         display: none;
     }
-    
+
     #nav-desktop {
         display: block;
     }
-    
+
     .site-nav__inner {
         display: flex;
         align-items: center;
@@ -386,7 +386,7 @@ nav ul {
     bottom: 0;
     width: 100vw;
     background-color: var(--secondary-color);
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
     padding: 0.5rem 0;
 }
 
@@ -416,7 +416,7 @@ nav ul {
     right: 0;
     z-index: 100;
     background-color: var(--primary-color);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 #nav-desktop .site-nav__inner {
@@ -504,7 +504,11 @@ nav ul {
 
 /* Primary Button */
 .btn-primary {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
     color: var(--white);
     box-shadow: 0 2px 8px rgba(26, 54, 93, 0.2);
 }
@@ -512,7 +516,11 @@ nav ul {
 .btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 16px rgba(26, 54, 93, 0.3);
-    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    background: linear-gradient(
+        135deg,
+        var(--secondary-color),
+        var(--primary-color)
+    );
 }
 
 .btn-primary:active {

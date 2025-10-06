@@ -12,13 +12,17 @@
 }
 
 .card::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(
+        90deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -35,7 +39,11 @@
 
 .card-header {
     padding: 1.5rem 1.5rem 1rem;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
     color: white;
     position: relative;
 }
@@ -61,7 +69,11 @@
 
 /* Learn More Button */
 .learn-more-btn {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
     color: white;
     border: none;
     padding: 0.8rem 1.5rem;
@@ -79,7 +91,11 @@
 .learn-more-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    background: linear-gradient(
+        135deg,
+        var(--secondary-color),
+        var(--primary-color)
+    );
 }
 
 .learn-more-btn:active {
@@ -95,11 +111,11 @@
         margin-bottom: 2rem;
         min-height: 280px; /* Ensure consistent card heights */
     }
-    
+
     .card-header h3 {
         font-size: 1.5rem;
     }
-    
+
     .card-body {
         padding: 1.8rem;
         display: flex;
@@ -107,7 +123,7 @@
         justify-content: space-between;
         flex-grow: 1;
     }
-    
+
     .learn-more-btn {
         align-self: flex-start;
         margin-top: auto;
@@ -120,15 +136,15 @@
         width: 100%;
         margin-bottom: 1.5rem;
     }
-    
+
     .card-header {
         padding: 1.2rem 1.2rem 0.8rem;
     }
-    
+
     .card-header h3 {
         font-size: 1.3rem;
     }
-    
+
     .card-body {
         padding: 1.2rem;
     }

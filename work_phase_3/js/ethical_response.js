@@ -24,10 +24,10 @@
  * */
 
 // when the page fully loads
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
     // Initialize ethical response page functionality
-    console.log('Ethical Response page loaded');
-    
+    console.log("Ethical Response page loaded");
+
     // Add any interactive elements or functionality here
     // For example: smooth scrolling, animations, etc.
 });

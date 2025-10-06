@@ -2,13 +2,13 @@
  * IMPORTS
  * Keep track of external modules being used
  * */
-import { initAccordion } from './modules/accordion.js';
+import { initAccordion } from "./modules/accordion.js";
 
 /**
  * CONSTANTS
  * Define values that don't change e.g. page titles, URLs, etc.
  * */
-const ACCORDION_ID = 'site-map-accordion';
+const ACCORDION_ID = "site-map-accordion";
 
 /**
  * VARIABLES
@@ -29,4 +29,4 @@ function initPage() {
  * */
 
 // when the page fully loads
-document.addEventListener('DOMContentLoaded', initPage);
+document.addEventListener("DOMContentLoaded", initPage);

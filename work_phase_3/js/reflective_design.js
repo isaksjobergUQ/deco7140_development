@@ -2,7 +2,7 @@
  * IMPORTS
  * Keep track of external modules being used
  * */
-import { fetchGetData } from './modules/getData.js';
+import { fetchGetData } from "./modules/getData.js";
 
 /**
  * CONSTANTS
@@ -25,10 +25,10 @@ import { fetchGetData } from './modules/getData.js';
  * */
 
 // when the page fully loads
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
     // Initialize reflective design page functionality
-    console.log('Reflective Design page loaded');
-    
+    console.log("Reflective Design page loaded");
+
     // Load community data dynamically
     loadCommunityData();
 });
@@ -37,38 +37,43 @@ document.addEventListener('DOMContentLoaded', () => {
  * Load community data from API and display it
  */
 async function loadCommunityData() {
-    const container = document.getElementById('community-list');
-    
+    const container = document.getElementById("community-list");
+
     if (!container) {
-        console.error('Community list container not found');
+        console.error("Community list container not found");
         return;
     }
-    
+
     try {
         // Replace with actual API endpoint and headers
         const data = await fetchGetData(
-            'INSERT_API_ENDPOINT', // Replace with actual endpoint
+            "INSERT_API_ENDPOINT", // Replace with actual endpoint
             {
-                'student_number': 's1234567', // Replace with your student number
-                'uqcloud_zone_id': 'abcd123'  // Replace with your UQ Cloud Zone ID
+                student_number: "s1234567", // Replace with your student number
+                uqcloud_zone_id: "abcd123", // Replace with your UQ Cloud Zone ID
             }
         );
-        
+
         if (!data) {
-            showErrorMessage(container, 'Unable to load community stories at this time. Please try again later.');
+            showErrorMessage(
+                container,
+                "Unable to load community stories at this time. Please try again later."
+            );
             return;
         }
-        
+
         if (data.length === 0) {
             showEmptyMessage(container);
             return;
         }
-        
+
         displayCommunityData(container, data);
-        
     } catch (error) {
-        console.error('Error loading community data:', error);
-        showErrorMessage(container, 'There was an error loading community stories. Please try again later.');
+        console.error("Error loading community data:", error);
+        showErrorMessage(
+            container,
+            "There was an error loading community stories. Please try again later."
+        );
     }
 }
 
@@ -77,21 +82,21 @@ async function loadCommunityData() {
  */
 function displayCommunityData(container, data) {
     // Clear loading message
-    container.innerHTML = '';
-    
+    container.innerHTML = "";
+
     // Create cards for each community member
-    data.forEach(member => {
-        const card = document.createElement('div');
-        card.className = 'community-card';
-        
-        const name = member.name || 'Anonymous';
-        const message = member.message || 'No message provided';
-        
+    data.forEach((member) => {
+        const card = document.createElement("div");
+        card.className = "community-card";
+
+        const name = member.name || "Anonymous";
+        const message = member.message || "No message provided";
+
         card.innerHTML = `
             <h4>${escapeHtml(name)}</h4>
             <p>${escapeHtml(message)}</p>
         `;
-        
+
         container.appendChild(card);
     });
 }
@@ -122,7 +127,7 @@ function showEmptyMessage(container) {
  * Escape HTML to prevent XSS attacks
  */
 function escapeHtml(text) {
-    const div = document.createElement('div');
+    const div = document.createElement("div");
     div.textContent = text;
     return div.innerHTML;
 }

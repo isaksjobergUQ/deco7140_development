@@ -7,30 +7,30 @@ const postFormData = async (formEl, endpointUrl, customHeaders = {}) => {
     try {
         // Create FormData object from form inputs
         const formData = new FormData(formEl);
-        
+
         // Send POST request to API endpoint
         const response = await fetch(endpointUrl, {
-            method: 'POST',
+            method: "POST",
             headers: {
-                'Content-Type': 'application/json',
-                ...customHeaders
+                "Content-Type": "application/json",
+                ...customHeaders,
             },
-            body: JSON.stringify(Object.fromEntries(formData))
+            body: JSON.stringify(Object.fromEntries(formData)),
         });
-        
+
         // Convert response to JavaScript object
         const data = await response.json();
-        
+
         // Return success status and data
         return {
-            success: response.ok && data.status === 'success',
+            success: response.ok && data.status === "success",
             data,
         };
     } catch (error) {
         // Handle network or server errors gracefully
         return {
             success: false,
-            data: { message: 'Network or server error.', error },
+            data: { message: "Network or server error.", error },
         };
     }
 };
