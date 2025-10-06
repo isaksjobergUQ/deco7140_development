@@ -129,6 +129,54 @@
     line-height: 1.6;
 }
 
+/* Prompts & Code Snippets */
+.prompt-grid,
+.code-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.prompt-card,
+.code-card {
+    background: var(--white);
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.prompt-card h3,
+.code-card h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.prompt-card pre,
+.code-card pre {
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    line-height: 1.6;
+    white-space: pre-wrap; /* allow wrapping to new lines */
+    word-break: break-word; /* break long tokens if necessary */
+    overflow-wrap: anywhere; /* modern wrap support */
+}
+
+.prompt-card code,
+.code-card code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+    font-size: 0.95rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
 /* Learning List */
 .learning-list {
     background: var(--white);
@@ -185,6 +233,11 @@
     }
 
     .usage-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .prompt-grid,
+    .code-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 

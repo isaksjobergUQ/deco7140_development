@@ -239,6 +239,62 @@
                     </div>
                 </section>
 
+                <!-- Example Prompts and Code Snippets -->
+                <section>
+                    <h2 class="m-t-3">Example Prompts and Code Snippets</h2>
+
+                    <div class="prompt-grid">
+                        <div class="prompt-card">
+                            <h3>Prompt: Build Style Guide Cards</h3>
+                            <pre><code>I want to create three card containers inside the Style Guide using the previously used card and button styles. The three should be aligned next to each other and they should be visceral_design, behavioural_design and reflective_design. Now I want this short paragraph for visceral: "Visceral Design\nDesigning for first impressions covering layout, typography, and color schemes that create immediate emotional responses.", this for behavioural: "Creating intuitive interactions and usability patterns that support user tasks and enhance the overall experience.", and this for reflective: "Building long-term engagement through community features, personalization, and cultural exchange facilitation." All cards must have a Learn More button using our standard button design leading to the corresponding HTML pages. Sounds good?</code></pre>
+                        </div>
+
+                        <div class="prompt-card">
+                            <h3>Prompt: Heading Spacing Under Navbar</h3>
+                            <pre><code>It looks like the headers are a bit too close to the navbar. Can you tell me where in the code that is, and make the spacing consistent across all pages?</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="code-grid">
+                        <div class="code-card">
+                            <h3>HTML: Style Guide Cards (excerpt)</h3>
+                            <pre><code>&lt;div class="card-container"&gt;
+    &lt;a class="card" href="visceral_design.html"&gt;
+        &lt;div class="card-header"&gt;
+            &lt;h3&gt;Visceral Design&lt;/h3&gt;
+        &lt;/div&gt;
+        &lt;div class="card-body"&gt;
+            &lt;p&gt;Designing for first impressions...&lt;/p&gt;
+            &lt;button class="learn-more-btn"&gt;Learn More&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/a&gt;
+    <!-- behavioural_design + reflective_design cards similarly structured -->
+&lt;/div&gt;</code></pre>
+                        </div>
+
+                        <div class="code-card">
+                            <h3>CSS: Align "Learn More" Buttons</h3>
+                            <pre><code>.card {
+    display: flex;
+    flex-direction: column;
+}
+.card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.learn-more-btn { margin-top: auto; }</code></pre>
+                        </div>
+
+                        <div class="code-card">
+                            <h3>CSS: Global Page Title Spacing</h3>
+                            <pre><code>.page-title {
+    margin-top: 3rem; /* spacing below fixed navbar */
+}</code></pre>
+                        </div>
+                    </div>
+                </section>
+
                 <!-- Framework Compliance -->
                 <section>
                     <h2 class="m-t-3">Framework Compliance</h2>
