@@ -133,6 +133,54 @@ section h2 {
     font-size: 0.95rem;
 }
 
+/* Mini Navigation */
+.mini-nav {
+    background: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mini-nav-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.mini-nav-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.mini-nav-link:hover {
+    background: var(--secondary-color);
+    color: var(--white);
+    outline: 2px solid var(--white);
+    outline-offset: 2px;
+}
+
+.mini-nav-link.current {
+    background: var(--secondary-color);
+    color: var(--white);
+    border-color: transparent;
+    font-weight: 600;
+}
+
+.mini-nav-link.current:hover {
+    background: var(--secondary-color);
+    border-color: transparent;
+}
+
 /* Responsive adjustments */
 @media (min-width: 768px) {
     .component-showcase,
@@ -147,5 +195,9 @@ section h2 {
     
     .button-showcase {
         gap: 1.5rem;
+    }
+    
+    .mini-nav-container {
+        justify-content: flex-start;
     }
 }
