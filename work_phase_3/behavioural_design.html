@@ -3,12 +3,18 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <!-- CSS Linking -->
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/base.css" />
         <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/components.css" />
         <link rel="stylesheet" href="css/utilities.css" />
+        <link rel="stylesheet" href="css/component_skeletons/form.css" />
+        <link rel="stylesheet" href="css/page_css/behavioural_design.css" />
         <!-- NEW -->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
         <title>Behavioural Design - Work Phase 3</title>
@@ -39,7 +45,7 @@
                 <li><a href="genai_mt_acknowledgement.html"><span class="icon">🤖</span></a></li>
             </ul>
         </nav>
-        <main>
+        <main id="main-content">
             <div class="container">
                 <!-- Breadcrumb Navigation -->
                 <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -50,16 +56,164 @@
                     </ol>
                 </nav>
 
-                <h1>Behavioural Design</h1>
-                <h2>What's in this website?</h2>
-                <p>
-                    This is the third phase of my work. I will be completing A3
-                    Design Proposal during this phase. All of the assessment
-                    content will be created as pages in this website.
-                </p>
+                <h1 class="page-title m-y-5">Behavioural Design</h1>
+                <p class="hero-text">Interactive components and user experience design that supports effective task completion and user satisfaction</p>
+                
+                <!-- Design Philosophy Section -->
+                <section>
+                    <h2>Design Philosophy</h2>
+                    <p>Behavioural design focuses on how users interact with the platform and complete tasks effectively. This level addresses usability, functionality, and the overall user experience to ensure international students can easily navigate and accomplish their goals.</p>
+                    
+                    <p>This approach supports client needs for an intuitive platform and addresses user stories like "As an international student, I want to quickly find relevant tips and resources so that I can adapt to my new environment efficiently."</p>
+                </section>
+
+                <!-- Button Styles Section -->
+                <section>
+                    <h2 class="m-t-3">Button Styles</h2>
+                    <p>Interactive buttons demonstrate clear affordances, visual feedback, and accessibility features that support effective user interaction on the international student platform.</p>
+                    
+                    <!-- Primary Button Example -->
+                    <div class="button-example">
+                        <h3>Primary Button</h3>
+                        <div class="button-showcase">
+                            <button class="btn btn-primary">Join Community</button>
+                            <button class="btn btn-primary" disabled>Join Community</button>
+                        </div>
+                        <p class="explanation">
+                            Primary buttons use strong color contrast and clear action labels to stand out as the main call-to-action. The hover and pressed states provide immediate visual feedback, supporting user confidence through clear signifiers of interactivity.
+                        </p>
+                    </div>
+
+                    <!-- Secondary Button Example -->
+                    <div class="button-example">
+                        <h3>Secondary Button</h3>
+                        <div class="button-showcase">
+                            <button class="btn btn-secondary">Learn More</button>
+                            <button class="btn btn-secondary" disabled>Learn More</button>
+                        </div>
+                        <p class="explanation">
+                            Secondary buttons provide alternative actions with subtle styling that doesn't compete with primary buttons. The design maintains consistency while offering clear visual hierarchy and accessibility through proper contrast ratios.
+                        </p>
+                    </div>
+
+                    <!-- Icon Button Example -->
+                    <div class="button-example">
+                        <h3>Icon Button</h3>
+                        <div class="button-showcase">
+                            <button class="btn btn-icon" aria-label="Search for resources">🔍</button>
+                            <button class="btn btn-icon" aria-label="Close dialog">✖</button>
+                            <button class="btn btn-icon" aria-label="Share this tip">📤</button>
+                        </div>
+                        <p class="explanation">
+                            Icon-only buttons use clear visual symbols with proper ARIA labels for screen readers. The design maintains consistency with other buttons while providing intuitive visual cues for common actions like search, close, and share.
+                        </p>
+                    </div>
+
+                    <!-- Call-to-Action Button Example -->
+                    <div class="button-example">
+                        <h3>Call-to-Action Button</h3>
+                        <div class="button-showcase">
+                            <button class="btn btn-cta">Get Started Today</button>
+                            <button class="btn btn-cta" disabled>Get Started Today</button>
+                        </div>
+                        <p class="explanation">
+                            Call-to-action buttons use compelling language and enhanced visual prominence to encourage user engagement. The design emphasizes urgency and value while maintaining accessibility standards and providing clear feedback states.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Navigation Design Section -->
+                <section>
+                    <h2 class="m-t-3">Navigation Design</h2>
+                    <p>Clear navigation patterns that help users understand where they are and how to move through the platform effectively.</p>
+                    
+                    <!-- Mini Navigation Example -->
+                    <div class="navigation-showcase">
+                        <h3>Site Navigation</h3>
+                        <p>This mini navigation demonstrates the current page highlighting and clear navigation structure.</p>
+                        
+                        <nav class="mini-nav" aria-label="Mini site navigation">
+                            <div class="mini-nav-container">
+                                <a href="index.html" class="mini-nav-link">Home</a>
+                                <a href="site_map.html" class="mini-nav-link">Site Map</a>
+                                <a href="style_guide.html" class="mini-nav-link">Style Guide</a>
+                                <a href="behavioural_design.html" class="mini-nav-link current">Behavioural Design</a>
+                                <a href="ethical_response.html" class="mini-nav-link">Ethical Response</a>
+                                <a href="genai_mt_acknowledgement.html" class="mini-nav-link">GenAI/MT</a>
+                            </div>
+                        </nav>
+                        
+                        <p class="explanation">
+                            The current page (Behavioural Design) is highlighted with a different color and visual indicator, providing clear feedback about the user's location within the site structure.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Form Design Section -->
+                <section>
+                    <h2 class="m-t-3">Form Design</h2>
+                    <p>User-friendly forms that minimize cognitive load and support successful task completion for international students. This interactive form demonstrates clear labeling, validation, and accessibility features.</p>
+                    
+                    <!-- Community Form -->
+                    <div class="form-showcase">
+                        <h3>Join the International Student Community</h3>
+                        <p>Connect with fellow students and access valuable resources for your academic journey.</p>
+                        
+                        <form id="community-form" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required />
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required />
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="student_id">Student ID</label>
+                                <input type="text" id="student_id" name="student_id" />
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="country">Country of Origin</label>
+                                <input type="text" id="country" name="country" />
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="program">Study Program</label>
+                                <select id="program" name="program">
+                                    <option value="">Select your program</option>
+                                    <option value="undergraduate">Undergraduate</option>
+                                    <option value="postgraduate">Postgraduate</option>
+                                    <option value="research">Research</option>
+                                    <option value="exchange">Exchange</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="interests">Areas of Interest</label>
+                                <textarea id="interests" name="interests" rows="3" placeholder="Tell us about your interests, hobbies, or what you'd like to connect with other students about..."></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="newsletter">
+                                    <input type="checkbox" id="newsletter" name="newsletter" value="yes" />
+                                    Subscribe to our newsletter for tips and updates
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Join the Community</button>
+                        </form>
+                        
+                        <!-- Feedback message area -->
+                        <p id="form-feedback" aria-live="polite"></p>
+                    </div>
+                </section>
             </div>
         </main>
         <!-- END: PAGE STRUCTURE -->
-    </body>
-    <script type="module" src="/js/index.js"></script>
+        
+        <!-- JavaScript -->
+        <script type="module" src="js/behavioural_design.js"></script>
 </html>

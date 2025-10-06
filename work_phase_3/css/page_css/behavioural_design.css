@@ -1,0 +1,151 @@
+/* Behavioural Design page specific styles */
+
+/* Breadcrumb Navigation */
+.breadcrumb {
+    margin-bottom: 1rem;
+}
+
+.breadcrumb ol {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 0.5rem;
+}
+
+.breadcrumb li {
+    color: var(--text-color);
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: "›";
+    margin-left: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.breadcrumb a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Component Showcase Sections */
+.component-showcase,
+.navigation-showcase,
+.form-showcase {
+    background: var(--white);
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.component-showcase p,
+.navigation-showcase p,
+.form-showcase p {
+    color: var(--text-color);
+    font-style: italic;
+    text-align: center;
+    margin: 0;
+}
+
+/* Section spacing */
+section {
+    margin-bottom: 3rem;
+}
+
+section h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Call-to-Action Button (specific to behavioural design showcase) */
+.btn-cta {
+    background: linear-gradient(135deg, var(--accent-color), #c53030);
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 12px rgba(229, 62, 62, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(229, 62, 62, 0.4);
+    background: linear-gradient(135deg, #c53030, var(--accent-color));
+}
+
+.btn-cta:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(229, 62, 62, 0.3);
+}
+
+.btn-cta:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.btn-cta:disabled {
+    background: var(--light-gray);
+    color: #999;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Button Examples Container */
+.button-example {
+    background: var(--white);
+    border: 1px solid var(--light-gray);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.button-example h3 {
+    color: var(--primary-color);
+    margin: 0 0 1rem 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.button-showcase {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.explanation {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .component-showcase,
+    .navigation-showcase,
+    .form-showcase {
+        padding: 3rem;
+    }
+    
+    .button-example {
+        padding: 2.5rem;
+    }
+    
+    .button-showcase {
+        gap: 1.5rem;
+    }
+}
