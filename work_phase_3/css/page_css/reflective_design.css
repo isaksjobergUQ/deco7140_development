@@ -139,8 +139,8 @@
 }
 
 .original-text {
-    background: #fee2e2;
-    border-left: 4px solid #dc2626;
+    background: var(--light-gray);
+    border-left: 4px solid var(--accent-color);
     padding: 1rem;
     margin: 0 0 1rem 0;
     border-radius: 0 4px 4px 0;
@@ -148,8 +148,8 @@
 }
 
 .refined-text {
-    background: #d1fae5;
-    border-left: 4px solid #059669;
+    background: var(--light-gray);
+    border-left: 4px solid var(--secondary-color);
     padding: 1rem;
     margin: 0 0 1rem 0;
     border-radius: 0 4px 4px 0;
@@ -305,11 +305,11 @@
 }
 
 .error-message {
-    background: #fee2e2;
-    border: 1px solid #fca5a5;
+    background: var(--light-gray);
+    border: 1px solid var(--accent-color);
     border-radius: 6px;
     padding: 1rem;
-    color: #991b1b;
+    color: var(--accent-color);
     text-align: center;
 }
 

@@ -1,7 +1,4 @@
-/**
- * GET Data Module
- * Reusable function to retrieve data from API using GET request
- */
+
 
 const fetchGetData = (url, headers = {}) => {
     return fetch(url, {

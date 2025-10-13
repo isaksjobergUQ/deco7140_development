@@ -67,7 +67,7 @@ section h2 {
 
 /* Call-to-Action Button (specific to behavioural design showcase) */
 .btn-cta {
-    background: linear-gradient(135deg, var(--accent-color), #c53030);
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-color));
     color: var(--white);
     font-weight: 600;
     font-size: 1.1rem;
@@ -80,7 +80,7 @@ section h2 {
 .btn-cta:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(229, 62, 62, 0.4);
-    background: linear-gradient(135deg, #c53030, var(--accent-color));
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-color));
 }
 
 .btn-cta:active {
@@ -95,7 +95,7 @@ section h2 {
 
 .btn-cta:disabled {
     background: var(--light-gray);
-    color: #999;
+    color: var(--light-gray);
     cursor: not-allowed;
     transform: none;
     box-shadow: none;

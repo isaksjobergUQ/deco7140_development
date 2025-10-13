@@ -24,7 +24,7 @@
 }
 
 .gallery img:focus-visible { 
-    outline: 3px solid #3b82f6; 
+    outline: 3px solid var(--secondary-color); 
     outline-offset: 2px; 
 }
 

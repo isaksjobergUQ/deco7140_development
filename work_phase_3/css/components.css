@@ -23,7 +23,7 @@
    =============================== */
 .site-nav {
     background: var(--primary-color);
-    color: #fff;
+    color: var(--white);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 100%;
 }
@@ -56,17 +56,17 @@
 }
 
 .site-nav a {
-    color: #fff;
+    color: var(--white);
     text-decoration: none;
     display: inline-block;
     padding: 0.45rem 0.7rem;
     border-radius: 999px;
-    border: 1px solid color-mix(in srgb, #fff 14%, transparent);
+    border: 1px solid color-mix(in srgb, var(--white) 14%, transparent);
 }
 .site-nav a:hover,
 .site-nav a:focus-visible {
     background: var(--secondary-color);
-    color: #fff;
+    color: var(--white);
     border-color: transparent;
 }
 .site-nav .brand {
@@ -95,17 +95,17 @@
     height: 42px;
     border-radius: 10px;
     cursor: pointer;
-    border: 1px solid color-mix(in srgb, #fff 20%, transparent);
+    border: 1px solid color-mix(in srgb, var(--white) 20%, transparent);
 }
 .nav-toggle-btn:focus-visible {
-    outline: 2px solid #fff;
+    outline: 2px solid var(--white);
     outline-offset: 2px;
 }
 .nav-toggle-btn .bar {
     display: block;
     width: 22px;
     height: 2px;
-    background: #fff;
+    background: var(--white);
     border-radius: 2px;
     transition: transform 0.25s ease, opacity 0.2s ease;
 }
@@ -536,7 +536,7 @@ nav ul {
 
 .btn-primary:disabled {
     background: var(--light-gray);
-    color: #999;
+    color: var(--light-gray);
     cursor: not-allowed;
     transform: none;
     box-shadow: none;
@@ -569,8 +569,8 @@ nav ul {
 
 .btn-secondary:disabled {
     background: var(--light-gray);
-    color: #999;
-    border-color: #ccc;
+    color: var(--light-gray);
+    border-color: var(--light-gray);
     cursor: not-allowed;
     transform: none;
     box-shadow: none;
