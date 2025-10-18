@@ -1,0 +1,74 @@
+[
+  {
+    "id": "group-1",
+    "name": "Engineering Study Group",
+    "description": "Weekly study sessions for engineering students. We cover calculus, physics, and programming.",
+    "members": 12,
+    "max_members": 15,
+    "meeting_day": "Tuesday",
+    "meeting_time": "6:00 PM",
+    "location": "UQ Library Study Room 3",
+    "contact": "engineering.study@uq.edu.au",
+    "category": "Academic"
+  },
+  {
+    "id": "group-2", 
+    "name": "Business Students Network",
+    "description": "Connect with fellow business students, share internship opportunities, and discuss case studies.",
+    "members": 8,
+    "max_members": 20,
+    "meeting_day": "Thursday",
+    "meeting_time": "5:30 PM",
+    "location": "UQ Business School",
+    "contact": "business.network@uq.edu.au",
+    "category": "Academic"
+  },
+  {
+    "id": "group-3",
+    "name": "Language Exchange Partners",
+    "description": "Practice English and learn other languages with native speakers. Great for improving communication skills.",
+    "members": 25,
+    "max_members": 30,
+    "meeting_day": "Saturday",
+    "meeting_time": "2:00 PM",
+    "location": "South Bank Parklands",
+    "contact": "language.exchange@uq.edu.au",
+    "category": "Language"
+  },
+  {
+    "id": "group-4",
+    "name": "International Cooking Club",
+    "description": "Learn to cook dishes from different countries and share your cultural cuisine with others.",
+    "members": 15,
+    "max_members": 18,
+    "meeting_day": "Sunday",
+    "meeting_time": "4:00 PM",
+    "location": "UQ Student Union Kitchen",
+    "contact": "cooking.club@uq.edu.au",
+    "category": "Cultural"
+  },
+  {
+    "id": "group-5",
+    "name": "Fitness Buddies",
+    "description": "Stay active and healthy with group workouts, hiking trips, and sports activities.",
+    "members": 20,
+    "max_members": 25,
+    "meeting_day": "Wednesday",
+    "meeting_time": "7:00 AM",
+    "location": "UQ Sports Complex",
+    "contact": "fitness.buddies@uq.edu.au",
+    "category": "Health"
+  },
+  {
+    "id": "group-6",
+    "name": "Photography Enthusiasts",
+    "description": "Explore Brisbane through photography. We organize photo walks and share techniques.",
+    "members": 10,
+    "max_members": 15,
+    "meeting_day": "Friday",
+    "meeting_time": "5:00 PM",
+    "location": "Various Brisbane locations",
+    "contact": "photo.club@uq.edu.au",
+    "category": "Creative"
+  }
+]

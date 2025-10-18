@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS Linking -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/component_skeletons/gallery.css">
+    <link rel="stylesheet" href="css/page_css/tips.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Tips - International Student Platform</title>
+</head>
+<body>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Desktop Navigation (Top) -->
+    <nav id="nav-desktop" aria-label="Main Navigation">
+        <div class="site-nav__inner">
+            <a class="brand" href="index.html">ISP</a>
+            <div class="site-nav__links">
+                <a href="index.html" data-i18n="nav_home">Home</a>
+                <a href="tips.html" aria-current="page" data-i18n="nav_tips">Tips</a>
+                <a href="events.html" data-i18n="nav_events">Events</a>
+                <a href="community.html" data-i18n="nav_community">Community</a>
+                <a href="language.html" data-i18n="nav_language">Language</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation (Bottom) -->
+    <nav id="nav-mobile" aria-label="Main Navigation">
+        <ul>
+            <li><a href="index.html"><span class="icon">🏠</span></a></li>
+            <li><a href="tips.html" aria-current="page"><span class="icon">💡</span></a></li>
+            <li><a href="events.html"><span class="icon">🎉</span></a></li>
+            <li><a href="community.html"><span class="icon">🤝</span></a></li>
+            <li><a href="language.html"><span class="icon">🌍</span></a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <div class="container">
+            <!-- Breadcrumb Navigation -->
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                    <li aria-current="page" data-i18n="nav_tips">Tips</li>
+                </ol>
+            </nav>
+
+            <!-- Page Header -->
+            <section class="page-header">
+                <h1 class="page-title" data-i18n="nav_tips">Tips & Resources</h1>
+                <p class="hero-text">Practical advice and resources to help you succeed as an international student</p>
+            </section>
+
+            <!-- Filter Section -->
+            <section class="filter-section" aria-labelledby="filter-heading">
+                <h2 id="filter-heading" class="sr-only">Filter Tips</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all" data-i18n="filter_all">All</button>
+                    <button class="filter-btn" data-filter="Academic" data-i18n="filter_academic">Academic</button>
+                    <button class="filter-btn" data-filter="Living" data-i18n="filter_living">Living</button>
+                    <button class="filter-btn" data-filter="Health" data-i18n="filter_health">Health</button>
+                </div>
+            </section>
+
+            <!-- Tips Grid -->
+            <section class="tips-section" aria-labelledby="tips-heading">
+                <h2 id="tips-heading" class="sr-only">Tips</h2>
+                <div class="card-container" id="tips-container">
+                    <div class="loading" data-i18n="loading">Loading...</div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; <span id="year"></span> International Student Platform. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="js/tips.js"></script>
+</body>
+</html>

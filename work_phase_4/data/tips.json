@@ -1,0 +1,147 @@
+[
+  {
+    "id": "academic-1",
+    "category": "Academic",
+    "title": "Effective Note-Taking Strategies",
+    "summary": "Learn proven techniques to capture and organize lecture content for better retention and exam preparation.",
+    "image": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&h=600&fit=crop",
+    "author": "Wei Chen",
+    "date": "2024-10-15",
+    "content": "<p>Taking effective notes is crucial for academic success. Here are strategies that work well for international students:</p><h3>The Cornell Method</h3><p>Divide your page into three sections: notes, cues, and summary. This helps organize information and makes review easier.</p><h3>Active Listening</h3><p>Focus on understanding concepts rather than transcribing everything. Listen for key phrases like 'importantly', 'in conclusion', or 'the main point is'.</p><h3>Use Abbreviations</h3><p>Develop a personal shorthand system to write faster. For example: w/ (with), b/c (because), info (information).</p><h3>Review Within 24 Hours</h3><p>Research shows reviewing notes within a day significantly improves retention. Spend 10 minutes reviewing after each lecture.</p>",
+    "tags": ["study-skills", "note-taking", "academic-success"],
+    "featured": true
+  },
+  {
+    "id": "academic-2",
+    "category": "Academic",
+    "title": "Understanding Academic Integrity",
+    "summary": "Navigate Australian academic standards and avoid plagiarism with clear guidelines and practical examples.",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&h=600&fit=crop",
+    "author": "Sarah Mitchell",
+    "date": "2024-10-12",
+    "content": "<p>Academic integrity is fundamental in Australian universities. Understanding these expectations will help you succeed.</p><h3>What is Plagiarism?</h3><p>Using someone else's words, ideas, or work without proper attribution. This includes:</p><ul><li>Copying text without quotation marks</li><li>Paraphrasing without citing the source</li><li>Submitting work done by someone else</li><li>Self-plagiarism (reusing your own previous work)</li></ul><h3>How to Cite Properly</h3><p>Always acknowledge your sources using the required citation style (APA, Harvard, etc.). When in doubt, cite it!</p><h3>Use Turnitin</h3><p>Check your work through Turnitin before submission to identify any unintentional plagiarism.</p>",
+    "tags": ["academic-integrity", "plagiarism", "citations"],
+    "featured": false
+  },
+  {
+    "id": "academic-3",
+    "category": "Academic",
+    "title": "Time Management for Students",
+    "summary": "Balance coursework, part-time work, and social life with practical scheduling techniques.",
+    "image": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=600&fit=crop",
+    "author": "Maria Rodriguez",
+    "date": "2024-10-10",
+    "content": "<p>Managing time effectively is essential when adjusting to a new academic system and culture.</p><h3>Use a Digital Calendar</h3><p>Google Calendar or Outlook can help you track classes, assignments, and social events. Set reminders for important deadlines.</p><h3>The Pomodoro Technique</h3><p>Study in 25-minute focused sessions with 5-minute breaks. This prevents burnout and maintains concentration.</p><h3>Prioritize Tasks</h3><p>Use the Eisenhower Matrix: Important & Urgent (do first), Important & Not Urgent (schedule), Urgent & Not Important (delegate), Neither (eliminate).</p><h3>Build in Buffer Time</h3><p>Always allocate extra time for assignments. Technical issues and language barriers can take longer than expected.</p>",
+    "tags": ["time-management", "productivity", "study-tips"],
+    "featured": true
+  },
+  {
+    "id": "academic-4",
+    "category": "Academic",
+    "title": "Group Project Success Tips",
+    "summary": "Collaborate effectively with diverse team members and navigate cultural differences in group work.",
+    "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop",
+    "author": "James Park",
+    "date": "2024-10-08",
+    "content": "<p>Group projects are common in Australian universities. Here's how to make them successful:</p><h3>Establish Clear Communication</h3><p>Set up a group chat (WhatsApp, Discord) and agree on response times. Be clear about your availability and time zone if working remotely.</p><h3>Define Roles Early</h3><p>Assign tasks based on strengths and interests. Use tools like Trello or Asana to track progress.</p><h3>Cultural Awareness</h3><p>Different cultures have different communication styles. Some are direct, others indirect. Be patient and clarify expectations.</p><h3>Meet Regularly</h3><p>Schedule weekly check-ins to discuss progress, challenges, and next steps. Don't wait until the deadline!</p>",
+    "tags": ["group-work", "collaboration", "teamwork"],
+    "featured": false
+  },
+  {
+    "id": "living-1",
+    "category": "Living",
+    "title": "Finding Affordable Accommodation",
+    "summary": "Navigate the rental market, understand lease agreements, and find safe, affordable housing options.",
+    "image": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop",
+    "author": "Emma Thompson",
+    "date": "2024-10-14",
+    "content": "<p>Finding the right accommodation is one of the first challenges for international students.</p><h3>Start Early</h3><p>Begin your search 2-3 months before arrival. Popular areas fill up quickly, especially before semester starts.</p><h3>Know Your Options</h3><ul><li><strong>On-campus:</strong> Convenient but limited availability</li><li><strong>Shared housing:</strong> Most affordable, great for making friends</li><li><strong>Homestay:</strong> Live with a local family, immersive cultural experience</li><li><strong>Private rental:</strong> More expensive but more independence</li></ul><h3>Understand Lease Terms</h3><p>Read contracts carefully. Look for: lease duration, bond amount (usually 4 weeks rent), notice period, and what's included (utilities, internet, furniture).</p><h3>Inspection Checklist</h3><p>Check: water pressure, heating/cooling, locks, internet connection, proximity to public transport, and safety of the neighborhood.</p>",
+    "tags": ["accommodation", "housing", "rental"],
+    "featured": true
+  },
+  {
+    "id": "living-2",
+    "category": "Living",
+    "title": "Using Public Transport",
+    "summary": "Master Brisbane's public transport system with tips on go cards, routes, and money-saving strategies.",
+    "image": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&h=600&fit=crop",
+    "author": "David Lee",
+    "date": "2024-10-11",
+    "content": "<p>Brisbane's public transport system is efficient once you understand how it works.</p><h3>Get a Go Card</h3><p>Purchase a go card from newsagents or online. It's cheaper than paper tickets and works on buses, trains, and ferries.</p><h3>Student Concession</h3><p>Apply for a concession go card to save 50% on fares. You'll need your student ID and proof of enrollment.</p><h3>Plan Your Journey</h3><p>Use the TransLink app or Google Maps to plan routes. Check real-time arrivals and service disruptions.</p><h3>Off-Peak Travel</h3><p>Travel outside peak hours (before 7am or after 9am) for cheaper fares. Weekend travel is also discounted.</p><h3>City Cycle</h3><p>Brisbane has a bike-share system. First 30 minutes are free with a subscription!</p>",
+    "tags": ["transport", "go-card", "brisbane"],
+    "featured": false
+  },
+  {
+    "id": "living-3",
+    "category": "Living",
+    "title": "Grocery Shopping on a Budget",
+    "summary": "Save money on groceries with smart shopping strategies and knowledge of affordable stores.",
+    "image": "https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&h=600&fit=crop",
+    "author": "Lisa Wang",
+    "date": "2024-10-09",
+    "content": "<p>Food costs can add up quickly. Here's how to eat well without breaking the bank.</p><h3>Shop at Discount Supermarkets</h3><p>Aldi and Costco offer significantly lower prices than Coles and Woolworths. Asian grocery stores are great for international ingredients.</p><h3>Buy Generic Brands</h3><p>Store brands (Woolworths Select, Coles Brand) are often identical quality to name brands but 30-50% cheaper.</p><h3>Shop Weekly Specials</h3><p>Check catalogues (online or in-store) for half-price specials. Stock up on non-perishables when they're on sale.</p><h3>Meal Prep</h3><p>Cook large batches on weekends and freeze portions. This saves time and money compared to eating out.</p><h3>Markets for Fresh Produce</h3><p>Farmers markets offer fresh, affordable produce. Go late in the day for end-of-day discounts.</p>",
+    "tags": ["budget", "groceries", "food"],
+    "featured": false
+  },
+  {
+    "id": "living-4",
+    "category": "Living",
+    "title": "Opening a Bank Account",
+    "summary": "Set up your Australian bank account with step-by-step guidance and tips for avoiding fees.",
+    "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
+    "author": "Michael Brown",
+    "date": "2024-10-07",
+    "content": "<p>Opening a bank account is essential for managing your finances in Australia.</p><h3>Do It Within 6 Weeks</h3><p>Open your account within 6 weeks of arrival to avoid needing 100 points of ID. You'll only need your passport and student visa.</p><h3>Choose the Right Bank</h3><p>Commonwealth Bank, NAB, ANZ, and Westpac are the major banks. Compare fees, ATM locations, and student benefits.</p><h3>Student Accounts</h3><p>Most banks offer fee-free accounts for students. Bring your enrollment confirmation letter.</p><h3>What You'll Need</h3><ul><li>Passport</li><li>Student visa</li><li>Proof of enrollment</li><li>Australian address (can be temporary)</li></ul><h3>Set Up Online Banking</h3><p>Download the bank's app for easy transfers, bill payments, and balance checking.</p>",
+    "tags": ["banking", "finance", "money"],
+    "featured": false
+  },
+  {
+    "id": "health-1",
+    "category": "Health",
+    "title": "Understanding OSHC",
+    "summary": "Navigate Overseas Student Health Cover to access healthcare services and understand what's covered.",
+    "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop",
+    "author": "Dr. Rachel Green",
+    "date": "2024-10-13",
+    "content": "<p>Overseas Student Health Cover (OSHC) is mandatory for international students. Here's what you need to know.</p><h3>What's Covered</h3><ul><li>Doctor (GP) visits</li><li>Hospital treatment</li><li>Ambulance services</li><li>Limited pharmaceutical benefits</li></ul><h3>What's NOT Covered</h3><ul><li>Dental care (except accidents)</li><li>Optical services</li><li>Physiotherapy</li><li>Pre-existing conditions (waiting periods apply)</li></ul><h3>How to Use It</h3><p>Book a GP appointment and present your OSHC card. You may need to pay upfront and claim reimbursement, or the clinic may bulk-bill.</p><h3>Finding a Doctor</h3><p>Use your OSHC provider's website to find participating doctors. University health services often bulk-bill students.</p>",
+    "tags": ["health", "oshc", "insurance"],
+    "featured": true
+  },
+  {
+    "id": "health-2",
+    "category": "Health",
+    "title": "Mental Health Support Services",
+    "summary": "Access free counseling and mental health resources available to international students.",
+    "image": "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?w=800&h=600&fit=crop",
+    "author": "Dr. Sophie Chen",
+    "date": "2024-10-06",
+    "content": "<p>Adjusting to life in a new country can be challenging. Mental health support is available and there's no stigma in seeking help.</p><h3>University Counseling</h3><p>Most universities offer free, confidential counseling services. Book online or call student services. No referral needed.</p><h3>24/7 Crisis Support</h3><ul><li><strong>Lifeline:</strong> 13 11 14 (24/7 crisis support)</li><li><strong>Beyond Blue:</strong> 1300 22 4636 (depression and anxiety)</li><li><strong>Kids Helpline:</strong> 1800 55 1800 (for under 25s)</li></ul><h3>Peer Support Groups</h3><p>Join international student support groups where you can share experiences with others who understand your challenges.</p><h3>Self-Care Strategies</h3><p>Exercise regularly, maintain sleep routine, stay connected with family, and don't isolate yourself. It's okay to feel homesick.</p>",
+    "tags": ["mental-health", "counseling", "wellbeing"],
+    "featured": false
+  },
+  {
+    "id": "health-3",
+    "category": "Health",
+    "title": "Staying Active and Healthy",
+    "summary": "Find affordable ways to exercise, eat well, and maintain physical health while studying.",
+    "image": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=600&fit=crop",
+    "author": "Tom Anderson",
+    "date": "2024-10-05",
+    "content": "<p>Maintaining physical health is crucial for academic success and overall wellbeing.</p><h3>University Gym Membership</h3><p>Campus gyms offer discounted student rates. Many include classes like yoga, pilates, and martial arts.</p><h3>Free Outdoor Exercise</h3><p>Brisbane has excellent parks and outdoor gyms. The Brisbane River walk is perfect for running or cycling.</p><h3>Sports Clubs</h3><p>Join university sports clubs to stay active and meet people. Options range from soccer to ultimate frisbee.</p><h3>Healthy Eating</h3><p>Balance your diet with fruits, vegetables, and protein. Avoid relying too heavily on instant noodles and fast food.</p><h3>Sleep Hygiene</h3><p>Aim for 7-9 hours of sleep. Avoid screens before bed and maintain a consistent sleep schedule.</p>",
+    "tags": ["fitness", "exercise", "health"],
+    "featured": false
+  },
+  {
+    "id": "health-4",
+    "category": "Health",
+    "title": "Dealing with Homesickness",
+    "summary": "Practical strategies to cope with homesickness and build a support network in your new home.",
+    "image": "https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?w=800&h=600&fit=crop",
+    "author": "Anna Martinez",
+    "date": "2024-10-04",
+    "content": "<p>Homesickness is normal and affects most international students. Here's how to manage it.</p><h3>Stay Connected</h3><p>Schedule regular video calls with family and friends. But don't spend all your time online - balance is key.</p><h3>Build New Connections</h3><p>Join clubs, attend social events, and say yes to invitations. Building a local support network takes time but is essential.</p><h3>Create Routines</h3><p>Establish familiar routines that provide comfort: weekly coffee at a favorite café, Sunday video calls home, or cooking traditional meals.</p><h3>Explore Your New City</h3><p>Discover local attractions, try new activities, and create positive memories in your new home.</p><h3>Give It Time</h3><p>Adjustment takes 3-6 months. Be patient with yourself and recognize that feeling homesick doesn't mean you made the wrong decision.</p>",
+    "tags": ["homesickness", "mental-health", "adjustment"],
+    "featured": false
+  }
+]
+

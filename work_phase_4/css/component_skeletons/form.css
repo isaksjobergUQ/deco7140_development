@@ -93,9 +93,9 @@ select {
     background-repeat: no-repeat;
     background-size: 1.5em 1.5em;
     padding-right: 2.5rem;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    appearance: none; /* Remove default browser arrow */
+    -webkit-appearance: none; /* Remove default browser arrow for WebKit */
+    -moz-appearance: none; /* Remove default browser arrow for Firefox */
 }
 
 /* Form feedback */
@@ -167,4 +167,7 @@ select {
     color: var(--text-color);
     opacity: 0.7;
 }
-
+    .form-showcase {
+        padding: 2.5rem;
+    }
+}

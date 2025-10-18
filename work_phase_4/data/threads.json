@@ -1,0 +1,119 @@
+[
+  {
+    "id": "thread-1",
+    "title": "Best places to study on campus?",
+    "author": "Maria Rodriguez",
+    "date": "2024-10-15",
+    "replies": 12,
+    "likes": 8,
+    "category": "Academic",
+    "content": "<p>Hi everyone! I'm new to UQ and looking for quiet study spots. Any recommendations for places with good WiFi and comfortable seating?</p>",
+    "replies_content": [
+      {
+        "author": "James Park",
+        "date": "2024-10-15",
+        "content": "The Law Library on level 3 is usually quiet and has great views!"
+      },
+      {
+        "author": "Sarah Chen",
+        "date": "2024-10-15", 
+        "content": "I love the Biological Sciences Library - lots of natural light and comfy chairs."
+      }
+    ]
+  },
+  {
+    "id": "thread-2",
+    "title": "Looking for housemates in Toowong",
+    "author": "David Lee",
+    "date": "2024-10-14",
+    "replies": 5,
+    "likes": 3,
+    "category": "Living",
+    "content": "<p>I found a great 3-bedroom house near Toowong station. Looking for 2 housemates. Rent is $200/week including utilities. Close to UQ and city!</p>",
+    "replies_content": [
+      {
+        "author": "Emma Thompson",
+        "date": "2024-10-14",
+        "content": "Interested! When can I come for a viewing?"
+      }
+    ]
+  },
+  {
+    "id": "thread-3",
+    "title": "Cultural shock - anyone else struggling?",
+    "author": "Wei Chen",
+    "date": "2024-10-13",
+    "replies": 18,
+    "likes": 15,
+    "category": "Support",
+    "content": "<p>I've been here for 3 months and still feel overwhelmed sometimes. The academic system is so different from back home. Anyone else feeling this way?</p>",
+    "replies_content": [
+      {
+        "author": "Lisa Wang",
+        "date": "2024-10-13",
+        "content": "You're not alone! It took me 6 months to feel comfortable. Join the international student support group - it really helps."
+      },
+      {
+        "author": "Tom Anderson",
+        "date": "2024-10-13",
+        "content": "I felt the same way. The key is to be patient with yourself and reach out for help when you need it."
+      }
+    ]
+  },
+  {
+    "id": "thread-4",
+    "title": "Best cheap eats near campus?",
+    "author": "Anna Martinez",
+    "date": "2024-10-12",
+    "replies": 8,
+    "likes": 12,
+    "category": "Living",
+    "content": "<p>Student budget is tight! What are your favorite affordable restaurants and food spots near UQ?</p>",
+    "replies_content": [
+      {
+        "author": "Michael Brown",
+        "date": "2024-10-12",
+        "content": "The Vietnamese place on Hawken Drive has amazing pho for $12!"
+      },
+      {
+        "author": "Sophie Chen",
+        "date": "2024-10-12",
+        "content": "UQ Union food court has student discounts. The sushi place is pretty good."
+      }
+    ]
+  },
+  {
+    "id": "thread-5",
+    "title": "Group study for Economics 101",
+    "author": "James Park",
+    "date": "2024-10-11",
+    "replies": 6,
+    "likes": 4,
+    "category": "Academic",
+    "content": "<p>Anyone interested in forming a study group for Economics 101? We could meet weekly to review lectures and work on assignments together.</p>",
+    "replies_content": [
+      {
+        "author": "Maria Rodriguez",
+        "date": "2024-10-11",
+        "content": "Count me in! I'm struggling with the microeconomics concepts."
+      }
+    ]
+  },
+  {
+    "id": "thread-6",
+    "title": "Weekend trip to Gold Coast - anyone interested?",
+    "author": "Emma Thompson",
+    "date": "2024-10-10",
+    "replies": 9,
+    "likes": 7,
+    "category": "Social",
+    "content": "<p>Planning a day trip to Gold Coast this weekend. Looking for travel buddies to split costs and have fun together!</p>",
+    "replies_content": [
+      {
+        "author": "David Lee",
+        "date": "2024-10-10",
+        "content": "I'm interested! What's the plan?"
+      }
+    ]
+  }
+]

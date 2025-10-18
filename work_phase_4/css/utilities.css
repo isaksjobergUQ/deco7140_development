@@ -1,0 +1,71 @@
+/* Utilities / Helper Classes */
+
+/* Margin utilities */
+.m-t-3 {
+    margin-top: 1.5rem;
+}
+
+.m-y-5 {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.m-b-5 {
+    margin-bottom: 2.5rem;
+}
+
+/* Text utilities */
+.hero-text {
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    line-height: 1.6;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    margin-bottom: 2rem;
+}
+
+.breadcrumb ol {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0.5rem;
+}
+
+.breadcrumb li {
+    margin: 0;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: "›";
+    margin-left: 0.5rem;
+    color: var(--text-color);
+}
+
+.breadcrumb a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb li[aria-current="page"] {
+    color: var(--text-color);
+    font-weight: 500;
+}

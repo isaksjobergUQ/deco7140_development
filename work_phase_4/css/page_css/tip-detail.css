@@ -1,0 +1,303 @@
+/* Tip detail page specific styles */
+
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.page-header .page-title {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.page-header .hero-text {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.loading-state,
+.error-state {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.error-state h1 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.error-state p {
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+.tip-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tip-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--light-gray);
+}
+
+.tip-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    flex-wrap: wrap;
+}
+
+.category {
+    background: var(--accent-color);
+    color: var(--white);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.tip-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.tip-actions {
+    margin-top: 1rem;
+}
+
+.bookmark-btn {
+    background: var(--secondary-color);
+    color: var(--white);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.bookmark-btn:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.bookmark-btn.bookmarked {
+    background: var(--accent-color);
+}
+
+.bookmark-icon {
+    font-size: 1.2rem;
+}
+
+.tip-image {
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.tip-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.tip-summary {
+    background: var(--light-gray);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    font-style: italic;
+}
+
+.tip-body {
+    margin-bottom: 2rem;
+}
+
+.tip-body h2 {
+    color: var(--primary-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.tip-body h3 {
+    color: var(--secondary-color);
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.tip-body p {
+    color: var(--text-color);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.tip-body ul,
+.tip-body ol {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+}
+
+.tip-body li {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.tip-tags {
+    margin-bottom: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--light-gray);
+}
+
+.tip-tags h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.tip-tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    background: var(--light-gray);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.related-tips {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--light-gray);
+}
+
+.related-tips h2 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.tip-card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.tip-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--primary-color);
+    line-height: 1.3;
+}
+
+.card-summary {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-color);
+    font-style: italic;
+}
+
+/* Responsive design */
+@media (max-width: 767px) {
+    .tip-title {
+        font-size: 2rem;
+    }
+    
+    .tip-image img {
+        height: 250px;
+    }
+    
+    .tip-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .tip-summary {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    
+    .tip-body h2 {
+        font-size: 1.3rem;
+    }
+    
+    .tip-body h3 {
+        font-size: 1.1rem;
+    }
+    
+    .card-content {
+        padding: 1rem;
+    }
+    
+    .card-title {
+        font-size: 1.1rem;
+    }
+}

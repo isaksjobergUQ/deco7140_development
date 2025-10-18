@@ -1,65 +1,97 @@
+/* CSS Colour Variables */
 :root {
-    --color-bg: #ffffff;
-    --color-fg: #1a1a1a;
-    --color-accent: #2b7a78;
-    --color-accent-contrast: #ffffff;
-    --color-border: #e5e7eb;
-    --space-1: 0.25rem;
-    --space-2: 0.5rem;
-    --space-3: 0.75rem;
-    --space-4: 1rem;
-    --space-6: 1.5rem;
-    --space-8: 2rem;
-    --radius: 8px;
+    --primary-color: #1a365d; /* Deep Blue */
+    --secondary-color: #3182ce; /* Bright Blue */
+    --accent-color: #e53e3e; /* Red */
+    --text-color: #1a202c; /* Darker Gray for better contrast */
+    --background-color: #f7fafc; /* Light Gray */
+    --light-gray: #edf2f7;
+    --white: #ffffff;
 }
 
-html {
-    box-sizing: border-box;
-}
-
-*, *:before, *:after {
-    box-sizing: inherit;
-}
-
+/* Base Typography */
 body {
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-    color: var(--color-fg);
-    background: var(--color-bg);
-    font-size: 16px;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
+/* Mobile Typography */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0 0 1rem;
+    line-height: 1.2;
 }
 
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin: 1.5rem 0 1rem;
+    line-height: 1.3;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin: 1.25rem 0 0.75rem;
+    line-height: 1.4;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0 0 1rem;
+    line-height: 1.6;
+}
+
+ul,
+ol {
+    margin: 0 0 1rem 1.5rem;
+    padding: 0;
+}
+
+li {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+}
+
+/* Links */
 a {
-    color: #0b6bcb;
+    text-decoration: none;
+    color: var(--text-color);
 }
 
-a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
-    outline: 3px solid #ff9900;
+a:hover {
+    text-decoration: none;
+}
+
+a:focus {
+    text-decoration: none;
+    outline: 2px solid var(--primary-color);
     outline-offset: 2px;
 }
 
-.container {
-    width: min(100%, 72rem);
-    padding: 0 var(--space-4);
-    margin: 0 auto;
-}
+/* Desktop Typography */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 3.5rem;
+    }
 
-.skip-link {
-    position: absolute;
-    left: -999px;
-    top: auto;
-    background: var(--color-accent);
-    color: var(--color-accent-contrast);
-    padding: var(--space-2) var(--space-4);
-    border-radius: var(--radius);
-}
+    h2 {
+        font-size: 2.5rem;
+    }
 
-.skip-link:focus {
-    left: var(--space-4);
-    top: var(--space-4);
-}
+    h3 {
+        font-size: 1.75rem;
+    }
 
+    p {
+        font-size: 1.125rem;
+    }
+}

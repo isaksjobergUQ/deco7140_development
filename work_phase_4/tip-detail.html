@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS Linking -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/page_css/tip-detail.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Tip Detail - International Student Platform</title>
+</head>
+<body>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Desktop Navigation (Top) -->
+    <nav id="nav-desktop" aria-label="Main Navigation">
+        <div class="site-nav__inner">
+            <a class="brand" href="index.html">ISP</a>
+            <div class="site-nav__links">
+                <a href="index.html" data-i18n="nav_home">Home</a>
+                <a href="tips.html" data-i18n="nav_tips">Tips</a>
+                <a href="events.html" data-i18n="nav_events">Events</a>
+                <a href="community.html" data-i18n="nav_community">Community</a>
+                <a href="language.html" data-i18n="nav_language">Language</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation (Bottom) -->
+    <nav id="nav-mobile" aria-label="Main Navigation">
+        <ul>
+            <li><a href="index.html"><span class="icon">🏠</span></a></li>
+            <li><a href="tips.html"><span class="icon">💡</span></a></li>
+            <li><a href="events.html"><span class="icon">🎉</span></a></li>
+            <li><a href="community.html"><span class="icon">🤝</span></a></li>
+            <li><a href="language.html"><span class="icon">🌍</span></a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <div class="container">
+            <!-- Breadcrumb Navigation -->
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                    <li><a href="tips.html" data-i18n="nav_tips">Tips</a></li>
+                    <li id="breadcrumb-category">Category</li>
+                    <li aria-current="page" id="breadcrumb-title">Tip Title</li>
+                </ol>
+            </nav>
+
+            <!-- Loading State -->
+            <div id="loading-state" class="loading-state">
+                <div class="loading" data-i18n="loading">Loading...</div>
+            </div>
+
+            <!-- Error State -->
+            <div id="error-state" class="error-state" style="display: none;">
+                <h1>Tip Not Found</h1>
+                <p>The requested tip could not be found.</p>
+                <a href="tips.html" class="btn btn-primary" data-i18n="back_to_home">Back to Tips</a>
+            </div>
+
+            <!-- Tip Content -->
+            <article id="tip-content" class="tip-content" style="display: none;">
+                <!-- Tip Header -->
+                <header class="tip-header">
+                    <div class="tip-meta">
+                        <span class="category" id="tip-category">Category</span>
+                        <span class="date" id="tip-date">Date</span>
+                        <span class="author" id="tip-author">Author</span>
+                    </div>
+                    <h1 class="tip-title" id="tip-title">Tip Title</h1>
+                    <div class="tip-actions">
+                        <button id="bookmark-btn" class="btn btn-secondary bookmark-btn" aria-label="Bookmark this tip">
+                            <span class="bookmark-icon">🤍</span>
+                            <span class="bookmark-text" data-i18n="bookmark">Bookmark</span>
+                        </button>
+                    </div>
+                </header>
+
+                <!-- Tip Image -->
+                <div class="tip-image">
+                    <img id="tip-image" src="" alt="" loading="lazy">
+                </div>
+
+                <!-- Tip Summary -->
+                <div class="tip-summary">
+                    <p id="tip-summary">Tip summary will appear here</p>
+                </div>
+
+                <!-- Tip Content -->
+                <div class="tip-body">
+                    <div id="tip-body-content">
+                        <!-- Tip content will be inserted here -->
+                    </div>
+                </div>
+
+                <!-- Tip Tags -->
+                <div class="tip-tags">
+                    <h3>Tags:</h3>
+                    <div id="tip-tags-container">
+                        <!-- Tags will be inserted here -->
+                    </div>
+                </div>
+
+                <!-- Related Tips -->
+                <section class="related-tips" aria-labelledby="related-heading">
+                    <h2 id="related-heading" data-i18n="related_content">Related Tips</h2>
+                    <div class="card-container" id="related-tips-container">
+                        <!-- Related tips will be inserted here -->
+                    </div>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; <span id="year"></span> International Student Platform. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="js/tip-detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS Linking -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/page_css/language.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Language Support - International Student Platform</title>
+</head>
+<body>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Desktop Navigation (Top) -->
+    <nav id="nav-desktop" aria-label="Main Navigation">
+        <div class="site-nav__inner">
+            <a class="brand" href="index.html">ISP</a>
+            <div class="site-nav__links">
+                <a href="index.html" data-i18n="nav_home">Home</a>
+                <a href="tips.html" data-i18n="nav_tips">Tips</a>
+                <a href="events.html" data-i18n="nav_events">Events</a>
+                <a href="community.html" data-i18n="nav_community">Community</a>
+                <a href="language.html" aria-current="page" data-i18n="nav_language">Language</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation (Bottom) -->
+    <nav id="nav-mobile" aria-label="Main Navigation">
+        <ul>
+            <li><a href="index.html"><span class="icon">🏠</span></a></li>
+            <li><a href="tips.html"><span class="icon">💡</span></a></li>
+            <li><a href="events.html"><span class="icon">🎉</span></a></li>
+            <li><a href="community.html"><span class="icon">🤝</span></a></li>
+            <li><a href="language.html" aria-current="page"><span class="icon">🌍</span></a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <div class="container">
+            <!-- Breadcrumb Navigation -->
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                    <li aria-current="page" data-i18n="nav_language">Language</li>
+                </ol>
+            </nav>
+
+            <!-- Page Header -->
+            <section class="page-header">
+                <h1 class="page-title" data-i18n="nav_language">Language Support</h1>
+                <p class="hero-text">Access language learning resources, translation tools, and multilingual support</p>
+            </section>
+
+            <!-- Language Switcher Section -->
+            <section class="language-switcher-section" aria-labelledby="language-switcher-heading">
+                <h2 id="language-switcher-heading" data-i18n="language_switcher">Select Language</h2>
+                <p>Choose your preferred language for the website interface:</p>
+                
+                <div class="language-selector">
+                    <label for="language-select">Language:</label>
+                    <select id="language-select" aria-label="Select website language">
+                        <option value="en">English</option>
+                        <option value="zh">中文 (Chinese)</option>
+                        <option value="es">Español (Spanish)</option>
+                        <option value="fr">Français (French)</option>
+                        <option value="de">Deutsch (German)</option>
+                        <option value="ja">日本語 (Japanese)</option>
+                        <option value="ko">한국어 (Korean)</option>
+                    </select>
+                    <button id="apply-language" class="btn btn-primary">Apply Language</button>
+                </div>
+                
+                <div class="current-language">
+                    <p><strong>Current Language:</strong> <span id="current-lang-display">English</span></p>
+                </div>
+            </section>
+
+            <!-- Language Learning Resources Section -->
+            <section class="language-resources-section" aria-labelledby="learning-resources-heading">
+                <h2 id="learning-resources-heading" data-i18n="language_resources">Language Learning Resources</h2>
+                <p>Improve your English skills and learn about Australian culture with these helpful resources:</p>
+                
+                <div class="card-container" id="language-tips-container">
+                    <div class="loading" data-i18n="loading">Loading...</div>
+                </div>
+            </section>
+
+            <!-- Translation Tools Section -->
+            <section class="translation-tools-section" aria-labelledby="translation-tools-heading">
+                <h2 id="translation-tools-heading" data-i18n="translation_tools">Translation Tools & Resources</h2>
+                <p>Useful tools and resources for translation and language support:</p>
+                
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <h3>🌐 Google Translate</h3>
+                        <p>Free online translation service supporting 100+ languages</p>
+                        <a href="https://translate.google.com" target="_blank" rel="noopener" class="btn btn-secondary">Visit Google Translate</a>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <h3>📚 DeepL Translator</h3>
+                        <p>AI-powered translation with high accuracy for major languages</p>
+                        <a href="https://www.deepl.com" target="_blank" rel="noopener" class="btn btn-secondary">Visit DeepL</a>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <h3>🎧 Language Learning Apps</h3>
+                        <p>Duolingo, Babbel, and other apps for structured language learning</p>
+                        <a href="https://www.duolingo.com" target="_blank" rel="noopener" class="btn btn-secondary">Try Duolingo</a>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <h3>📖 UQ Language Centre</h3>
+                        <p>University of Queensland's language learning programs and resources</p>
+                        <a href="https://languages-cultures.uq.edu.au" target="_blank" rel="noopener" class="btn btn-secondary">Visit UQ Languages</a>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <h3>🗣️ Conversation Exchange</h3>
+                        <p>Find language exchange partners for practice and cultural exchange</p>
+                        <a href="https://www.conversationexchange.com" target="_blank" rel="noopener" class="btn btn-secondary">Find Partners</a>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <h3>📝 Grammar Resources</h3>
+                        <p>Grammarly, Purdue OWL, and other grammar checking tools</p>
+                        <a href="https://www.grammarly.com" target="_blank" rel="noopener" class="btn btn-secondary">Try Grammarly</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cultural Communication Section -->
+            <section class="cultural-communication-section" aria-labelledby="cultural-heading">
+                <h2 id="cultural-heading">Cultural Communication Tips</h2>
+                <p>Understanding cultural differences in communication can help you connect better with others:</p>
+                
+                <div class="tips-grid">
+                    <div class="tip-item">
+                        <h3>🇦🇺 Australian Communication Style</h3>
+                        <ul>
+                            <li>Australians tend to be direct but friendly</li>
+                            <li>Use of informal language and slang is common</li>
+                            <li>Eye contact shows respect and attention</li>
+                            <li>Punctuality is highly valued</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <h3>🎓 Academic Communication</h3>
+                        <ul>
+                            <li>Use formal language in emails to professors</li>
+                            <li>Be specific and clear in your requests</li>
+                            <li>Ask questions if you don't understand</li>
+                            <li>Participate actively in class discussions</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <h3>🤝 Building Relationships</h3>
+                        <ul>
+                            <li>Show genuine interest in others' cultures</li>
+                            <li>Be patient with language barriers</li>
+                            <li>Share your own cultural background</li>
+                            <li>Join cultural clubs and events</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; <span id="year"></span> International Student Platform. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="js/language.js"></script>
+</body>
+</html>
