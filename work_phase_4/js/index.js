@@ -30,7 +30,7 @@ async function loadFeaturedContent() {
         const upcomingEvents = events.filter(event => {
             const eventDate = new Date(event.date);
             return eventDate >= new Date();
-        }).slice(0, 6); // Show 6 events instead of 3
+        }).slice(0, 3);
         renderUpcomingEvents(upcomingEvents);
         
     } catch (error) {
