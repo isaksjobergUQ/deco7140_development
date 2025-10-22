@@ -1,215 +1,227 @@
-/* Community page specific styles */
+/* Community page specific styles - Mobile First */
 
 .page-header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
 }
 
 .page-header .page-title {
     color: var(--primary-color);
     margin-bottom: 1rem;
+    font-size: 1.8rem;
 }
 
 .page-header .hero-text {
     color: var(--text-color);
-    font-size: 1.1rem;
-    max-width: 600px;
+    font-size: 1rem;
+    max-width: 100%;
     margin: 0 auto;
-}
-
-.community-sections {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
+    line-height: 1.5;
 }
 
 .community-section {
-    background: var(--white);
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    padding: 0 1rem;
 }
 
 .community-section h2 {
     color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-}
-
-.community-section p {
-    color: var(--text-color);
     margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    text-align: center;
 }
 
-/* Forum threads */
-.forum-thread {
-    background: var(--light-gray);
+/* Mobile-first accordion styles */
+.accordion {
+    margin-bottom: 2rem;
+}
+
+.accordion-item {
+    background: var(--white);
     border-radius: 8px;
-    padding: 1.5rem;
     margin-bottom: 1rem;
-    border-left: 4px solid var(--secondary-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
-.thread-header {
-    margin-bottom: 1rem;
-}
-
-.thread-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-.thread-meta {
-    display: flex;
-    gap: 1rem;
-    font-size: 0.9rem;
-    color: var(--text-color);
-}
-
-.thread-content {
-    margin-bottom: 1rem;
-    color: var(--text-color);
-    line-height: 1.6;
-}
-
-.thread-footer {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-size: 0.9rem;
-}
-
-.like-btn {
-    background: none;
+.accordion-header {
+    width: 100%;
+    background: var(--white);
     border: none;
+    padding: 1rem;
+    text-align: left;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem;
-    border-radius: 20px;
-    transition: background-color 0.3s ease;
-}
-
-.like-btn:hover {
-    background: rgba(0, 0, 0, 0.1);
-}
-
-.like-icon {
-    font-size: 1.2rem;
-}
-
-.like-count {
-    font-weight: 500;
-}
-
-.replies-count {
-    color: var(--text-color);
-}
-
-.category {
-    background: var(--accent-color);
-    color: var(--white);
-    padding: 0.25rem 0.5rem;
-    border-radius: 12px;
-    font-size: 0.8rem;
-}
-
-/* Study groups */
-.study-group {
-    background: var(--light-gray);
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-    border-left: 4px solid var(--primary-color);
-}
-
-.group-header {
-    margin-bottom: 1rem;
-}
-
-.group-name {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-.group-meta {
-    display: flex;
-    gap: 1rem;
-    font-size: 0.9rem;
-    color: var(--text-color);
-}
-
-.group-description {
-    color: var(--text-color);
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
-
-.group-details {
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
-}
-
-.group-details p {
-    margin: 0.25rem 0;
-    color: var(--text-color);
-}
-
-.group-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
 }
 
-.join-btn {
+.accordion-header:hover {
+    background: var(--light-gray);
+}
+
+.accordion-header[aria-expanded="true"] {
+    background: var(--light-gray);
+}
+
+.accordion-title {
+    font-weight: 600;
+    color: var(--primary-color);
+    flex: 1;
+    margin-right: 1rem;
+}
+
+.accordion-toggle {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    transition: transform 0.3s ease;
+}
+
+.accordion-header[aria-expanded="true"] .accordion-toggle {
+    transform: rotate(45deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.accordion-content[aria-hidden="false"] {
+    max-height: 1000px;
+}
+
+.accordion-body {
+    padding: 1rem;
+    border-top: 1px solid var(--light-gray);
+}
+
+.thread-meta {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.thread-replies {
+    margin-bottom: 1rem;
+}
+
+.thread-replies p {
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--light-gray);
+}
+
+.like-btn {
     background: var(--secondary-color);
     color: var(--white);
     border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-weight: 500;
-}
-
-.join-btn:hover {
-    background: var(--primary-color);
-    transform: translateY(-2px);
-}
-
-.join-btn.joined {
-    background: var(--accent-color);
-}
-
-.join-btn.joined:hover {
-    background: #c53030;
-}
-
-.contact {
-    color: var(--text-color);
     font-size: 0.9rem;
 }
 
-/* Contact form */
+.like-btn:hover {
+    background: var(--primary-color);
+    transform: scale(1.05);
+}
+
+/* Mobile-first study groups styles */
+.study-groups-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.study-group-card {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.study-group-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.study-group-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.study-group-card .subject {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+}
+
+.study-group-card .description {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    font-size: 0.9rem;
+}
+
+.study-group-card .members {
+    color: var(--text-color);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.join-group-btn {
+    background: var(--secondary-color);
+    color: var(--white);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+.join-group-btn:hover {
+    background: var(--primary-color);
+    transform: scale(1.02);
+}
+
+/* Mobile-first contact form styles */
 .contact-form {
-    max-width: 600px;
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
+    max-width: 100%;
+}
+
+.contact-form h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.5rem;
 }
 
 .form-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    font-weight: 500;
     color: var(--primary-color);
+    font-weight: 500;
+    font-size: 0.9rem;
 }
 
 .form-group input,
@@ -217,10 +229,11 @@
     width: 100%;
     padding: 0.75rem;
     border: 2px solid var(--light-gray);
-    border-radius: 8px;
+    border-radius: 6px;
     font-family: inherit;
     font-size: 1rem;
     transition: border-color 0.3s ease;
+    box-sizing: border-box;
 }
 
 .form-group input:focus,
@@ -231,15 +244,33 @@
 
 .form-group textarea {
     resize: vertical;
-    min-height: 120px;
+    min-height: 100px;
+}
+
+.submit-btn {
+    background: var(--secondary-color);
+    color: var(--white);
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-weight: 500;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background: var(--primary-color);
+    transform: scale(1.02);
 }
 
 .form-feedback {
     margin-top: 1rem;
-    padding: 1rem;
-    border-radius: 8px;
-    text-align: center;
+    padding: 0.75rem;
+    border-radius: 6px;
     font-weight: 500;
+    text-align: center;
 }
 
 .form-feedback.success {
@@ -256,34 +287,83 @@
 
 .loading {
     text-align: center;
-    padding: 2rem;
+    padding: 1.5rem;
     color: var(--text-color);
     font-style: italic;
 }
 
-/* Responsive design */
-@media (max-width: 767px) {
+/* Tablet styles */
+@media (min-width: 768px) {
     .page-header {
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
+        padding: 0 2rem;
+    }
+    
+    .page-header .page-title {
+        font-size: 2.5rem;
+    }
+    
+    .page-header .hero-text {
+        font-size: 1.1rem;
+        max-width: 600px;
     }
     
     .community-section {
+        margin-bottom: 3rem;
+        padding: 0 2rem;
+    }
+    
+    .community-section h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .study-groups-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .study-group-card {
         padding: 1.5rem;
     }
     
-    .forum-thread,
-    .study-group {
-        padding: 1rem;
-    }
-    
-    .thread-footer,
-    .group-footer {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
+    .study-group-card h3 {
+        font-size: 1.25rem;
     }
     
     .contact-form {
-        max-width: 100%;
+        padding: 2rem;
+        max-width: 600px;
+    }
+    
+    .contact-form h2 {
+        font-size: 2rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 1rem;
+    }
+    
+    .submit-btn {
+        padding: 1rem 2rem;
+        width: auto;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+    .study-groups-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+    
+    .accordion-header {
+        padding: 1.5rem;
+        font-size: 1.1rem;
+    }
+    
+    .accordion-body {
+        padding: 1.5rem;
     }
 }

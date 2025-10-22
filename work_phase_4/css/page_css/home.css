@@ -1,2 +1,255 @@
-.hero p { max-width: 60ch; }
+/* Home page specific styles - Mobile First */
+
+/* Mobile-first hero section */
+.hero {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    margin-bottom: 2rem;
+    border-radius: 8px;
+}
+
+.hero .page-title {
+    color: var(--white);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.hero .hero-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    max-width: 100%;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+.featured-section {
+    margin: 2rem 0;
+}
+
+.featured-section h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.section-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.quick-access {
+    margin: 2rem 0;
+    padding: 2rem 1rem;
+    background: var(--light-gray);
+    border-radius: 8px;
+}
+
+.quick-access h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+/* Mobile-first card styles */
+.card-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.tip-card,
+.event-card {
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.tip-card:hover,
+.event-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+    position: relative;
+    height: 150px; /* Smaller for mobile */
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.tip-card:hover .card-image img,
+.event-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.bookmark-btn {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.bookmark-btn:hover {
+    background: var(--white);
+    transform: scale(1.1);
+}
+
+.card-content {
+    padding: 1rem;
+}
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    font-size: 0.8rem;
+    color: var(--text-color);
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.category,
+.type {
+    background: var(--accent-color);
+    color: var(--white);
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    line-height: 1.3;
+}
+
+.card-summary {
+    color: var(--text-color);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+    font-size: 0.9rem;
+}
+
+.event-details {
+    margin-bottom: 0.75rem;
+    font-size: 0.8rem;
+}
+
+.event-details p {
+    margin: 0.2rem 0;
+    color: var(--text-color);
+}
+
+.loading {
+    text-align: center;
+    padding: 1.5rem;
+    color: var(--text-color);
+    font-style: italic;
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+    .hero {
+        padding: 3rem 2rem;
+        margin-bottom: 3rem;
+        border-radius: 12px;
+    }
+    
+    .hero .page-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero .hero-text {
+        font-size: 1.25rem;
+        max-width: 600px;
+    }
+    
+    .featured-section {
+        margin: 3rem 0;
+    }
+    
+    .featured-section h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .quick-access {
+        margin: 3rem 0;
+        padding: 3rem 2rem;
+        border-radius: 12px;
+    }
+    
+    .quick-access h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin: 2rem 0;
+    }
+    
+    .card-image {
+        height: 180px;
+    }
+    
+    .card-content {
+        padding: 1.5rem;
+    }
+    
+    .card-title {
+        font-size: 1.25rem;
+    }
+    
+    .card-summary {
+        font-size: 1rem;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+    .card-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+    
+    .card-image {
+        height: 200px;
+    }
+    
+    .bookmark-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
 

@@ -1,7 +1,7 @@
 /* CSS Colour Variables */
 :root {
     --primary-color: #1a365d; /* Deep Blue */
-    --secondary-color: #3182ce; /* Bright Blue */
+    --secondary-color: #2c5aa0; /* Darker Blue for better contrast */
     --accent-color: #e53e3e; /* Red */
     --text-color: #1a202c; /* Darker Gray for better contrast */
     --background-color: #f7fafc; /* Light Gray */

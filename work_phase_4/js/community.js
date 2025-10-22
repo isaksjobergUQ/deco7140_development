@@ -114,7 +114,7 @@ function renderGroups(groups) {
                     </div>
                 </div>
                 <div class="group-footer">
-                    <button class="join-btn ${isMember ? 'joined' : ''}" data-group-id="${group.id}">
+                    <button class="join-btn ${isMember ? 'joined' : ''}" data-group-id="${group.id}" aria-label="${isMember ? 'Leave group' : 'Join group'}: ${group.name}">
                         ${isMember ? 'Leave Group' : 'Join Group'}
                     </button>
                     <span class="contact">Contact: ${group.contact}</span>

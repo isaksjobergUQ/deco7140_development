@@ -49,7 +49,7 @@ function renderFeaturedTips(tips) {
     }
     
     container.innerHTML = tips.map(tip => `
-        <div class="card tip-card" data-tip-id="${tip.id}">
+        <a href="tip-detail.html?id=${tip.id}" class="tip-card" data-tip-id="${tip.id}">
             <div class="card-image">
                 <img src="${tip.image}" alt="${tip.title}" loading="lazy">
                 <button class="bookmark-btn" aria-label="Bookmark this tip" data-tip-id="${tip.id}">
@@ -59,13 +59,11 @@ function renderFeaturedTips(tips) {
             <div class="card-content">
                 <div class="card-meta">
                     <span class="category">${tip.category}</span>
-                    <span class="date">${new Date(tip.date).toLocaleDateString()}</span>
                 </div>
                 <h3 class="card-title">${tip.title}</h3>
                 <p class="card-summary">${tip.summary}</p>
-                <a href="tip-detail.html?id=${tip.id}" class="btn btn-secondary" data-i18n="read_more">Read More</a>
             </div>
-        </div>
+        </a>
     `).join('');
 }
 
@@ -78,7 +76,7 @@ function renderUpcomingEvents(events) {
     }
     
     container.innerHTML = events.map(event => `
-        <div class="card event-card" data-event-id="${event.id}">
+        <a href="event-detail.html?id=${event.id}" class="event-card" data-event-id="${event.id}">
             <div class="card-image">
                 <img src="${event.image}" alt="${event.title}" loading="lazy">
                 <button class="bookmark-btn" aria-label="Save this event" data-event-id="${event.id}">
@@ -88,17 +86,15 @@ function renderUpcomingEvents(events) {
             <div class="card-content">
                 <div class="card-meta">
                     <span class="type">${event.type}</span>
-                    <span class="date">${new Date(event.date).toLocaleDateString()}</span>
                 </div>
                 <h3 class="card-title">${event.title}</h3>
                 <p class="card-summary">${event.summary}</p>
                 <div class="event-details">
-                    <p><strong>Location:</strong> ${event.location}</p>
-                    <p><strong>Time:</strong> ${event.time}</p>
+                    <p>📅 ${event.date}</p>
+                    <p>📍 ${event.location}</p>
                 </div>
-                <a href="event-detail.html?id=${event.id}" class="btn btn-secondary" data-i18n="read_more">Read More</a>
             </div>
-        </div>
+        </a>
     `).join('');
 }
 

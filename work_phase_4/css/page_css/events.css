@@ -1,31 +1,35 @@
-/* Events page specific styles */
+/* Events page specific styles - Mobile First */
 
 .page-header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
 }
 
 .page-header .page-title {
     color: var(--primary-color);
     margin-bottom: 1rem;
+    font-size: 1.8rem;
 }
 
 .page-header .hero-text {
     color: var(--text-color);
-    font-size: 1.1rem;
-    max-width: 600px;
+    font-size: 1rem;
+    max-width: 100%;
     margin: 0 auto;
+    line-height: 1.5;
 }
 
 .filter-section {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     text-align: center;
+    padding: 0 1rem;
 }
 
 .filter-buttons {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 0.5rem;
     flex-wrap: wrap;
     margin-top: 1rem;
 }
@@ -34,11 +38,12 @@
     background: var(--white);
     border: 2px solid var(--light-gray);
     color: var(--text-color);
-    padding: 0.75rem 1.5rem;
-    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: 500;
+    font-size: 0.9rem;
 }
 
 .filter-btn:hover {
@@ -53,26 +58,35 @@
 }
 
 .events-section {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+}
+
+/* Mobile-first card styles */
+.card-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
 }
 
 .event-card {
     background: var(--white);
-    border-radius: 12px;
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
 }
 
 .event-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
 .card-image {
     position: relative;
-    height: 200px;
+    height: 150px; /* Smaller for mobile */
     overflow: hidden;
 }
 
@@ -89,19 +103,19 @@
 
 .bookmark-btn {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 0.75rem;
+    right: 0.75rem;
     background: rgba(255, 255, 255, 0.9);
     border: none;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .bookmark-btn:hover {
@@ -111,117 +125,172 @@
 
 .event-date-badge {
     position: absolute;
-    top: 1rem;
-    left: 1rem;
+    top: 0.75rem;
+    left: 0.75rem;
     background: var(--primary-color);
     color: var(--white);
-    padding: 0.5rem;
-    border-radius: 8px;
+    padding: 0.4rem;
+    border-radius: 6px;
     text-align: center;
-    min-width: 50px;
+    min-width: 40px;
 }
 
 .event-date-badge .month {
     display: block;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     font-weight: 500;
     text-transform: uppercase;
 }
 
 .event-date-badge .day {
     display: block;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 700;
 }
 
 .card-content {
-    padding: 1.5rem;
+    padding: 1rem;
 }
 
 .card-meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.8rem;
     color: var(--text-color);
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .type {
     background: var(--accent-color);
     color: var(--white);
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
     font-weight: 500;
 }
 
 .card-title {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 600;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
     color: var(--primary-color);
     line-height: 1.3;
 }
 
 .card-summary {
     color: var(--text-color);
-    margin-bottom: 1rem;
-    line-height: 1.5;
-}
-
-.event-details {
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
     font-size: 0.9rem;
 }
 
+.event-details {
+    margin-bottom: 0.75rem;
+    font-size: 0.8rem;
+}
+
 .event-details p {
-    margin: 0.25rem 0;
+    margin: 0.2rem 0;
     color: var(--text-color);
 }
 
 .loading {
     text-align: center;
-    padding: 2rem;
+    padding: 1.5rem;
     color: var(--text-color);
     font-style: italic;
 }
 
-/* Responsive design */
-@media (max-width: 767px) {
+/* Tablet styles */
+@media (min-width: 768px) {
     .page-header {
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
+        padding: 0 2rem;
+    }
+    
+    .page-header .page-title {
+        font-size: 2.5rem;
+    }
+    
+    .page-header .hero-text {
+        font-size: 1.1rem;
+        max-width: 600px;
+    }
+    
+    .filter-section {
+        margin-bottom: 3rem;
+        padding: 0 2rem;
     }
     
     .filter-buttons {
-        gap: 0.5rem;
+        gap: 1rem;
     }
     
     .filter-btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .events-section {
+        margin-bottom: 3rem;
+        padding: 0 2rem;
+    }
+    
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin: 2rem 0;
+    }
+    
+    .card-image {
+        height: 180px;
     }
     
     .card-content {
-        padding: 1rem;
+        padding: 1.5rem;
     }
     
     .card-title {
-        font-size: 1.1rem;
+        font-size: 1.25rem;
+    }
+    
+    .card-summary {
+        font-size: 1rem;
     }
     
     .event-date-badge {
-        top: 0.5rem;
-        left: 0.5rem;
-        padding: 0.25rem;
-        min-width: 40px;
+        top: 1rem;
+        left: 1rem;
+        padding: 0.5rem;
+        min-width: 50px;
     }
     
     .event-date-badge .month {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
     
     .event-date-badge .day {
-        font-size: 1rem;
+        font-size: 1.2rem;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+    .card-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+    
+    .card-image {
+        height: 200px;
+    }
+    
+    .bookmark-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
     }
 }
