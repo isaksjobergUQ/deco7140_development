@@ -6,6 +6,7 @@
     padding: 2rem 1rem;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--white);
+    margin-top: 2rem;
     margin-bottom: 2rem;
     border-radius: 8px;
 }
@@ -28,11 +29,41 @@
     margin: 2rem 0;
 }
 
+.section-subtitle {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+}
+
+.upcoming-events-section {
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.05), rgba(155, 89, 182, 0.05));
+    padding: 2rem 1rem;
+    border-radius: 12px;
+    margin: 3rem 0;
+}
+
 .featured-section h2 {
     text-align: center;
     margin-bottom: 1.5rem;
     color: var(--primary-color);
     font-size: 1.5rem;
+    font-weight: 600;
+    position: relative;
+}
+
+.featured-section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
 }
 
 .section-footer {
@@ -52,6 +83,68 @@
     margin-bottom: 1.5rem;
     color: var(--primary-color);
     font-size: 1.5rem;
+    font-weight: 600;
+    position: relative;
+}
+
+.quick-access h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+/* Quick Access Cards */
+.quick-access-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.quick-access-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: var(--accent-color);
+}
+
+.quick-access-card .card-header h3 {
+    margin: 0 0 1rem 0;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.quick-access-card .card-body {
+    position: relative;
+}
+
+.quick-access-card .card-body p {
+    margin: 0;
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+.card-arrow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    transition: transform 0.3s ease;
+}
+
+.quick-access-card:hover .card-arrow {
+    transform: translateX(4px);
 }
 
 /* Mobile-first card styles */
@@ -218,6 +311,10 @@
         margin: 2rem 0;
     }
     
+    .quick-access .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
     .card-image {
         height: 180px;
     }
@@ -240,6 +337,10 @@
     .card-container {
         grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
+    }
+    
+    .quick-access .card-container {
+        grid-template-columns: repeat(4, 1fr);
     }
     
     .card-image {
