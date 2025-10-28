@@ -73,6 +73,19 @@
     font-weight: 800;
     letter-spacing: 0.2px;
     border-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.site-nav .brand .logo {
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+
+.site-nav .brand span {
+    font-size: 1.25rem;
 }
 .site-nav a[aria-current="page"] {
     background: var(--secondary-color);

@@ -2,7 +2,6 @@
 import { fetchGetData } from './modules/getData.js';
 import { storage } from './modules/storage.js';
 import { i18n } from './modules/i18n.js';
-import { initAccordion } from './modules/accordion.js';
 
 let allThreads = [];
 let allGroups = [];
@@ -15,20 +14,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Set current year
     document.getElementById('year').textContent = new Date().getFullYear();
     
-    // Initialize accordions
-    initAccordion('forums-accordion');
-    initAccordion('groups-accordion');
-    initAccordion('contact-accordion');
-    
     // Load community data
     await loadCommunityData();
-    
-    // Set up form handling
-    setupContactForm();
     
     // Set up interactive features
     setupLikeHandlers();
     setupGroupHandlers();
+    
+    // Set up new post form handlers
+    setupNewPostForm();
 });
 
 async function loadCommunityData() {
@@ -41,6 +35,11 @@ async function loadCommunityData() {
         
         allThreads = threads;
         allGroups = groups;
+        
+        // Merge user-generated posts with JSON data
+        const userPosts = storage.getUserPosts();
+        // User posts should appear first (most recent at top)
+        allThreads = [...userPosts.reverse(), ...threads];
         
         renderForums(allThreads);
         renderGroups(allGroups);
@@ -124,44 +123,6 @@ function renderGroups(groups) {
     }).join('');
 }
 
-function setupContactForm() {
-    const form = document.getElementById('contact-form');
-    const feedback = document.getElementById('form-feedback');
-    
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData);
-        
-        // Client-side validation
-        if (!data.name || !data.email || !data.subject || !data.message) {
-            showFormFeedback('Please fill in all required fields.', 'error');
-            return;
-        }
-        
-        if (!isValidEmail(data.email)) {
-            showFormFeedback('Please enter a valid email address.', 'error');
-            return;
-        }
-        
-        try {
-            // Save to localStorage (simulating form submission)
-            storage.saveFormSubmission(data);
-            
-            // Show success message
-            showFormFeedback('Thank you for your message! We\'ll get back to you soon.', 'success');
-            
-            // Reset form
-            form.reset();
-            
-        } catch (error) {
-            console.error('Error submitting form:', error);
-            showFormFeedback('Sorry, there was an error sending your message. Please try again.', 'error');
-        }
-    });
-}
-
 function setupLikeHandlers() {
     document.addEventListener('click', (e) => {
         if (e.target.closest('.like-btn')) {
@@ -222,24 +183,74 @@ function toggleGroupMembership(groupId) {
     }
 }
 
-function showFormFeedback(message, type) {
-    const feedback = document.getElementById('form-feedback');
-    feedback.textContent = message;
-    feedback.className = `form-feedback ${type}`;
-    
-    // Clear feedback after 5 seconds
-    setTimeout(() => {
-        feedback.textContent = '';
-        feedback.className = 'form-feedback';
-    }, 5000);
-}
-
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
-
 function showError(containerId) {
     const container = document.getElementById(containerId);
     container.innerHTML = `<p data-i18n="error_loading">Error loading content</p>`;
+}
+
+function setupNewPostForm() {
+    const newPostBtn = document.getElementById('new-post-btn');
+    const formContainer = document.getElementById('new-post-form-container');
+    const cancelBtn = document.getElementById('cancel-post-btn');
+    const form = document.getElementById('new-post-form');
+    
+    // Show/hide form
+    newPostBtn.addEventListener('click', () => {
+        formContainer.style.display = 'block';
+        // Smooth scroll to form
+        formContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+    
+    cancelBtn.addEventListener('click', () => {
+        formContainer.style.display = 'none';
+        form.reset();
+    });
+    
+    // Handle form submission
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const formData = new FormData(form);
+        const title = formData.get('title').trim();
+        const content = formData.get('content').trim();
+        const category = formData.get('category');
+        const author = 'You'; // Could be replaced with actual user name if logged in
+        
+        // Validate
+        if (!title || !content) {
+            alert('Please fill in both title and content.');
+            return;
+        }
+        
+        // Create new post
+        const newPost = storage.addUserPost({
+            title: title,
+            content: `<p>${content}</p>`,
+            author: author,
+            category: category
+        });
+        
+        // Add to allThreads array at the beginning
+        allThreads.unshift(newPost);
+        
+        // Re-render forums
+        renderForums(allThreads);
+        
+        // Hide form and reset
+        formContainer.style.display = 'none';
+        form.reset();
+        
+        // Scroll to the new post
+        setTimeout(() => {
+            const newPostElement = document.querySelector(`[data-thread-id="${newPost.id}"]`);
+            if (newPostElement) {
+                newPostElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                // Add a highlight effect
+                newPostElement.style.backgroundColor = '#e8f5e9';
+                setTimeout(() => {
+                    newPostElement.style.backgroundColor = '';
+                }, 2000);
+            }
+        }, 100);
+    });
 }

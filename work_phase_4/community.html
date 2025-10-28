@@ -27,12 +27,16 @@
     <!-- Desktop Navigation (Top) -->
     <nav id="nav-desktop" aria-label="Main Navigation">
         <div class="site-nav__inner">
-            <a class="brand" href="index.html">ISP</a>
+            <a class="brand" href="index.html">
+                <img src="images/logo.svg" alt="ISP Logo" class="logo">
+                 
+            </a>
             <div class="site-nav__links">
                 <a href="index.html" data-i18n="nav_home">Home</a>
                 <a href="tips.html" data-i18n="nav_tips">Tips</a>
                 <a href="events.html" data-i18n="nav_events">Events</a>
                 <a href="community.html" aria-current="page" data-i18n="nav_community">Community</a>
+                <a href="contact.html">Contact</a>
                 <a href="language.html" data-i18n="nav_language">Language</a>
             </div>
         </div>
@@ -45,6 +49,7 @@
             <li><a href="tips.html"><span class="icon" aria-label="Tips">💡</span></a></li>
             <li><a href="events.html"><span class="icon" aria-label="Events">🎉</span></a></li>
             <li><a href="community.html" aria-current="page"><span class="icon" aria-label="Community">🤝</span></a></li>
+            <li><a href="contact.html"><span class="icon" aria-label="Contact">📧</span></a></li>
             <li><a href="language.html"><span class="icon" aria-label="Language">🌍</span></a></li>
         </ul>
     </nav>
@@ -61,23 +66,51 @@
             <div class="community-sections">
                 <!-- Forums Section -->
                 <section class="community-section" aria-labelledby="forums-heading">
-                    <h2 id="forums-heading">Discussion Forums</h2>
-                    <p>Join conversations with other international students about academic life, living in Brisbane, and more.</p>
+                    <div class="section-header-with-btn">
+                        <div>
+                            <h2 id="forums-heading">Discussion Forums</h2>
+                            <p>Join conversations with other international students about academic life, living in Brisbane, and more.</p>
+                        </div>
+                        <button id="new-post-btn" class="btn btn-primary">+ New Post</button>
+                    </div>
                     
-                    <div class="accordion" id="forums-accordion">
-                        <div class="accordion-item">
-                            <button class="accordion-header" aria-expanded="false" aria-controls="forums-content">
-                                <span class="accordion-icon">💬</span>
-                                <span class="accordion-title">Recent Discussions</span>
-                                <span class="accordion-toggle">+</span>
-                            </button>
-                            <div class="accordion-content" id="forums-content">
-                                <div class="accordion-body">
-                                    <div id="forums-container">
-                                        <div class="loading" data-i18n="loading">Loading...</div>
-                                    </div>
-                                </div>
+                    <!-- New Post Form (hidden by default) -->
+                    <div id="new-post-form-container" class="new-post-form-container" style="display: none;">
+                        <form id="new-post-form" class="new-post-form">
+                            <h3>Create New Discussion</h3>
+                            
+                            <div class="form-group">
+                                <label for="post-title">Title <span class="required">*</span></label>
+                                <input type="text" id="post-title" name="title" required placeholder="Enter a descriptive title">
                             </div>
+                            
+                            <div class="form-group">
+                                <label for="post-content">Content <span class="required">*</span></label>
+                                <textarea id="post-content" name="content" rows="5" required placeholder="Write your post content here..."></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="post-category">Category</label>
+                                <select id="post-category" name="category">
+                                    <option value="General">General</option>
+                                    <option value="Academic">Academic</option>
+                                    <option value="Living">Living</option>
+                                    <option value="Support">Support</option>
+                                    <option value="Social">Social</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Submit Post</button>
+                                <button type="button" id="cancel-post-btn" class="btn btn-secondary">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- Horizontal Scrolling Forum Cards -->
+                    <div class="scrollable-cards-container">
+                        <div id="forums-container" class="cards-wrapper">
+                            <div class="loading" data-i18n="loading">Loading...</div>
                         </div>
                     </div>
                 </section>
@@ -87,65 +120,10 @@
                     <h2 id="groups-heading">Study Groups</h2>
                     <p>Join study groups to collaborate with peers and enhance your learning experience.</p>
                     
-                    <div class="accordion" id="groups-accordion">
-                        <div class="accordion-item">
-                            <button class="accordion-header" aria-expanded="false" aria-controls="groups-content">
-                                <span class="accordion-icon">👥</span>
-                                <span class="accordion-title">Available Groups</span>
-                                <span class="accordion-toggle">+</span>
-                            </button>
-                            <div class="accordion-content" id="groups-content">
-                                <div class="accordion-body">
-                                    <div id="groups-container">
-                                        <div class="loading" data-i18n="loading">Loading...</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Contact Form Section -->
-                <section class="community-section" aria-labelledby="contact-heading">
-                    <h2 id="contact-heading" data-i18n="contact_form_title">Get in Touch</h2>
-                    <p>Have questions or want to connect? Send us a message and we'll get back to you.</p>
-                    
-                    <div class="accordion" id="contact-accordion">
-                        <div class="accordion-item">
-                            <button class="accordion-header" aria-expanded="false" aria-controls="contact-content">
-                                <span class="accordion-icon">📧</span>
-                                <span class="accordion-title">Contact Form</span>
-                                <span class="accordion-toggle">+</span>
-                            </button>
-                            <div class="accordion-content" id="contact-content">
-                                <div class="accordion-body">
-                                    <form id="contact-form" class="contact-form">
-                                        <div class="form-group">
-                                            <label for="name" data-i18n="contact_form_name">Your Name</label>
-                                            <input type="text" id="name" name="name" required>
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <label for="email" data-i18n="contact_form_email">Email Address</label>
-                                            <input type="email" id="email" name="email" required>
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <label for="subject">Subject</label>
-                                            <input type="text" id="subject" name="subject" required>
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <label for="message" data-i18n="contact_form_message">Message</label>
-                                            <textarea id="message" name="message" rows="5" required></textarea>
-                                        </div>
-                                        
-                                        <button type="submit" class="btn btn-primary" data-i18n="contact_form_submit">Send Message</button>
-                                    </form>
-                                    
-                                    <div id="form-feedback" aria-live="polite"></div>
-                                </div>
-                            </div>
+                    <!-- Horizontal Scrolling Study Group Cards -->
+                    <div class="scrollable-cards-container">
+                        <div id="groups-container" class="cards-wrapper">
+                            <div class="loading" data-i18n="loading">Loading...</div>
                         </div>
                     </div>
                 </section>

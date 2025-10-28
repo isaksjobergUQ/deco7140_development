@@ -88,5 +88,26 @@ export const storage = {
     getFormSubmissions() {
         const submissions = localStorage.getItem('formSubmissions');
         return submissions ? JSON.parse(submissions) : [];
+    },
+
+    // User-generated forum posts
+    getUserPosts() {
+        const posts = localStorage.getItem('userPosts');
+        return posts ? JSON.parse(posts) : [];
+    },
+
+    addUserPost(postData) {
+        const posts = this.getUserPosts();
+        const newPost = {
+            id: `user-post-${Date.now()}`,
+            ...postData,
+            date: new Date().toISOString().split('T')[0],
+            replies: 0,
+            likes: 0,
+            category: postData.category || 'General'
+        };
+        posts.push(newPost);
+        localStorage.setItem('userPosts', JSON.stringify(posts));
+        return newPost;
     }
 };

@@ -11,6 +11,23 @@
     border-radius: 8px;
 }
 
+.hero-logo {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.5rem;
+    display: block;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
 .hero .page-title {
     color: var(--white);
     margin-bottom: 1rem;
