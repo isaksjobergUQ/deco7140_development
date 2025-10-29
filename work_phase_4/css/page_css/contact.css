@@ -1,30 +1,48 @@
 /* Contact page specific styles - Mobile First */
 
 .page-header {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    padding: 3rem 1rem;
+    margin-top: 2rem;
     margin-bottom: 2rem;
+    padding: 0 1rem;
     text-align: center;
-    border-radius: 0 0 20px 20px;
-}
-
-.page-header-content {
-    max-width: 800px;
-    margin: 0 auto;
 }
 
 .page-header .page-title {
-    color: white;
+    color: var(--primary-color);
     margin-bottom: 1rem;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.page-header .page-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
 }
 
 .page-header .hero-text {
-    color: rgba(255, 255, 255, 0.95);
+    color: var(--text-color);
     font-size: 1.1rem;
-    line-height: 1.6;
+    max-width: 700px;
+    margin: 2rem auto 0;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+/* Reduce spacing on mobile */
+@media (max-width: 767px) {
+    .page-header {
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+    }
 }
 
 .contact-content {

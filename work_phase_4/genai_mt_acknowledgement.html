@@ -12,24 +12,342 @@
     <link rel="stylesheet" href="./css/page_css/genai.css">
 </head>
 <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+      <!-- Skip link for accessibility -->
+      <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header role="banner">
-        <div class="container">
-            <h1>GenAI/MT Acknowledgement</h1>
-            <nav aria-label="Primary">
-                <ul class="nav">
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./implementation_rationale.html">Rationale</a></li>
-                    <li><a href="./genai_mt_acknowledgement.html" aria-current="page">GenAI/MT</a></li>
-                </ul>
-            </nav>
+    <!-- Desktop Navigation (Top) -->
+    <nav id="nav-desktop" aria-label="Main Navigation">
+        <div class="site-nav__inner">
+            <a class="brand" href="index.html">
+                <img src="images/logo.svg" alt="ISP Logo" class="logo">
+            </a>
+            <div class="site-nav__links">
+                <a href="index.html" data-i18n="nav_home">Home</a>
+                <a href="tips.html" data-i18n="nav_tips">Tips</a>
+                <a href="events.html" data-i18n="nav_events">Events</a>
+                <a href="community.html" data-i18n="nav_community">Community</a>
+                <a href="language.html" data-i18n="nav_language">Language</a>
+                <a href="contact.html">Contact</a>
+                <a href="implementation_rationale.html" class="nav-secondary">Rationale</a>
+                <a href="genai_mt_acknowledgement.html" class="nav-secondary" aria-current="page">GenAI</a>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <main id="main" class="container" tabindex="-1">
-        <h2>Transparency and Framework</h2>
-        <p>Draft scaffold. Populate with acknowledgement, checklist, reflection, and integrity statement.</p>
+    <!-- Mobile Navigation (Bottom) -->
+    <nav id="nav-mobile" aria-label="Main Navigation">
+        <ul>
+            <li><a href="index.html"><span class="icon">🏠</span></a></li>
+            <li><a href="tips.html"><span class="icon">💡</span></a></li>
+            <li><a href="events.html"><span class="icon">🎉</span></a></li>
+            <li><a href="community.html"><span class="icon">🤝</span></a></li>
+            <li><a href="language.html"><span class="icon">🌍</span></a></li>
+            <li><a href="contact.html"><span class="icon">📧</span></a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content" class="container" tabindex="-1">
+        <section class="page-header">
+            <h1 class="page-title">GenAI/MT Acknowledgement</h1>
+            <p class="hero-text">Transparent documentation of my use of Generative AI and Machine Translation tools in Work Phase 4, following the GenAI and MT Usage Framework.</p>
+        </section>
+
+        <!-- GenAI/MT Usage Checklist -->
+        <section>
+            <h2>GenAI/MT Usage Checklist</h2>
+            <div class="checklist-container">
+                <div class="checklist-item completed">
+                    <h3>✓ Understanding the Problem</h3>
+                    <p>I independently analyzed the A3 design proposal, reviewed accessibility requirements, and identified implementation challenges based on course materials and previous work DB phases.</p>
+                </div>
+
+                <div class="checklist-item completed">
+                    <h3>✓ Independent Design Work</h3>
+                    <p>I made strategic design variations (horizontal cards, separate contact page, simplified headers) based on usability testing and best practices learned from lectures and readings.</p>
+                </div>
+
+                <div class="checklist-item completed">
+                    <h3>✓ Collaborative Implementation</h3>
+                    <p>I used Cursor AI to implement dynamic features (localStorage, card rendering, form handling) according to my specifications and design requirements.</p>
+                </div>
+
+                <div class="checklist-item completed">
+                    <h3>✓ Verification and Adaptation</h3>
+                    <p>I reviewed all AI-generated code, tested functionality across devices, verified accessibility compliance, and adapted code to ensure it met my standards and requirements.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Usage Reflection -->
+        <section>
+            <h2>Detailed Usage Reflection</h2>
+
+            <div class="reflection-section">
+                <h3>1. Problem Understanding and Design Variations</h3>
+                <p><strong>My Independent Work:</strong> After implementing the initial A3 design, I identified usability issues and areas for improvement. I independently decided to replace accordions with horizontal scrolling cards for better engagement, create a separate contact page for clearer information architecture, and simplify page headers for consistency.</p>
+                <p><strong>AI Assistance:</strong> I used AI to implement these design decisions, providing clear specifications for each variation. I articulated the visual requirements and technical constraints.</p>
+            </div>
+
+            <div class="reflection-section">
+                <h3>2. Dynamic Feature Development</h3>
+                <p><strong>My Independent Work:</strong> I designed the "new post" functionality for discussion forums, user-generated content system using localStorage, and bookmarking/liking features. I planned the data flow and user interactions.</p>
+                <p><strong>AI Assistance:</strong> I used Cursor AI to implement the localStorage management module, DOM manipulation for dynamic rendering, and form handling. I provided specific requirements and tested all functionality.</p>
+            </div>
+
+            <div class="reflection-section">
+                <h3>3. Responsive Design and Styling</h3>
+                <p><strong>My Independent Work:</strong> I tested the website on various screen sizes and identified areas where mobile experience needed improvement. I planned responsive breakpoints and mobile-specific adjustments.</p>
+                <p><strong>AI Assistance:</strong> I used AI to write CSS media queries, implement mobile navigation fixes, and create consistent page header styles across all pages. All styling decisions were based on my design requirements.</p>
+            </div>
+
+            <div class="reflection-section">
+                <h3>4. Accessibility and Quality Assurance</h3>
+                <p><strong>My Independent Work:</strong> I cross-referenced implementation against WCAG 2.2 guidelines, manually tested keyboard navigation, verified color contrast, and ensured all interactive elements were properly labeled.</p>
+                <p><strong>Verification Process:</strong> I reviewed all AI-generated code for semantic HTML, proper ARIA attributes, and accessibility best practices. I rejected suggestions that didn't meet accessibility standards.</p>
+            </div>
+        </section>
+
+        <!-- Specific AI Usage Areas -->
+        <section>
+            <h2>Specific AI Usage Areas</h2>
+
+            <div class="usage-grid">
+                <div class="usage-card">
+                    <h3>LocalStorage Management</h3>
+                    <p>Used AI to implement the storage.js module for managing bookmarks, likes, and user-generated posts. I specified the data structure and API, then reviewed all code for security and best practices.</p>
+                </div>
+
+                <div class="usage-card">
+                    <h3>Dynamic Card Rendering</h3>
+                    <p>Collaborated with AI to create the forum and study group card rendering logic, including horizontal scrolling containers and responsive layouts based on my design specifications.</p>
+                </div>
+
+                <div class="usage-card">
+                    <h3>Form Handling</h3>
+                    <p>Used AI to implement the new post form functionality, including validation, submission handling, and dynamic DOM updates. All logic aligned with my requirements for user experience.</p>
+                </div>
+
+                <div class="usage-card">
+                    <h3>Logo Design</h3>
+                    <p>I provided the design brief (globe icon with "I" for International), and used AI to generate the SVG code. I then refined the code and integrated it into the site.</p>
+                </div>
+
+                <div class="usage-card">
+                    <h3>Page Header Consistency</h3>
+                    <p>Collaborated with AI to create consistent page header styles across all pages (except homepage), including gradient underline and responsive spacing adjustments.</p>
+                </div>
+
+                <div class="usage-card">
+                    <h3>Documentation Writing</h3>
+                    <p>Used AI to help structure the Implementation Rationale and GenAI Acknowledgement pages. I provided all content and decisions, and AI assisted with formatting and organization.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Example Prompts and Code Snippets -->
+        <section>
+            <h2>Example Prompts and Code Snippets</h2>
+
+            <div class="prompt-grid induction">
+                <div class="prompt-card">
+                    <h3>Prompt: Implement New Post Form</h3>
+                    <pre><code>I want to add a "New Post" button next to the Discussion Forums heading. When clicked, it should show a form where users can enter a post title and content. After submission, the post should be saved to localStorage and appear at the top of the forums list. The form should slide down smoothly and have cancel/submit buttons.</code></pre>
+                </div>
+
+                <div class="prompt-card">
+                    <h3>Prompt: Horizontal Scrolling Cards</h3>
+                    <pre><code>Replace the accordion layout for forums and study groups with horizontal scrolling cards. Each card should show a preview of the content, and users can scroll horizontally. Make it work smoothly on mobile with touch scrolling. Keep the "New Post" button visible above the forums.</code></pre>
+                </div>
+
+                <div class="prompt-card">
+                    <h3>Prompt: Separate Contact Page</h3>
+                    <pre><code>Move the contact form to a separate contact.html page. Update all navigation links across the site. Make sure the contact page has the same header style as other pages (with gradient underline). On mobile, Contact should always be last in the navigation.</code></pre>
+                </div>
+
+                <div class="prompt-card">
+                    <h3>Prompt: Consistent Page Headers</h3>
+                    <pre><code>All pages except the homepage should have consistent header styling: centered title with a gradient underline, proper spacing from navbar, and consistent intro text. On mobile, move everything slightly higher. Make this work across Tips, Events, Language, Community, Contact pages.</code></pre>
+                </div>
+            </div>
+
+            <div class="code-grid">
+                <div class="code-card">
+                    <h3>storage.js: User Post Management</h3>
+                    <pre><code>getUserPosts() {
+    const posts = localStorage.getItem('userPosts');
+    return posts ? JSON.parse(posts) : [];
+},
+
+addUserPost(postData) {
+    const posts = this.getUserPosts();
+    const newPost = {
+        id: `user-post-${Date.now()}`,
+        ...postData,
+        date: new Date().toISOString().split('T')[0],
+        replies: 0,
+        likes: 0,
+        category: postData.category || 'General'
+    };
+    posts.push(newPost);
+    localStorage.setItem('userPosts', JSON.stringify(posts));
+    return newPost;
+}</code></pre>
+                </div>
+
+                <div class="code-card">
+                    <h3>community.js: Dynamic Card Rendering</h3>
+                    <pre><code>function renderForums(threads) {
+    const container = document.getElementById('forums-container');
+    if (!container) return;
+    
+    container.innerHTML = threads.map(thread => `
+        &lt;div class="forum-thread"&gt;
+            &lt;h3&gt;${thread.title}&lt;/h3&gt;
+            &lt;p&gt;${thread.description}&lt;/p&gt;
+            &lt;div class="thread-meta"&gt;
+                &lt;span&gt;💬 ${thread.replies}&lt;/span&gt;
+                &lt;span&gt;❤️ ${thread.likes}&lt;/span&gt;
+                &lt;span&gt;📅 ${thread.date}&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    `).join('');
+}</code></pre>
+                </div>
+
+                <div class="code-card">
+                    <h3>CSS: Horizontal Scrolling</h3>
+                    <pre><code>.scrollable-cards-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+.cards-wrapper {
+    display: flex;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+    min-width: fit-content;
+}
+
+.forum-thread {
+    min-width: 300px;
+    max-width: 350px;
+    flex-shrink: 0;
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Framework Compliance -->
+        <section>
+            <h2>Framework Compliance</h2>
+            <p>This acknowledgement addresses each requirement of the GenAI and MT Usage Framework:</p>
+
+            <div class="framework-requirements">
+                <div class="requirement-item">
+                    <h3>✓ Transparency</h3>
+                    <p>
+                        <strong>Tools Used:</strong> Cursor AI (AI-powered code editor)<br />
+                        <strong>When:</strong> During Work Phase 4 implementation<br />
+                        <strong>Purpose:</strong> To implement dynamic features, refactor layouts, and create consistent styling across pages<br />
+                        <strong>Specific Examples:</strong> localStorage management, horizontal card scrolling, form handling, logo creation, page header standardization
+                    </p>
+                </div>
+
+                <div class="requirement-item">
+                    <h3>✓ Purposeful Application</h3>
+                    <p>
+                        <strong>Learning Support:</strong> AI helped implement complex JavaScript features and responsive CSS patterns I planned but needed coding assistance for<br />
+                        <strong>Task Alignment:</strong> Supported the goal of creating a functional, accessible, responsive website<br />
+                        <strong>Specific Applications:</strong> Used AI for implementation only - all design decisions and variations were my own
+                    </p>
+                </div>
+
+                <div class="requirement-item">
+                    <h3>✓ Critical Engagement</h3>
+                    <p>
+                        <strong>Evaluation Process:</strong> Reviewed every line of AI-generated code, tested across devices, verified WCAG compliance<br />
+                        <strong>Modifications Made:</strong> Adapted code to match existing patterns, rejected suggestions that didn't align with design system, added comments for maintainability<br />
+                        <strong>Quality Control:</strong> Ensured all code met accessibility standards, responsive design principles, and project requirements
+                    </p>
+                </div>
+
+                <div class="requirement-item">
+                    <h3>✓ Personal Voice & Ownership</h3>
+                    <p>
+                        <strong>Design Control:</strong> All design variations, feature planning, and user experience decisions were my original work<br />
+                        <strong>Creative Direction:</strong> I maintained full creative control - AI was used only for implementing my pre-planned features<br />
+                        <strong>Final Output:</strong> The website reflects my understanding of responsive design, accessibility principles, and user-centered design
+                    </p>
+                </div>
+
+                <div class="requirement-item">
+                    <h3>✓ Reflection on Learning</h3>
+                    <p>
+                        <strong>Learning Outcomes:</strong> Developed skills in articulating technical specifications, managing complex state with localStorage, creating responsive layouts, and integrating AI assistance effectively<br />
+                        <strong>Challenges Faced:</strong> Balancing implementation speed with code quality, ensuring mobile responsiveness across all features, maintaining consistency while allowing necessary variations<br />
+                        <strong>Limitations Acknowledged:</strong> AI tools excel at implementation but require careful guidance, testing, and refinement to meet production standards
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning and Development -->
+        <section>
+            <h2>Learning and Development</h2>
+            <p>Through this collaborative process with AI tools, I developed skills in:</p>
+
+            <ul class="learning-list">
+                <li>Articulating technical requirements for dynamic features and state management</li>
+                <li>Implementing localStorage-based data persistence for user interactions</li>
+                <li>Creating responsive horizontal scrolling layouts that work across devices</li>
+                <li>Maintaining consistent design patterns while allowing justified variations</li>
+                <li>Testing and refining AI-generated code to meet accessibility standards</li>
+                <li>Balancing design consistency with usability improvements</li>
+                <li>Using AI as a collaborative partner for implementation while maintaining design integrity</li>
+            </ul>
+
+            <h3>Key Insights for Future Practice</h3>
+            <p>This project reinforced several important principles for using AI tools professionally:</p>
+            <ul class="learning-list">
+                <li><strong>Clear Communication:</strong> Providing detailed specifications and requirements leads to better AI outputs</li>
+                <li><strong>Iterative Refinement:</strong> AI-generated code often needs testing and refinement to meet production standards</li>
+                <li><strong>Verification is Essential:</strong> Never deploy AI-generated code without thorough testing across devices and use cases</li>
+                <li><strong>Maintain Design Control:</strong> Use AI for implementation, not design decisions or problem analysis</li>
+                <li><strong>Code Review:</strong> Treat AI-generated code with the same scrutiny as any other code</li>
+            </ul>
+        </section>
+
+        <!-- Integrity Statement -->
+        <section>
+            <h2>Integrity Statement</h2>
+            <div class="integrity-statement">
+                <p><strong>I declare that:</strong></p>
+                <ul>
+                    <li>All design variations (horizontal cards, separate contact page, simplified headers) were decisions I made independently based on usability testing and best practices</li>
+                    <li>I planned the new post functionality, localStorage data structures, and responsive design adjustments independently</li>
+                    <li>I used Cursor AI as a collaborative tool for implementing my design ideas and feature specifications</li>
+                    <li>All AI-generated code was reviewed, tested, and adapted by me to meet my specific requirements and standards</li>
+                    <li>I maintained full creative control over the design process and implementation approach</li>
+                    <li>All work represents my understanding and application of responsive design, accessibility principles, and user-centered design</li>
+                    <li>I conducted manual testing across multiple devices and screen sizes to verify functionality and responsiveness</li>
+                    <li>The Implementation Rationale reflects my genuine reflection on the development process, challenges faced, and decisions made</li>
+                </ul>
+
+                <p><strong>This assessment demonstrates my ability to:</strong> translate design proposals into functional websites, make informed design variations based on usability, implement dynamic features, ensure accessibility compliance, and use AI tools responsibly as implementation partners while maintaining full ownership of the creative and technical decisions.</p>
+        </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section>
+            <h2>Conclusion</h2>
+            <p>This Work Phase 4 implementation represents a collaborative approach where I maintained full creative and technical control while leveraging AI tools for efficient implementation of complex features. The final website reflects my understanding of responsive design, accessibility standards, ethical considerations, and user-centered development practices.</p>
+
+            <p>By using AI tools responsibly - for implementation rather than design, with thorough review and testing, and with full transparency - I demonstrated how AI can enhance productivity while maintaining high standards of quality, accessibility, and ethical design.</p>
+
+            <p>This approach shows that AI tools, when used thoughtfully and critically, can be valuable partners in the development process while ensuring that the final work authentically represents the developer's skills, understanding, and ethical commitment to inclusive design.</p>
+        </section>
     </main>
 
     <footer role="contentinfo">

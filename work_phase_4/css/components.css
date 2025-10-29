@@ -87,6 +87,11 @@
 .site-nav .brand span {
     font-size: 1.25rem;
 }
+
+.nav-secondary {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.6rem !important;
+}
 .site-nav a[aria-current="page"] {
     background: var(--secondary-color);
     border-color: transparent;

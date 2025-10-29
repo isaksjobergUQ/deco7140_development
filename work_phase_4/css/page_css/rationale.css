@@ -1,2 +1,160 @@
 main { padding: var(--space-6) 0; }
 
+/* Page Header */
+.page-header {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.page-header .page-title {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.page-header .page-title::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border-radius: 2px;
+}
+
+.page-header .hero-text {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* User Needs Grid */
+.user-needs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.need-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.need-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.need-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.need-card p {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.need-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* Audit Placeholder */
+.audit-placeholder {
+    background: #f8f9fa;
+    border: 2px dashed #dee2e6;
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.audit-placeholder ul {
+    text-align: left;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+/* Code blocks */
+code {
+    background: #f4f4f4;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    color: #e83e8c;
+}
+
+/* Sections */
+section {
+    margin-bottom: 3rem;
+}
+
+section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e9ecef;
+}
+
+section h3 {
+    color: #333;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+section ul, section ol {
+    margin-left: 1.5rem;
+    line-height: 1.8;
+}
+
+section li {
+    margin-bottom: 0.5rem;
+}
+
+/* Links */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+    .page-header {
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .page-header .page-title {
+        font-size: 2rem;
+    }
+    
+    .user-needs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    section h2 {
+        font-size: 1.5rem;
+    }
+}
+
