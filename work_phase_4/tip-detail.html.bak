@@ -44,7 +44,7 @@
             <li><a href="tips.html" aria-label="Tips"><span class="icon">💡</span></a></li>
             <li><a href="events.html" aria-label="Events"><span class="icon">🎉</span></a></li>
             <li><a href="community.html" aria-label="Community"><span class="icon">🤝</span></a></li>
-            <li><a href="language.html" aria-label="Language"><span class="icon">🌍</span></a></li>
+            <li><a href="language.html" aria-label 얼 Language"><span class="icon">🌍</span></a></li>
         </ul>
     </nav>
 

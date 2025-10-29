@@ -69,3 +69,27 @@
     color: var(--text-color);
     font-weight: 500;
 }
+
+/* Footer styling - improved contrast for WCAG AA compliance */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+footer p {
+    color: var(--white);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+footer a:hover {
+    opacity: 0.9;
+}
