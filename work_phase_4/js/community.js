@@ -3,6 +3,7 @@ import { fetchGetData } from "./modules/getData.js";
 import { postFormData } from "./modules/postFormData.js";
 import { storage } from "./modules/storage.js";
 import { i18n } from "./modules/i18n.js";
+import { setActiveNavItem } from "./modules/nav.js";
 
 // API Configuration
 const API_BASE_URL =
@@ -17,6 +18,10 @@ let allGroups = [];
 // Initialize the page
 document.addEventListener("DOMContentLoaded", async () => {
     await i18n.init();
+    
+    // Set active nav item
+    setActiveNavItem();
+    
     document.getElementById("year").textContent = new Date().getFullYear();
     await loadCommunityData();
     setupLikeHandlers();

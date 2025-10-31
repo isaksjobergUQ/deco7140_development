@@ -2,6 +2,7 @@
 import { postFormData } from './modules/postFormData.js';
 import { storage } from './modules/storage.js';
 import { i18n } from './modules/i18n.js';
+import { setActiveNavItem } from './modules/nav.js';
 
 // API Configuration
 const API_BASE_URL = 'https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/';
@@ -13,6 +14,9 @@ const UQ_CLOUD_ZONE_ID = '435eba26';
 document.addEventListener('DOMContentLoaded', async () => {
     // Initialize internationalization
     await i18n.init();
+    
+    // Set active nav item
+    setActiveNavItem();
     
     // Set current year
     document.getElementById('year').textContent = new Date().getFullYear();

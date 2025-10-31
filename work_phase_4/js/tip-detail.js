@@ -2,6 +2,7 @@
 import { fetchGetData } from './modules/getData.js';
 import { storage } from './modules/storage.js';
 import { i18n } from './modules/i18n.js';
+import { setActiveNavItem } from './modules/nav.js';
 
 let currentTip = null;
 let allTips = [];
@@ -10,6 +11,9 @@ let allTips = [];
 document.addEventListener('DOMContentLoaded', async () => {
     // Initialize internationalization
     await i18n.init();
+    
+    // Set active nav item
+    setActiveNavItem();
     
     // Set current year
     document.getElementById('year').textContent = new Date().getFullYear();
