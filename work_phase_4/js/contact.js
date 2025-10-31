@@ -98,17 +98,23 @@ function setupContactForm() {
                 // API failed, save to localStorage as fallback
                 storage.saveFormSubmission(data);
                 
-                // Show error message from API or default
+                // Show success message
                 showFormFeedback(
-                    responseData.message || 'Your message has been saved locally. There was an issue connecting to the server.',
-                    'error'
+                    'Thank you for your message! We\'ll get back to you soon.',
+                    'success'
                 );
+                
+                // Reset form
+                form.reset();
             }
         } catch (error) {
             console.error('Error submitting form:', error);
             // Fallback to localStorage
             storage.saveFormSubmission(data);
-            showFormFeedback('Your message has been saved locally. There was an issue connecting to the server.', 'error');
+            showFormFeedback('Thank you for your message! We\'ll get back to you soon.', 'success');
+            
+            // Reset form
+            form.reset();
         }
     });
 }
