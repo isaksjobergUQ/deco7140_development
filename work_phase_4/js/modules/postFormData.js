@@ -7,25 +7,36 @@ const postFormData = async (formEl, endpointUrl, customHeaders = {}) => {
     try {
         const formData = new FormData(formEl);
 
+        // Build headers - don't set Content-Type for FormData (browser will set it with boundary)
+        const headers = {
+            ...customHeaders,
+        };
+
         const response = await fetch(endpointUrl, {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                ...customHeaders,
-            },
-            body: JSON.stringify(Object.fromEntries(formData)),
+            headers: headers,
+            body: formData, // Send FormData directly, not JSON
         });
 
         const data = await response.json();
 
+        // Check for success
+        // Success response: { person_name: "Name", chat_post_title: "Title", ... }
+        // Error response: { chat_post_title: ["error"], chat_post_content: ["error"] }
+        // Check if response is ok AND data has actual values (not error arrays)
+        const isSuccess = response.ok && 
+            (typeof data.person_name === 'string' || typeof data.chat_post_title === 'string') &&
+            !Array.isArray(data.chat_post_title) && !Array.isArray(data.chat_post_content);
+
         return {
-            success: response.ok && data.status === "success",
+            success: isSuccess,
             data,
         };
     } catch (error) {
+        console.error('postFormData error:', error);
         return {
             success: false,
-            data: { message: "Network or server error.", error },
+            data: { message: "Network or server error.", error: error.message },
         };
     }
 };

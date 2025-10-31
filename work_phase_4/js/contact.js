@@ -1,6 +1,13 @@
 // Contact page functionality
+import { postFormData } from './modules/postFormData.js';
 import { storage } from './modules/storage.js';
 import { i18n } from './modules/i18n.js';
+
+// API Configuration
+const API_BASE_URL = 'https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/';
+const API_ENDPOINT = `${API_BASE_URL}simplecommunity/`;
+const STUDENT_NUMBER = '4978714';
+const UQ_CLOUD_ZONE_ID = '435eba26';
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', async () => {
@@ -17,6 +24,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 function setupContactForm() {
     const form = document.getElementById('contact-form');
     const feedback = document.getElementById('form-feedback');
+    
+    if (!form || !feedback) {
+        console.error('Form or feedback element not found');
+        return;
+    }
     
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -35,19 +47,66 @@ function setupContactForm() {
             return;
         }
         
+        // Show submitting message
+        feedback.textContent = 'Submitting...';
+        feedback.className = 'form-feedback';
+        
         try {
-            // Save to localStorage (simulating form submission)
-            storage.saveFormSubmission(data);
+            // Map contact form fields to API format
+            // Simple Community expects: name, message (and optionally photo)
+            // We'll combine subject, message, and email into the message field
+            const apiData = {
+                name: data.name,
+                message: `Subject: ${data.subject}\n\n${data.message}\n\nEmail: ${data.email}`
+            };
             
-            // Show success message
-            showFormFeedback('Thank you for your message! We\'ll get back to you soon.', 'success');
+            // Create a temporary form-like structure for the API
+            const apiForm = document.createElement('form');
+            Object.keys(apiData).forEach(key => {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = key;
+                input.value = apiData[key];
+                apiForm.appendChild(input);
+            });
             
-            // Reset form
-            form.reset();
+            // Submit to API
+            const { success, data: responseData } = await postFormData(
+                apiForm,
+                API_ENDPOINT,
+                {
+                    'student_number': STUDENT_NUMBER,
+                    'uqcloud_zone_id': UQ_CLOUD_ZONE_ID,
+                }
+            );
             
+            if (success) {
+                // Also save to localStorage as backup
+                storage.saveFormSubmission(data);
+                
+                // Show success message from API or default
+                showFormFeedback(
+                    responseData.message || 'Thank you for your message! We\'ll get back to you soon.',
+                    'success'
+                );
+                
+                // Reset form
+                form.reset();
+            } else {
+                // API failed, save to localStorage as fallback
+                storage.saveFormSubmission(data);
+                
+                // Show error message from API or default
+                showFormFeedback(
+                    responseData.message || 'Your message has been saved locally. There was an issue connecting to the server.',
+                    'error'
+                );
+            }
         } catch (error) {
             console.error('Error submitting form:', error);
-            showFormFeedback('Sorry, there was an error sending your message. Please try again.', 'error');
+            // Fallback to localStorage
+            storage.saveFormSubmission(data);
+            showFormFeedback('Your message has been saved locally. There was an issue connecting to the server.', 'error');
         }
     });
 }

@@ -73,8 +73,12 @@ function setupFilters() {
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             // Update active button
-            filterButtons.forEach(btn => btn.classList.remove('active'));
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-pressed', 'false');
+            });
             button.classList.add('active');
+            button.setAttribute('aria-pressed', 'true');
             
             // Filter tips
             const filter = button.dataset.filter;
@@ -86,6 +90,15 @@ function setupFilters() {
             
             renderTips(filteredTips);
         });
+    });
+    
+    // Set initial aria-pressed state
+    filterButtons.forEach(button => {
+        if (button.classList.contains('active')) {
+            button.setAttribute('aria-pressed', 'true');
+        } else {
+            button.setAttribute('aria-pressed', 'false');
+        }
     });
 }
 

@@ -6,7 +6,7 @@ import { i18n } from './modules/i18n.js';
 
 // API Configuration
 const API_BASE_URL = 'https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/';
-const CHAT_ENDPOINT = `${API_BASE_URL}genericchat/`;
+const CHAT_ENDPOINT = `${API_BASE_URL} /`;
 const STUDENT_NUMBER = 's4978714';
 const UQ_CLOUD_ZONE_ID = '435eba26';
 
@@ -34,66 +34,27 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 async function loadCommunityData() {
     try {
-        // Load forums, groups, and API posts in parallel
-        const [threads, groups, apiPosts] = await Promise.all([
+        // Load forums and groups in parallel
+        const [threads, groups] = await Promise.all([
             fetchGetData('./data/threads.json'),
-            fetchGetData('./data/groups.json'),
-            fetchGetData(CHAT_ENDPOINT) // GET posts from API (no headers needed for GET)
+            fetchGetData('./data/groups.json')
         ]);
         
         allThreads = threads;
         allGroups = groups;
         
-        // Convert API posts to forum thread format
-        const convertedApiPosts = (apiPosts || []).map(post => {
-            // Convert API date format "2025-05-18 15:20" to a format that can be parsed
-            // If it's already a valid date string, use it; otherwise format it
-            let dateStr = post.chat_date_time;
-            if (dateStr && !dateStr.includes('T')) {
-                // Convert "2025-05-18 15:20" to "2025-05-18T15:20" for proper parsing
-                dateStr = dateStr.replace(' ', 'T');
-            }
-            
-            return {
-                id: `api-${post.id}`,
-                title: post.chat_post_title,
-                content: post.chat_post_content.replace(/\n/g, '<br>'), // Convert newlines to HTML
-                author: post.person_name,
-                date: dateStr || new Date().toISOString(),
-                likes: 0,
-                replies: 0,
-                category: 'General',
-                fromAPI: true
-            };
-        });
-        
-        // Merge posts: API posts (newest first), then user localStorage posts, then JSON threads
+        // Merge user-generated posts with JSON data
         const userPosts = storage.getUserPosts();
-        allThreads = [
-            ...convertedApiPosts.reverse(), // API posts (most recent first)
-            ...userPosts.reverse(),        // User localStorage posts
-            ...threads                     // Static JSON threads
-        ];
+        // User posts should appear first (most recent at top)
+        allThreads = [...userPosts.reverse(), ...threads];
         
         renderForums(allThreads);
         renderGroups(allGroups);
         
     } catch (error) {
         console.error('Error loading community data:', error);
-        // Still try to load local data even if API fails
-        try {
-            const threads = await fetchGetData('./data/threads.json');
-            const groups = await fetchGetData('./data/groups.json');
-            const userPosts = storage.getUserPosts();
-            allThreads = [...userPosts.reverse(), ...(threads || [])];
-            allGroups = groups || [];
-            renderForums(allThreads);
-            renderGroups(allGroups);
-        } catch (localError) {
-            console.error('Error loading local data:', localError);
-            showError('forums-container');
-            showError('groups-container');
-        }
+        showError('forums-container');
+        showError('groups-container');
     }
 }
 
@@ -111,7 +72,7 @@ function renderForums(threads) {
                 <h3 class="thread-title">${thread.title}</h3>
                 <div class="thread-meta">
                     <span class="author">by ${thread.author}</span>
-                    <span class="date">${formatDate(thread.date)}</span>
+                    <span class="date">${new Date(thread.date).toLocaleDateString()}</span>
                 </div>
             </div>
             <div class="thread-content">
@@ -127,26 +88,6 @@ function renderForums(threads) {
             </div>
         </div>
     `).join('');
-}
-
-function formatDate(dateStr) {
-    if (!dateStr) return 'Recent';
-    
-    try {
-        // Handle API format "2025-05-18 15:20"
-        if (typeof dateStr === 'string' && dateStr.includes(' ') && !dateStr.includes('T')) {
-            dateStr = dateStr.replace(' ', 'T');
-        }
-        
-        const date = new Date(dateStr);
-        if (isNaN(date.getTime())) {
-            // If parsing failed, try to return the original string
-            return dateStr;
-        }
-        return date.toLocaleDateString();
-    } catch (error) {
-        return dateStr || 'Recent';
-    }
 }
 
 function renderGroups(groups) {
@@ -277,15 +218,14 @@ function setupNewPostForm() {
         e.preventDefault();
         
         const formData = new FormData(form);
-        const name = formData.get('name')?.trim() || '';
         const title = formData.get('title').trim();
         const content = formData.get('content').trim();
         const category = formData.get('category');
-        const author = name || 'Anonymous'; // Use form name or default to Anonymous
+        const author = 'You'; // Could be replaced with actual user name if logged in
         
         // Validate
-        if (!name || !title || !content) {
-            alert('Please fill in name, title, and content.');
+        if (!title || !content) {
+            alert('Please fill in both title and content.');
             return;
         }
         
@@ -296,31 +236,22 @@ function setupNewPostForm() {
         submitBtn.disabled = true;
         
         try {
-            // Prepare data for API (Generic Chat expects: person_name, chat_post_title, chat_post_content)
+            // Prepare data for API (Simple Chat expects: name, message)
+            // We'll combine title and content into the message
             const apiForm = document.createElement('form');
+            const nameInput = document.createElement('input');
+            nameInput.type = 'hidden';
+            nameInput.name = 'name';
+            nameInput.value = author;
+            apiForm.appendChild(nameInput);
             
-            // person_name (required)
-            const personNameInput = document.createElement('input');
-            personNameInput.type = 'hidden';
-            personNameInput.name = 'person_name';
-            personNameInput.value = author;
-            apiForm.appendChild(personNameInput);
+            const messageInput = document.createElement('input');
+            messageInput.type = 'hidden';
+            messageInput.name = 'message';
+            messageInput.value = `[${category}] ${title}\n\n${content}`;
+            apiForm.appendChild(messageInput);
             
-            // chat_post_title (required)
-            const titleInput = document.createElement('input');
-            titleInput.type = 'hidden';
-            titleInput.name = 'chat_post_title';
-            titleInput.value = title;
-            apiForm.appendChild(titleInput);
-            
-            // chat_post_content (required)
-            const contentInput = document.createElement('input');
-            contentInput.type = 'hidden';
-            contentInput.name = 'chat_post_content';
-            contentInput.value = content;
-            apiForm.appendChild(contentInput);
-            
-            // Submit to API with required headers
+            // Submit to API
             const { success, data: responseData } = await postFormData(
                 apiForm,
                 CHAT_ENDPOINT,
@@ -339,18 +270,26 @@ function setupNewPostForm() {
             });
             
             if (success) {
-                // Hide form and reset first
+                // Add to allThreads array at the beginning
+                allThreads.unshift(newPost);
+                
+                // Re-render forums
+                renderForums(allThreads);
+                
+                // Hide form and reset
                 formContainer.style.display = 'none';
                 form.reset();
                 
-                // Reload all community data (including API posts) to show the new post from API
-                await loadCommunityData();
-                
-                // Scroll to show the new posts area
+                // Scroll to the new post
                 setTimeout(() => {
-                    const forumsSection = document.getElementById('forums-container');
-                    if (forumsSection) {
-                        forumsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    const newPostElement = document.querySelector(`[data-thread-id="${newPost.id}"]`);
+                    if (newPostElement) {
+                        newPostElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        // Add a highlight effect
+                        newPostElement.style.backgroundColor = '#e8f5e9';
+                        setTimeout(() => {
+                            newPostElement.style.backgroundColor = '';
+                        }, 2000);
                     }
                 }, 100);
             } else {
