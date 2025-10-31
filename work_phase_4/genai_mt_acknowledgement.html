@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/component_skeletons/gallery.css">
+    <link rel="stylesheet" href="css/page_css/genai.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>GenAI/MT Acknowledgement</title>
-    <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/layout.css">
-    <link rel="stylesheet" href="./css/components.css">
-    <link rel="stylesheet" href="./css/page_css/genai.css">
 </head>
 <body>
-      <!-- Skip link for accessibility -->
-      <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Desktop Navigation (Top) -->
     <nav id="nav-desktop" aria-label="Main Navigation">
         <div class="site-nav__inner">
             <a class="brand" href="index.html">
@@ -34,7 +37,6 @@
         </div>
     </nav>
 
-    <!-- Mobile Navigation (Bottom) -->
     <nav id="nav-mobile" aria-label="Main Navigation">
         <ul>
             <li><a href="index.html" aria-label="Home"><span class="icon">🏠</span></a></li>
@@ -46,14 +48,14 @@
         </ul>
     </nav>
 
-    <main id="main-content" class="container" tabindex="-1">
-        <section class="page-header">
-            <h1 class="page-title">GenAI/MT Acknowledgement</h1>
-            <p class="hero-text">Transparent documentation of my use of Generative AI and Machine Translation tools in Work Phase 4, following the GenAI and MT Usage Framework.</p>
-        </section>
+    <main id="main-content">
+        <div class="container">
+            <section class="page-header">
+                <h1 class="page-title">GenAI/MT Acknowledgement</h1>
+                <p class="hero-text">Transparent documentation of my use of Generative AI and Machine Translation tools in Work Phase 4, following the GenAI and MT Usage Framework.</p>
+            </section>
 
-        <!-- GenAI/MT Usage Checklist -->
-        <section>
+            <section>
             <h2>GenAI/MT Usage Checklist</h2>
             <div class="checklist-container">
                 <div class="checklist-item completed">
@@ -76,10 +78,9 @@
                     <p>I reviewed all AI-generated code, tested functionality across devices, verified accessibility compliance, and adapted code to ensure it met my standards and requirements.</p>
                 </div>
             </div>
-        </section>
+            </section>
 
-        <!-- Detailed Usage Reflection -->
-        <section>
+            <section>
             <h2>Detailed Usage Reflection</h2>
 
             <div class="reflection-section">
@@ -105,10 +106,9 @@
                 <p><strong>My Independent Work:</strong> I cross-referenced implementation against WCAG 2.2 guidelines, manually tested keyboard navigation, verified color contrast, and ensured all interactive elements were properly labeled.</p>
                 <p><strong>Verification Process:</strong> I reviewed all AI-generated code for semantic HTML, proper ARIA attributes, and accessibility best practices. I rejected suggestions that didn't meet accessibility standards.</p>
             </div>
-        </section>
+            </section>
 
-        <!-- Specific AI Usage Areas -->
-        <section>
+            <section>
             <h2>Specific AI Usage Areas</h2>
 
             <div class="usage-grid">
@@ -142,10 +142,9 @@
                     <p>Used AI to help structure the Implementation Rationale and GenAI Acknowledgement pages. I provided all content and decisions, and AI assisted with formatting and organization.</p>
                 </div>
             </div>
-        </section>
+            </section>
 
-        <!-- Example Prompts and Code Snippets -->
-        <section>
+            <section>
             <h2>Example Prompts and Code Snippets</h2>
 
             <div class="prompt-grid induction">
@@ -237,10 +236,9 @@ addUserPost(postData) {
 }</code></pre>
                 </div>
             </div>
-        </section>
+            </section>
 
-        <!-- Framework Compliance -->
-        <section>
+            <section>
             <h2>Framework Compliance</h2>
             <p>This acknowledgement addresses each requirement of the GenAI and MT Usage Framework:</p>
 
@@ -291,10 +289,9 @@ addUserPost(postData) {
                     </p>
                 </div>
             </div>
-        </section>
+            </section>
 
-        <!-- Learning and Development -->
-        <section>
+            <section>
             <h2>Learning and Development</h2>
             <p>Through this collaborative process with AI tools, I developed skills in:</p>
 
@@ -317,10 +314,9 @@ addUserPost(postData) {
                 <li><strong>Maintain Design Control:</strong> Use AI for implementation, not design decisions or problem analysis</li>
                 <li><strong>Code Review:</strong> Treat AI-generated code with the same scrutiny as any other code</li>
             </ul>
-        </section>
+            </section>
 
-        <!-- Integrity Statement -->
-        <section>
+            <section>
             <h2>Integrity Statement</h2>
             <div class="integrity-statement">
                 <p><strong>I declare that:</strong></p>
@@ -337,26 +333,26 @@ addUserPost(postData) {
 
                 <p><strong>This assessment demonstrates my ability to:</strong> translate design proposals into functional websites, make informed design variations based on usability, implement dynamic features, ensure accessibility compliance, and use AI tools responsibly as implementation partners while maintaining full ownership of the creative and technical decisions.</p>
         </div>
-        </section>
+            </section>
 
-        <!-- Conclusion -->
-        <section>
+            <section>
             <h2>Conclusion</h2>
             <p>This Work Phase 4 implementation represents a collaborative approach where I maintained full creative and technical control while leveraging AI tools for efficient implementation of complex features. The final website reflects my understanding of responsive design, accessibility standards, ethical considerations, and user-centered development practices.</p>
 
             <p>By using AI tools responsibly - for implementation rather than design, with thorough review and testing, and with full transparency - I demonstrated how AI can enhance productivity while maintaining high standards of quality, accessibility, and ethical design.</p>
 
             <p>This approach shows that AI tools, when used thoughtfully and critically, can be valuable partners in the development process while ensuring that the final work authentically represents the developer's skills, understanding, and ethical commitment to inclusive design.</p>
-        </section>
+            </section>
+        </div>
     </main>
 
     <footer role="contentinfo">
         <div class="container">
-            <p>&copy; <span id="year"></span> CCI.</p>
+            <p>&copy; <span id="year"></span> International Student Platform. All rights reserved.</p>
         </div>
     </footer>
 
-    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
 

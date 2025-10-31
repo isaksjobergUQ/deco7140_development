@@ -12,9 +12,9 @@
     .card-container {
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: center; /* Center the cards */
-        gap: 2rem; /* Increased gap for better spacing */
-        align-items: stretch; /* Make all cards same height */
+        justify-content: center;
+        gap: 2rem;
+        align-items: stretch;
     }
 }
 
@@ -47,7 +47,6 @@
 }
 
 .site-nav__inner {
-    /* grid lets brand+toggle sit on row 1, links span full width below */
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 0.5rem;
@@ -97,10 +96,9 @@
     border-color: transparent;
 }
 
-/* Hamburger (CSS-only) */
 .nav-toggle {
     display: none;
-} /* keep it out of layout; label controls it */
+}
 .nav-toggle-btn {
     grid-column: 2;
     grid-row: 1;
@@ -128,25 +126,23 @@
     transition: transform 0.25s ease, opacity 0.2s ease;
 }
 
-/* LINKS: in normal flow on mobile, collapsed by default */
 .site-nav__links {
-    grid-column: 1 / -1; /* span full width below brand+toggle */
+    grid-column: 1 / -1;
     grid-row: 2;
     display: block;
     overflow: hidden;
-    max-height: 0; /* collapsed */
+    max-height: 0;
     transition: max-height 0.28s ease;
     background: var(--primary-color);
     border-radius: 12px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 0 0.25rem; /* inner padding only when open (set below) */
+    padding: 0 0.25rem;
 }
 .site-nav__links a {
     display: block;
     margin: 0.25rem 0;
 }
 
-/* OPEN STATE: animate and push layout down */
 .nav-toggle:checked ~ .nav-toggle-btn {
     background: var(--secondary-color);
     border-color: transparent;
@@ -161,11 +157,10 @@
     transform: translateY(-6px) rotate(-45deg);
 }
 .nav-toggle:checked ~ .site-nav__links {
-    padding: 0.5rem; /* add breathing room when open */
-    max-height: 60vh; /* enough to show all items and allow scroll if long */
+    padding: 0.5rem;
+    max-height: 60vh;
 }
 
-/* Show/Hide Navigation based on screen size */
 #nav-mobile {
     display: block;
 }
@@ -174,7 +169,6 @@
     display: none;
 }
 
-/* Desktop layout */
 @media (min-width: 768px) {
     #nav-mobile {
         display: none;
@@ -200,8 +194,8 @@
         background: transparent;
         box-shadow: none;
         border-radius: 0;
-        margin: 0 auto; /* Center the navigation */
-        position: static; /* ensure inline in header */
+        margin: 0 auto;
+        position: static;
         min-width: unset;
         gap: 0.4rem;
     }
@@ -211,20 +205,18 @@
     }
 }
 
-/* Add padding to main content to account for fixed navigation */
 main {
-    padding-top: 80px; /* Space for desktop top nav */
-    padding-bottom: 80px; /* Space for mobile bottom nav */
+    padding-top: 80px;
+    padding-bottom: 80px;
 }
 
 @media (min-width: 768px) {
     main {
-        padding-top: 70px; /* Smaller space for desktop nav */
-        padding-bottom: 0; /* No bottom padding on desktop */
+        padding-top: 70px;
+        padding-bottom: 0;
     }
 }
 
-/* Motion safety */
 @media (prefers-reduced-motion: reduce) {
     .site-nav__links {
         transition: none;
@@ -239,11 +231,10 @@ main {
    =============================== */
 .page-title {
     text-align: center;
-    margin-top: 3rem; /* consistent spacing below fixed navbar */
+    margin-top: 3rem;
     margin-bottom: 2rem;
 }
 
-/* Desktop */
 @media (min-width: 768px) {
     .page-title {
         text-align: left;
@@ -261,7 +252,6 @@ main {
     margin-bottom: 2rem;
 }
 
-/* Desktop */
 @media (min-width: 768px) {
     .hero-text {
         font-size: 1.75rem;
@@ -409,13 +399,12 @@ nav ul {
     padding: 0.5rem 0;
 }
 
-/* Mobile menu icon styling */
 #nav-mobile ul li a {
     display: block;
     padding: 1rem 0;
     font-size: 1.5rem;
     text-decoration: none;
-    color: #ffffff; /* Pure white for better contrast against #2c5aa0 */
+    color: #ffffff;
     border-radius: 4px;
     transition: background-color 0.2s ease;
 }
@@ -448,7 +437,7 @@ nav ul {
 }
 
 #nav-desktop .brand {
-    font-size: 1.4rem; /* Bigger brand text */
+    font-size: 1.4rem;
     font-weight: 700;
     color: var(--white);
     text-decoration: none;
@@ -456,16 +445,16 @@ nav ul {
 
 #nav-desktop .site-nav__links {
     display: flex;
-    gap: 2rem; /* Increased gap for better spacing */
+    gap: 2rem;
     align-items: center;
-    justify-content: space-between; /* Equal spacing between all elements */
-    flex: 1; /* Take up remaining space */
+    justify-content: space-between;
+    flex: 1;
 }
 
 #nav-desktop .site-nav__links a {
     display: block;
-    padding: 0.6rem 1.2rem; /* Increased padding */
-    font-size: 1.1rem; /* Bigger text */
+    padding: 0.6rem 1.2rem;
+    font-size: 1.1rem;
     font-weight: 500;
     text-decoration: none;
     color: var(--white);
@@ -490,7 +479,6 @@ nav ul {
     outline-offset: 2px;
 }
 
-/* Responsive control */
 @media screen and (min-width: 768px) {
     #nav-desktop {
         display: block;
@@ -504,7 +492,6 @@ nav ul {
    BUTTON COMPONENTS (global)
    =============================== */
 
-/* Base Button Styles */
 .btn {
     display: inline-block;
     padding: 0.75rem 1.5rem;
@@ -521,7 +508,6 @@ nav ul {
     overflow: hidden;
 }
 
-/* Primary Button */
 .btn-primary {
     background: linear-gradient(
         135deg,
@@ -560,7 +546,6 @@ nav ul {
     box-shadow: none;
 }
 
-/* Secondary Button */
 .btn-secondary {
     background: var(--white);
     color: var(--primary-color);
@@ -594,7 +579,6 @@ nav ul {
     box-shadow: none;
 }
 
-/* Icon Button */
 .btn-icon {
     background: var(--white);
     color: var(--primary-color);
