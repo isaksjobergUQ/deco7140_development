@@ -242,6 +242,11 @@
             </section>
 
             <section>
+            <h2>API Integration</h2>
+            <p>The site integrates a real API using modular JavaScript. A reusable POST module (<code>js/modules/postFormData.js</code>) submits form data via <code>fetch()</code> as FormData, and a reusable GET module (<code>js/modules/getData.js</code>) retrieves JSON data. The community page uses the <strong>Generic Chat</strong> endpoint (<code>https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/genericchat/</code>) to submit and fetch public discussion posts. Submissions include required headers (<code>student_number: s4978714</code>, <code>uqcloud_zone_id: 435eba26</code>) and required fields (<code>person_name</code>, <code>chat_post_title</code>, <code>chat_post_content</code>). After a successful POST, the page re-fetches posts from the API and displays them alongside local user posts and static examples. The contact page uses the <strong>Simple Community</strong> endpoint for submit-only behavior (no GET display) and provides a user-friendly fallback to <code>localStorage</code> if the API is temporarily unavailable. In deployment, the API instance required the same headers for GET to return data reliably; the implementation includes these for robustness.</p>
+            </section>
+
+            <section>
             <h2>Deployment and Repository</h2>
             <p>This project is deployed to UQCloud and the source code is hosted on GitHub.</p>
             

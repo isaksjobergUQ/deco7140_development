@@ -547,22 +547,29 @@ nav ul {
 }
 
 .btn-secondary {
-    background: var(--white);
-    color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
+    color: var(--white);
+    border: none;
+    box-shadow: 0 2px 8px rgba(26, 54, 93, 0.2);
 }
 
 .btn-secondary:hover {
-    background: var(--primary-color);
-    color: var(--white);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(26, 54, 93, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(26, 54, 93, 0.3);
+    background: linear-gradient(
+        135deg,
+        var(--secondary-color),
+        var(--primary-color)
+    );
 }
 
 .btn-secondary:active {
     transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(26, 54, 93, 0.2);
 }
 
 .btn-secondary:focus-visible {
@@ -573,7 +580,6 @@ nav ul {
 .btn-secondary:disabled {
     background: var(--light-gray);
     color: var(--light-gray);
-    border-color: var(--light-gray);
     cursor: not-allowed;
     transform: none;
     box-shadow: none;

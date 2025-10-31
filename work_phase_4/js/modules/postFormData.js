@@ -18,22 +18,26 @@ const postFormData = async (formEl, endpointUrl, customHeaders = {}) => {
             body: formData, // Send FormData directly, not JSON
         });
 
-        const data = await response.json();
+        let data;
+        try {
+            data = await response.json();
+        } catch (e) {
+            data = { message: 'Non-JSON response' };
+        }
 
         // Check for success
         // Success response: { person_name: "Name", chat_post_title: "Title", ... }
         // Error response: { chat_post_title: ["error"], chat_post_content: ["error"] }
         // Check if response is ok AND data has actual values (not error arrays)
         const isSuccess = response.ok && 
-            (typeof data.person_name === 'string' || typeof data.chat_post_title === 'string') &&
-            !Array.isArray(data.chat_post_title) && !Array.isArray(data.chat_post_content);
+            (typeof data?.person_name === 'string' || typeof data?.chat_post_title === 'string') &&
+            !Array.isArray(data?.chat_post_title) && !Array.isArray(data?.chat_post_content);
 
         return {
             success: isSuccess,
             data,
         };
     } catch (error) {
-        console.error('postFormData error:', error);
         return {
             success: false,
             data: { message: "Network or server error.", error: error.message },

@@ -6,7 +6,7 @@ import { i18n } from './modules/i18n.js';
 
 // API Configuration
 const API_BASE_URL = 'https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/';
-const CHAT_ENDPOINT = `${API_BASE_URL} /`;
+const CHAT_ENDPOINT = `${API_BASE_URL}genericchat/`;
 const STUDENT_NUMBER = 's4978714';
 const UQ_CLOUD_ZONE_ID = '435eba26';
 

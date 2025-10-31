@@ -15,49 +15,37 @@ let allGroups = [];
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', async () => {
-    // Initialize internationalization
     await i18n.init();
-    
-    // Set current year
     document.getElementById('year').textContent = new Date().getFullYear();
-    
-    // Load community data
     await loadCommunityData();
-    
-    // Set up interactive features
     setupLikeHandlers();
     setupGroupHandlers();
-    
-    // Set up new post form handlers
     setupNewPostForm();
 });
 
 async function loadCommunityData() {
     try {
-        // Load forums, groups, and API posts in parallel
         const [threads, groups, apiPosts] = await Promise.all([
             fetchGetData('./data/threads.json'),
             fetchGetData('./data/groups.json'),
-            fetchGetData(CHAT_ENDPOINT) // GET posts from API (no headers needed for GET)
+            fetchGetData(CHAT_ENDPOINT, {
+                'student_number': STUDENT_NUMBER,
+                'uqcloud_zone_id': UQ_CLOUD_ZONE_ID,
+            })
         ]);
         
         allThreads = threads;
         allGroups = groups;
-        
-        // Convert API posts to forum thread format
+
         const convertedApiPosts = (apiPosts || []).map(post => {
-            // Convert API date format "2025-05-18 15:20" to a format that can be parsed
-            // If it's already a valid date string, use it; otherwise format it
             let dateStr = post.chat_date_time;
             if (dateStr && !dateStr.includes('T')) {
-                // Convert "2025-05-18 15:20" to "2025-05-18T15:20" for proper parsing
                 dateStr = dateStr.replace(' ', 'T');
             }
-            
             return {
                 id: `api-${post.id}`,
                 title: post.chat_post_title,
-                content: post.chat_post_content.replace(/\n/g, '<br>'), // Convert newlines to HTML
+                content: post.chat_post_content.replace(/\n/g, '<br>'),
                 author: post.person_name,
                 date: dateStr || new Date().toISOString(),
                 likes: 0,
@@ -66,21 +54,18 @@ async function loadCommunityData() {
                 fromAPI: true
             };
         });
-        
-        // Merge posts: API posts (newest first), then user localStorage posts, then JSON threads
+
         const userPosts = storage.getUserPosts();
         allThreads = [
-            ...convertedApiPosts.reverse(), // API posts (most recent first)
-            ...userPosts.reverse(),        // User localStorage posts
-            ...threads                     // Static JSON threads
+            ...convertedApiPosts.reverse(),
+            ...userPosts.reverse(),
+            ...threads
         ];
-        
+
         renderForums(allThreads);
         renderGroups(allGroups);
-        
+
     } catch (error) {
-        console.error('Error loading community data:', error);
-        // Still try to load local data even if API fails
         try {
             const threads = await fetchGetData('./data/threads.json');
             const groups = await fetchGetData('./data/groups.json');
@@ -90,7 +75,6 @@ async function loadCommunityData() {
             renderForums(allThreads);
             renderGroups(allGroups);
         } catch (localError) {
-            console.error('Error loading local data:', localError);
             showError('forums-container');
             showError('groups-container');
         }
@@ -99,12 +83,10 @@ async function loadCommunityData() {
 
 function renderForums(threads) {
     const container = document.getElementById('forums-container');
-    
     if (threads.length === 0) {
         container.innerHTML = `<p data-i18n="no_content">No discussions available</p>`;
         return;
     }
-    
     container.innerHTML = threads.map(thread => `
         <div class="forum-thread" data-thread-id="${thread.id}">
             <div class="thread-header">
@@ -131,18 +113,12 @@ function renderForums(threads) {
 
 function formatDate(dateStr) {
     if (!dateStr) return 'Recent';
-    
     try {
-        // Handle API format "2025-05-18 15:20"
         if (typeof dateStr === 'string' && dateStr.includes(' ') && !dateStr.includes('T')) {
             dateStr = dateStr.replace(' ', 'T');
         }
-        
         const date = new Date(dateStr);
-        if (isNaN(date.getTime())) {
-            // If parsing failed, try to return the original string
-            return dateStr;
-        }
+        if (isNaN(date.getTime())) return dateStr;
         return date.toLocaleDateString();
     } catch (error) {
         return dateStr || 'Recent';
@@ -151,16 +127,13 @@ function formatDate(dateStr) {
 
 function renderGroups(groups) {
     const container = document.getElementById('groups-container');
-    
     if (groups.length === 0) {
         container.innerHTML = `<p data-i18n="no_content">No study groups available</p>`;
         return;
     }
-    
     container.innerHTML = groups.map(group => {
         const isMember = storage.isGroupMember(group.id);
         const currentMembers = group.members + (isMember ? 1 : 0);
-        
         return `
             <div class="study-group" data-group-id="${group.id}">
                 <div class="group-header">
@@ -179,7 +152,7 @@ function renderGroups(groups) {
                     </div>
                 </div>
                 <div class="group-footer">
-                    <button class="join-btn ${isMember ? 'joined' : ''}" data-group-id="${group.id}" aria-label="${isMember ? 'Leave group' : 'Join group'}: ${group.name}">
+                    <button class="btn btn-secondary join-btn ${isMember ? 'joined' : ''}" data-group-id="${group.id}" aria-label="${isMember ? 'Leave group' : 'Join group'}: ${group.name}">
                         ${isMember ? 'Leave Group' : 'Join Group'}
                     </button>
                     <span class="contact">Contact: ${group.contact}</span>
@@ -209,16 +182,11 @@ function setupGroupHandlers() {
 
 function toggleLike(threadId) {
     const isLiked = storage.toggleLike(threadId);
-    
-    // Update like button
     const likeBtn = document.querySelector(`[data-thread-id="${threadId}"] .like-btn`);
     if (likeBtn) {
         const icon = likeBtn.querySelector('.like-icon');
         const count = likeBtn.querySelector('.like-count');
-        
         icon.textContent = isLiked ? '❤️' : '🤍';
-        
-        // Update count
         const originalCount = allThreads.find(t => t.id === threadId).likes;
         count.textContent = originalCount + (isLiked ? 1 : 0);
     }
@@ -226,23 +194,18 @@ function toggleLike(threadId) {
 
 function toggleGroupMembership(groupId) {
     const isMember = storage.isGroupMember(groupId);
-    
     if (isMember) {
         storage.leaveGroup(groupId);
     } else {
         storage.joinGroup(groupId);
     }
-    
-    // Update group display
     const group = document.querySelector(`[data-group-id="${groupId}"]`);
     if (group) {
         const joinBtn = group.querySelector('.join-btn');
         const membersSpan = group.querySelector('.members');
-        
         const newIsMember = storage.isGroupMember(groupId);
         const originalGroup = allGroups.find(g => g.id === groupId);
         const currentMembers = originalGroup.members + (newIsMember ? 1 : 0);
-        
         joinBtn.textContent = newIsMember ? 'Leave Group' : 'Join Group';
         joinBtn.classList.toggle('joined', newIsMember);
         membersSpan.textContent = `${currentMembers}/${originalGroup.max_members} members`;
@@ -259,68 +222,50 @@ function setupNewPostForm() {
     const formContainer = document.getElementById('new-post-form-container');
     const cancelBtn = document.getElementById('cancel-post-btn');
     const form = document.getElementById('new-post-form');
-    
-    // Show/hide form
+
     newPostBtn.addEventListener('click', () => {
         formContainer.style.display = 'block';
-        // Smooth scroll to form
         formContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     });
-    
+
     cancelBtn.addEventListener('click', () => {
         formContainer.style.display = 'none';
         form.reset();
     });
-    
-    // Handle form submission
+
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        
         const formData = new FormData(form);
         const name = formData.get('name')?.trim() || '';
         const title = formData.get('title').trim();
         const content = formData.get('content').trim();
         const category = formData.get('category');
-        const author = name || 'Anonymous'; // Use form name or default to Anonymous
-        
-        // Validate
+        const author = name || 'Anonymous';
         if (!name || !title || !content) {
             alert('Please fill in name, title, and content.');
             return;
         }
-        
-        // Show submitting state
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalBtnText = submitBtn.textContent;
         submitBtn.textContent = 'Submitting...';
         submitBtn.disabled = true;
-        
         try {
-            // Prepare data for API (Generic Chat expects: person_name, chat_post_title, chat_post_content)
             const apiForm = document.createElement('form');
-            
-            // person_name (required)
             const personNameInput = document.createElement('input');
             personNameInput.type = 'hidden';
             personNameInput.name = 'person_name';
             personNameInput.value = author;
             apiForm.appendChild(personNameInput);
-            
-            // chat_post_title (required)
             const titleInput = document.createElement('input');
             titleInput.type = 'hidden';
             titleInput.name = 'chat_post_title';
             titleInput.value = title;
             apiForm.appendChild(titleInput);
-            
-            // chat_post_content (required)
             const contentInput = document.createElement('input');
             contentInput.type = 'hidden';
             contentInput.name = 'chat_post_content';
             contentInput.value = content;
             apiForm.appendChild(contentInput);
-            
-            // Submit to API with required headers
             const { success, data: responseData } = await postFormData(
                 apiForm,
                 CHAT_ENDPOINT,
@@ -329,45 +274,28 @@ function setupNewPostForm() {
                     'uqcloud_zone_id': UQ_CLOUD_ZONE_ID,
                 }
             );
-            
-            // Create new post (save locally regardless of API success)
-            const newPost = storage.addUserPost({
-                title: title,
-                content: `<p>${content}</p>`,
-                author: author,
-                category: category
-            });
-            
             if (success) {
-                // Hide form and reset first
                 formContainer.style.display = 'none';
                 form.reset();
-                
-                // Reload all community data (including API posts) to show the new post from API
                 await loadCommunityData();
-                
-                // Scroll to show the new posts area
                 setTimeout(() => {
                     const forumsSection = document.getElementById('forums-container');
-                    if (forumsSection) {
-                        forumsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
+                    if (forumsSection) forumsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }, 100);
             } else {
-                // API failed but post saved locally
-                alert('Your post was saved locally but could not be sent to the server. ' + 
-                      (responseData.message || 'Please try again later.'));
-                
-                // Still add to display
+                const newPost = storage.addUserPost({
+                    title: title,
+                    content: `<p>${content}</p>`,
+                    author: author,
+                    category: category
+                });
+                alert('Your post was saved locally but could not be sent to the server. ' + (responseData?.message || 'Please try again later.'));
                 allThreads.unshift(newPost);
                 renderForums(allThreads);
-                
                 formContainer.style.display = 'none';
                 form.reset();
             }
         } catch (error) {
-            console.error('Error submitting post:', error);
-            // Fallback: save locally anyway
             const newPost = storage.addUserPost({
                 title: title,
                 content: `<p>${content}</p>`,
@@ -380,7 +308,6 @@ function setupNewPostForm() {
             form.reset();
             alert('Your post was saved locally but there was an error connecting to the server.');
         } finally {
-            // Restore button
             submitBtn.textContent = originalBtnText;
             submitBtn.disabled = false;
         }

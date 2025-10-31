@@ -144,30 +144,6 @@
     min-height: 120px;
 }
 
-.btn {
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, var(--secondary-color), #45a049);
-    color: white;
-    width: 100%;
-}
-
-.btn-primary:hover {
-    background: linear-gradient(135deg, #45a049, var(--secondary-color));
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
-}
-
 .form-feedback {
     margin-top: 1.5rem;
     padding: 1rem;
