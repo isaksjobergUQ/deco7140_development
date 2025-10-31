@@ -48,7 +48,7 @@ function renderEvents(events) {
     container.innerHTML = events.map(event => `
         <div class="card event-card" data-event-id="${event.id}" data-type="${event.type}">
             <div class="card-image">
-                <img src="${event.image}" alt="${event.title}" loading="lazy">
+                <img src="${event.image}" alt="${event.title}" loading="lazy" referrerpolicy="no-referrer">
                 <button class="bookmark-btn" aria-label="Save this event" data-event-id="${event.id}">
                     <span class="bookmark-icon">${storage.isBookmarked(event.id) ? '❤️' : '🤍'}</span>
                 </button>

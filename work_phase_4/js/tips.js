@@ -46,7 +46,7 @@ function renderTips(tips) {
     container.innerHTML = tips.map(tip => `
         <div class="card tip-card" data-tip-id="${tip.id}" data-category="${tip.category}">
             <div class="card-image">
-                <img src="${tip.image}" alt="${tip.title}" loading="lazy">
+                <img src="${tip.image}" alt="${tip.title}" loading="lazy" referrerpolicy="no-referrer">
                 <button class="bookmark-btn" aria-label="Bookmark this tip" data-tip-id="${tip.id}">
                     <span class="bookmark-icon">${storage.isBookmarked(tip.id) ? '❤️' : '🤍'}</span>
                 </button>

@@ -51,7 +51,7 @@ function renderFeaturedTips(tips) {
     container.innerHTML = tips.map(tip => `
         <a href="tip-detail.html?id=${tip.id}" class="tip-card" data-tip-id="${tip.id}">
             <div class="card-image">
-                <img src="${tip.image}" alt="${tip.title}" loading="lazy">
+                <img src="${tip.image}" alt="${tip.title}" loading="lazy" referrerpolicy="no-referrer">
                 <button class="bookmark-btn" aria-label="Bookmark this tip" data-tip-id="${tip.id}">
                     <span class="bookmark-icon">${storage.isBookmarked(tip.id) ? '❤️' : '🤍'}</span>
                 </button>
@@ -78,7 +78,7 @@ function renderUpcomingEvents(events) {
     container.innerHTML = events.map(event => `
         <a href="event-detail.html?id=${event.id}" class="event-card" data-event-id="${event.id}">
             <div class="card-image">
-                <img src="${event.image}" alt="${event.title}" loading="lazy">
+                <img src="${event.image}" alt="${event.title}" loading="lazy" referrerpolicy="no-referrer">
                 <button class="bookmark-btn" aria-label="Save this event" data-event-id="${event.id}">
                     <span class="bookmark-icon">${storage.isBookmarked(event.id) ? '❤️' : '🤍'}</span>
                 </button>

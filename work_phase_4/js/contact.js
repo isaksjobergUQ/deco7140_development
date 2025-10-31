@@ -5,7 +5,7 @@ import { i18n } from './modules/i18n.js';
 
 // API Configuration
 const API_BASE_URL = 'https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/';
-const API_ENDPOINT = `${API_BASE_URL}simplecommunity/`;
+const API_ENDPOINT = `${API_BASE_URL}communitymembersimple/`;
 const STUDENT_NUMBER = '4978714';
 const UQ_CLOUD_ZONE_ID = '435eba26';
 
@@ -52,23 +52,25 @@ function setupContactForm() {
         feedback.className = 'form-feedback';
         
         try {
-            // Map contact form fields to API format
-            // Simple Community expects: name, message (and optionally photo)
-            // We'll combine subject, message, and email into the message field
-            const apiData = {
-                name: data.name,
-                message: `Subject: ${data.subject}\n\n${data.message}\n\nEmail: ${data.email}`
-            };
-            
-            // Create a temporary form-like structure for the API
+            // Map to Simple Community (name, email, message). Combine subject+message into message
             const apiForm = document.createElement('form');
-            Object.keys(apiData).forEach(key => {
-                const input = document.createElement('input');
-                input.type = 'hidden';
-                input.name = key;
-                input.value = apiData[key];
-                apiForm.appendChild(input);
-            });
+            const nameInput = document.createElement('input');
+            nameInput.type = 'hidden';
+            nameInput.name = 'name';
+            nameInput.value = data.name;
+            apiForm.appendChild(nameInput);
+
+            const emailInput = document.createElement('input');
+            emailInput.type = 'hidden';
+            emailInput.name = 'email';
+            emailInput.value = data.email;
+            apiForm.appendChild(emailInput);
+
+            const messageInput = document.createElement('input');
+            messageInput.type = 'hidden';
+            messageInput.name = 'message';
+            messageInput.value = `Subject: ${data.subject}\n\n${data.message}`;
+            apiForm.appendChild(messageInput);
             
             // Submit to API
             const { success, data: responseData } = await postFormData(
