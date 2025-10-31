@@ -3,85 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- CSS Linking -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/utilities.css">
     <link rel="stylesheet" href="css/component_skeletons/gallery.css">
-    <link rel="stylesheet" href="css/page_css/events.css">
-    <!-- Favicon -->
+    <link rel="stylesheet" href="css/page_css/profile.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <title>Events - International Student Platform</title>
+    <title>Profile - International Student Platform</title>
 </head>
 <body>
-    <!-- Skip link for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Desktop Navigation (Top) -->
     <nav id="nav-desktop" aria-label="Main Navigation">
         <div class="site-nav__inner">
             <a class="brand" href="index.html">
                 <img src="images/logo.svg" alt="ISP Logo" class="logo">
-                 
             </a>
             <div class="site-nav__links">
                 <a href="index.html" data-i18n="nav_home">Home</a>
                 <a href="tips.html" data-i18n="nav_tips">Tips</a>
-                <a href="events.html" aria-current="page" data-i18n="nav_events">Events</a>
+                <a href="events.html" data-i18n="nav_events">Events</a>
                 <a href="community.html" data-i18n="nav_community">Community</a>
                 <a href="language.html" data-i18n="nav_language">Language</a>
                 <a href="contact.html">Contact</a>
-                <a href="profile.html">Profile</a>
+                <a href="profile.html" aria-current="page">Profile</a>
                 <a href="implementation_rationale.html" class="nav-secondary">Rationale</a>
                 <a href="genai_mt_acknowledgement.html" class="nav-secondary">GenAI</a>
             </div>
         </div>
     </nav>
 
-    <!-- Mobile Navigation (Bottom) -->
     <nav id="nav-mobile" aria-label="Main Navigation">
         <ul>
             <li><a href="index.html" aria-label="Home"><span class="icon">🏠</span></a></li>
             <li><a href="tips.html" aria-label="Tips"><span class="icon">💡</span></a></li>
-            <li><a href="events.html" aria-current="page" aria-label="Events"><span class="icon">🎉</span></a></li>
+            <li><a href="events.html" aria-label="Events"><span class="icon">🎉</span></a></li>
             <li><a href="community.html" aria-label="Community"><span class="icon">🤝</span></a></li>
             <li><a href="language.html" aria-label="Language"><span class="icon">🌍</span></a></li>
             <li><a href="contact.html" aria-label="Contact"><span class="icon">📧</span></a></li>
-            <li><a href="profile.html" aria-label="Profile"><span class="icon">👤</span></a></li>
+            <li><a href="profile.html" aria-current="page" aria-label="Profile"><span class="icon">👤</span></a></li>
         </ul>
     </nav>
 
     <main id="main-content">
         <div class="container">
-            <!-- Page Header -->
             <section class="page-header">
-                <h1 class="page-title" data-i18n="nav_events">Events</h1>
-                <p class="hero-text">Cultural, uni, sports, and festival events in Brisbane</p>
+                <h1 class="page-title">My Profile</h1>
+                <p class="hero-text">Manage your account and view your activity</p>
             </section>
 
-            <!-- Filter Section -->
-            <section class="filter-section" aria-labelledby="filter-heading">
-                <h2 id="filter-heading" class="sr-only">Filter Events</h2>
-                <div class="filter-buttons" role="group" aria-label="Filter events by category">
-                    <button class="filter-btn active" data-filter="all" data-i18n="filter_all" aria-pressed="true">All</button>
-                    <button class="filter-btn" data-filter="Cultural" data-i18n="filter_cultural" aria-pressed="false">Cultural</button>
-                    <button class="filter-btn" data-filter="Sports" data-i18n="filter_sports" aria-pressed="false">Sports</button>
-                    <button class="filter-btn" data-filter="Festivals" data-i18n="filter_festivals" aria-pressed="false">Festivals</button>
-                    <button class="filter-btn" data-filter="Uni Activities" data-i18n="filter_uni_activities" aria-pressed="false">University Activities</button>
+            <section class="profile-section">
+                <div class="profile-card">
+                    <h2>Profile Settings</h2>
+                    <div class="form-group">
+                        <label for="user-name">Your Name</label>
+                        <div class="name-input-group">
+                            <input type="text" id="user-name" name="userName" placeholder="Enter your name">
+                            <button id="save-name-btn" class="btn btn-primary">Save</button>
+                        </div>
+                        <p id="name-feedback" class="form-feedback"></p>
+                    </div>
                 </div>
             </section>
 
-            <!-- Events Grid -->
-            <section class="events-section" aria-labelledby="events-heading">
-                <h2 id="events-heading" class="sr-only">Events</h2>
-                <div class="card-container" id="events-container" aria-live="polite" aria-atomic="true">
-                    <div class="loading" data-i18n="loading">Loading...</div>
+            <section class="profile-section">
+                <h2>My Bookmarks</h2>
+                <div class="card-container" id="bookmarks-container">
+                    <div class="loading">Loading...</div>
+                </div>
+            </section>
+
+            <section class="profile-section">
+                <h2>My Posts</h2>
+                <div class="card-container" id="my-posts-container">
+                    <div class="loading">Loading...</div>
                 </div>
             </section>
         </div>
@@ -93,6 +93,7 @@
         </div>
     </footer>
 
-    <script type="module" src="js/events.js"></script>
+    <script type="module" src="js/profile.js"></script>
 </body>
 </html>
+

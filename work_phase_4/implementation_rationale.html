@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,9 +18,9 @@
     <title>Implementation Rationale</title>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <nav id="nav-desktop" aria-label="Main Navigation">
+     <nav id="nav-desktop" aria-label="Main Navigation">
          <div class="site-nav__inner">
             <a class="brand" href="index.html">
                 <img src="images/logo.svg" alt="ISP Logo" class="logo">
@@ -33,6 +33,7 @@
                  
                  <a href="language.html" data-i18n="nav_language">Language</a>
                  <a href="contact.html">Contact</a>
+                 <a href="profile.html">Profile</a>
                  <a href="implementation_rationale.html" class="nav-secondary" aria-current="page">Rationale</a>
                  <a href="genai_mt_acknowledgement.html" class="nav-secondary">GenAI</a>
              </div>
@@ -47,229 +48,93 @@
             <li><a href="community.html" aria-label="Community"><span class="icon">🤝</span></a></li>
             <li><a href="language.html" aria-label="Language"><span class="icon">🌍</span></a></li>
             <li><a href="contact.html" aria-label="Contact"><span class="icon">📧</span></a></li>
+            <li><a href="profile.html" aria-label="Profile"><span class="icon">👤</span></a></li>
                 </ul>
-    </nav>
+            </nav>
 
     <main id="main-content">
         <div class="container">
-            <section class="page-header">
-                <h1 class="page-title">Implementation Rationale</h1>
-                <p class="hero-text">Documentation of development decisions, accessibility considerations, and ethical design choices for the International Student Platform</p>
-            </section>
-
-            <section>
-            <h2>Alignment with Client and User Needs</h2>
-            
-            <h3>Client Mission Alignment</h3>
-            <p>The International Student Platform directly supports CCI's mission of fostering social cohesion by empowering international students to connect, share experiences, and access resources. The platform addresses social cohesion through community forums and study groups that create connections between students from diverse backgrounds. It provides resource access through tips, events, and language support that offer comprehensive assistance for students adapting to Australian life. The implementation ensures inclusivity with multi-language support (English/Chinese) and culturally sensitive content that makes all students feel welcome. Finally, interactive features like discussion forums and event sharing facilitate meaningful relationships, supporting community building.</p>
-
-            <h3>User Needs Addressed</h3>
-            <p>Based on research conducted in Work Phases 1-3, the platform addresses critical needs identified through user stories:</p>
-            
-            <div class="user-needs-grid">
-                <div class="need-card">
-                    <h4>📚 Academic Success</h4>
-                    <p><strong>Need:</strong> Students need study tips and resources to succeed academically</p>
-                    <p><strong>Solution:</strong> Tips page with filterable academic content, study group matching on community page</p>
-                </div>
-                
-                <div class="need-card">
-                    <h4>🏠 Living Support</h4>
-                    <p><strong>Need:</strong> Practical advice for adapting to Australian living environment</p>
-                    <p><strong>Solution:</strong> Living tips covering housing, transportation, shopping, and daily life</p>
-                </div>
-                
-                <div class="need-card">
-                    <h4>🤝 Social Connection</h4>
-                    <p><strong>Need:</strong> Opportunities to meet other international students and build community</p>
-                    <p><strong>Solution:</strong> Events calendar, discussion forums, and study group features</p>
-                </div>
-                
-                <div class="need-card">
-                    <h4>🌍 Cultural Adaptation</h4>
-                    <p><strong>Need:</strong> Understanding local customs and reducing cultural shock</p>
-                    <p><strong>Solution:</strong> Cultural events, language support, and peer discussions about adaptation</p>
-                </div>
-        </div>
+        <section class="page-header">
+            <h1 class="page-title">Implementation Rationale</h1>
+                <p class="hero-text">Key decisions and evidence for WP4: how the build meets client goals, user needs, WCAG 2.2, and ethical design.</p>
         </section>
 
         <section>
-            <h2>Design Variations and Justifications</h2>
-            
-            <p>While the implemented website closely follows the A3 design proposal, several strategic variations were made to enhance usability, accessibility, and user experience based on implementation testing and best practices.</p>
+                <h2>Alignment with Client & User Needs</h2>
+                <p><strong>Client mission (CCI):</strong> The site supports social cohesion by helping international students connect, share, and access resources. Community features (forums/study groups), event discovery, and clear tips directly target transition challenges.</p>
+                <p><strong>User needs (from WP1–3):</strong> Academic support (filterable tips, study groups), living help (housing/transport/daily-life tips), social connection (events + forums), and cultural adaptation (language help + culture content). Multi-language UI (EN/ZH) and plain language writing reduce cognitive load for non-native speakers.</p>
+        </section>
 
-            <h3>1. Horizontal Scrolling Cards Instead of Accordions (Community Page)</h3>
-            <p><strong>Original Design:</strong> A3 proposed accordion-based navigation for forums and study groups</p>
-            <p><strong>Implemented Design:</strong> Horizontal scrolling card layout with immediate visibility</p>
-            <p><strong>Justification:</strong> The horizontal scrolling card layout was chosen because it provides better engagement through immediate content visibility, allowing users to see multiple options at once without requiring additional clicks or interactions. This approach improves accessibility by reducing the number of interactions needed to explore content, making it easier for users with various abilities to navigate. The design follows modern UI patterns that match common social media layouts, creating a familiar experience for users. Additionally, the horizontal scrolling mechanism works particularly well on mobile devices where users can naturally swipe through content, making it more relevant and intuitive for the platform's mobile-first approach.</p>
+        <section>
+                <h2>Variations from A3 & Justifications</h2>
+                <ul>
+                    <li><strong>Horizontal cards vs. accordions (Community):</strong> Immediate scanability and mobile swipe improve discovery and reduce clicks; matches familiar social feeds.</li>
+                    <li><strong>Dedicated Contact page:</strong> Clear IA and focused task completion; easier to find on mobile.</li>
+                    <li><strong>Unified headers:</strong> Consistent hierarchy lowers cognitive load and simplifies maintenance.</li>
+                    <li><strong>User posts (localStorage) vs. static threads:</strong> Increases engagement and demonstrates dynamic state without backend risk.</li>
+                    <li><strong>Logo added:</strong> Instant brand recognition for an international audience.</li>
+                    <li><strong>3 featured events on Home:</strong> Higher information density with controlled complexity; less scrolling than a single hero event.</li>
+            </ul>
+        </section>
 
-            <h3>2. Separate Contact Page</h3>
-            <p><strong>Original Design:</strong> A3 proposed contact form embedded in community page</p>
-            <p><strong>Implemented Design:</strong> Dedicated contact.html page with contact information and form</p>
-            <p><strong>Justification:</strong> Creating a separate contact page improves focused attention on contact functionality without competing elements that might distract users. This approach provides better mobile navigation by giving contact its own dedicated space in the navigation menu, making it easier to find. The separation results in clearer information architecture where each page has a distinct purpose, making the platform easier to understand and navigate. From a presentation perspective, the dedicated page creates a more professional appearance that better serves users seeking to contact the organization.</p>
+        <section>
+                <h2>Accessibility (WCAG 2.2 AA)</h2>
+                <ul>
+                    <li><strong>Perceivable:</strong> Semantic headings (h1–h3), alt text for images, decorative images marked with empty <code>alt</code>. Color tokens ensure ≥4.5:1 body/≥3:1 large text contrast.</li>
+                    <li><strong>Operable:</strong> Full keyboard access, visible focus, skip-link, 44×44px touch targets, no timing constraints.</li>
+                    <li><strong>Understandable:</strong> Plain language, consistent labels/menus, helpful labels/placeholders and inline validation.</li>
+                    <li><strong>Robust:</strong> Valid HTML5 landmarks (<code>header/nav/main/section/footer</code>); ARIA only where needed.</li>
+            </ul>
+        </section>
 
-            <h3>3. Simplified Page Headers</h3>
-            <p><strong>Original Design:</strong> Different header styles across pages</p>
-            <p><strong>Implemented Design:</strong> Consistent header style with gradient underline accent</p>
-            <p><strong>Justification:</strong> Standardizing the header style across all pages creates better visual consistency that helps users feel oriented and understand the platform's structure. The consistent style with gradient underline accents improves hierarchy by creating a clear visual pattern that users can recognize throughout the site. This approach reduces interface complexity by eliminating variations that might confuse users, while also making the codebase easier to maintain and scale as new pages are added.</p>
-
-            <h3>4. New Post Functionality</h3>
-            <p><strong>Original Design:</strong> Static discussion threads from JSON</p>
-            <p><strong>Implemented Design:</strong> User-generated posts saved via localStorage</p>
-            <p><strong>Justification:</strong> The addition of user-generated post functionality significantly increases engagement and community building by allowing students to actively participate in discussions rather than just viewing static content. This feature demonstrates dynamic data handling capabilities while supporting peer-to-peer support networks where students can share experiences and advice. The implementation aligns with CCI's goal of creating interactive features that foster meaningful connections between international students.</p>
-
-            <h3>5. Logo Addition</h3>
-            <p><strong>Original Design:</strong> Text-based branding</p>
-            <p><strong>Implemented Design:</strong> Custom logo with globe and "I" icon</p>
-            <p><strong>Justification:</strong> The custom logo featuring a globe and "I" icon creates a clearer visual identity that immediately communicates the platform's international focus. This visual element improves brand recall by providing a memorable symbol that users can associate with the platform. The logo contributes to a more professional appearance while specifically supporting the global audience by visually representing the international nature of the student community.</p>
-
-            <h3>6. Multiple Events Display on Homepage</h3>
-            <p><strong>Original Design:</strong> Work Phase 3 style guide suggested one event in focus with one image displayed at a time</p>
-            <p><strong>Implemented Design:</strong> Three featured events displayed simultaneously on the homepage</p>
-            <p><strong>Justification:</strong> While the Work Phase 3 style guide suggested one event in focus at a time, the implementation displays three featured events simultaneously because the single-event approach felt suboptimal and required excessive scrolling to access a variety of suggestions. The three-event layout provides immediate visibility of multiple event options without overwhelming the user, achieving better information density while maintaining visual clarity. This approach improves user experience by showcasing diverse event types at first glance, allowing users to quickly see the range of activities available rather than having to scroll through individual events one at a time.</p>
-            </section>
-
-            <section>
-            <h2>Accessibility Considerations</h2>
-            
-            <p>The implementation follows WCAG 2.2 Level AA guidelines to ensure the platform is accessible to all international students, regardless of their abilities or technical constraints.</p>
-
-            <p>As identified in <strong>Work Phase 2 - Accessibility Assessment</strong>, the platform focuses on three critical accessibility principles tailored to our user personas: <em>Perceivable Text Contrast</em> (WCAG 1.4.3) for Priya who uses mobile phones outdoors, <em>Consistent Navigation</em> (WCAG 3.2.3) for Hana with low digital literacy, and <em>Meaningful Sequence</em> (WCAG 1.3.2) for Ava to ensure event details are easily found.</p>
-
-            <h3>Perceivable Content</h3>
-            <p><strong>Text Alternatives (WCAG 1.1):</strong> All images include descriptive <code>alt</code> text, such as "Logo of ISP with globe icon", to provide meaningful information for screen reader users. Icons throughout the platform have <code>aria-label</code> attributes for screen readers, ensuring that icon-only buttons and links are properly described. Decorative elements use empty alt text to avoid creating unnecessary noise for assistive technology users.</p>
-
-            <p><strong>Visual Hierarchy (WCAG 1.3):</strong> Headers follow a clear semantic structure (h1 → h2 → h3) that creates logical content organization. Typography sizing is carefully implemented with h1 at 2.5rem, h2 at 1.5-2rem, and body text at 1rem to establish clear visual hierarchy. The design includes clear visual separation between page sections and maintains consistent spacing and layout patterns throughout.</p>
-
-            <p><strong>Color Contrast (WCAG 1.4.3):</strong> As emphasized in Work Phase 2, "Phone-only and often outdoors — needs clear text at a glance". The implementation uses dark gray (#1a202c) text on light backgrounds to achieve high contrast ratios that meet WCAG standards (body text ≥ 4.5:1; large text ≥ 3:1). All buttons and interactive elements meet the 4.5:1 contrast ratio minimum, while gradient underlines enhance visibility of important elements. Icons are sized sufficiently for easy recognition, and the color palette is locked in CSS variables to ensure consistency across all pages.</p>
-
-            <h3>Operable Interface</h3>
-            <p><strong>Keyboard Navigation (WCAG 2.1.1):</strong> All interactive elements including buttons, links, and forms are fully keyboard accessible, ensuring users who cannot use a mouse can navigate the platform effectively. The tab order follows the visual flow of the page, creating an intuitive navigation experience. Skip links are present on each page to allow users to bypass repetitive navigation and jump directly to main content. Visible focus indicators on all interactive elements help users understand their current position in the interface.</p>
-
-            <p><strong>Button Visibility (WCAG 2.4.4, 2.4.7):</strong> All buttons have clear visual affordances that make their interactive nature obvious to users. Touch targets meet minimum size requirements of 44x44px on mobile devices, making them easy to tap with a finger. Descriptive labels such as "Join Group" and "Bookmark this tip" clearly communicate each button's function. Hover states provide immediate visual feedback when users interact with buttons, enhancing the overall user experience.</p>
-
-            <p><strong>No Timing (WCAG 2.2.1):</strong> The platform includes no automatic timeouts that might interrupt users or cause them to lose work. Form feedback messages are dismissible, giving users control over when to close notifications. Users maintain full control over page transitions and can navigate at their own pace without time constraints.</p>
-
-            <h3>Understandable Content</h3>
-            <p><strong>Readable Text (WCAG 3.1):</strong> The platform uses clear, plain language that is suitable for non-native English speakers, recognizing that many international students may be reading in their second or third language. Sentence structures are kept simple to enhance comprehension, and terminology remains consistent throughout the platform. Form inputs include helpful placeholder text that guides users on what information is expected.</p>
-
-            <p><strong>Predictable Navigation (WCAG 3.2):</strong> As noted in Work Phase 2 for Hana with low digital literacy, "Low digital literacy — stable labels/locations reduce anxiety". The menu maintains the same order and wording on every page, creating a predictable experience that reduces cognitive load. The current page is clearly indicated with <code>aria-current="page"</code> attributes, and clear headings with simple labels are used throughout the site. Fixed mobile navigation ensures users experience the same access patterns across all devices, further enhancing predictability.</p>
-
-            <p><strong>Input Assistance (WCAG 3.3):</strong> Required fields are marked with visual indicators such as asterisks, making it immediately clear which information is mandatory. All form inputs have descriptive labels that explain their purpose. Error messages are displayed clearly when validation fails, and the form validation system provides immediate feedback to help users correct mistakes quickly.</p>
-
-            <h3>Robust Implementation</h3>
-            <p><strong>Valid Markup (WCAG 4.1):</strong> The platform uses semantic HTML5 elements including <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, and <code>&lt;footer&gt;</code> to create a clear document structure that assistive technologies can parse effectively. Proper ARIA attributes are applied to dynamic content to ensure screen readers can communicate changes to users. All form elements are properly associated with their labels using standard HTML techniques, and the markup is validated to ensure there are no errors that could break assistive technologies.</p>
-
-            <h3>Multi-Device Accessibility</h3>
-            <p><strong>Responsive Design:</strong> The mobile-first approach ensures usability on small screens where many international students primarily access the platform. Touch targets are appropriately sized for finger interaction, making the interface easy to use on touch devices. Content reflows naturally to avoid horizontal scrolling that would make the platform difficult to navigate. The footer navigation structure matches screen reader needs, providing an alternative navigation method that works well with assistive technologies.</p>
-
-            <h3>Accessibility Audit Results</h3>
-            <p>An accessibility audit was performed using the IBM Equal Access Accessibility Checker across all pages of the website. The audit identified several key issues that were systematically fixed:</p>
-            
-            <figure style="margin: 2rem 0; text-align: center;">
-                <img src="images/rationale/image.png" alt="IBM Equal Access Accessibility Checker audit results showing 28 violations on the Tips page before fixes were applied" style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                <figcaption style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-color);">Accessibility audit results before fixes were applied.</figcaption>
-            </figure>
-            
-            <h4>Key Issues Fixed:</h4>
-            <p>The audit identified several critical issues that were systematically addressed. <strong>ARIA labels on spans:</strong> The <code>aria-label</code> attributes were moved from decorative spans to parent anchor links in mobile navigation, ensuring that screen readers announce the navigation items correctly. <strong>Text contrast:</strong> Contrast ratios were improved in mobile navigation and footer text by using pure white (#ffffff) on dark backgrounds, meeting WCAG AA standards for text visibility. <strong>Button accessibility:</strong> All bookmark buttons were verified to have proper <code>aria-label</code> attributes, ensuring that screen reader users can understand and interact with these features.</p>
-            
-            <p>These fixes were applied consistently across all pages. After remediation, the audit shows significant improvement in accessibility compliance, reducing violations from 28 to minimal or zero across tested pages. The audit process identified specific areas needing improvement, particularly in contrast ratios and ARIA implementation, enabling targeted enhancements that benefit all users, especially those with visual impairments or using assistive technologies.</p>
-            </section>
-
-            <section>
+        <section>
             <h2>Ethical Considerations</h2>
-            
-            <p>The implementation incorporates ethical design principles identified in Work Phase 2, ensuring the platform serves as an inclusive, culturally sensitive tool for international students.</p>
-
-            <p>As documented in <strong>Work Phase 2 - Ethics Analysis</strong>, the original subscription plug-in posed potential harms including excessive data collection, forced personal details, security risks, and user stress. In response to the ACS Code of Ethics principles of <em>Public Interest & Honesty</em>, <em>Quality of Life</em>, <em>Competence</em>, and <em>Professionalism</em>, the implementation uses localStorage for user preferences only, avoiding any sensitive data collection.</p>
-
-            <h3>Subscription Plug-in Response</h3>
-            <p><strong>Ethical Decision:</strong> No subscription or paywall implemented</p>
-            <p>This decision is consistent with CCI's non-profit mission and accessibility requirements. All core features are accessible without payment, ensuring no financial barriers prevent students from accessing the platform. There is no content gating or exclusive membership tiers that would create inequalities between users. The platform uses localStorage solely for user preferences, and the overall design creates an open and inclusive platform for all students regardless of their financial situation.</p>
-
-            <h3>Cultural Sensitivity</h3>
-            <p>The platform implements cultural sensitivity through multi-language support in English and Chinese for common translations, recognizing the diverse linguistic backgrounds of international students. Content is carefully crafted to avoid cultural stereotypes, ensuring that representations of different cultures are respectful and accurate. The sample data features diverse representation from various cultural backgrounds, and all imagery and language throughout the platform is respectful and inclusive.</p>
-
-            <h3>Privacy and Data Protection</h3>
-            <p>The implementation prioritizes user privacy by storing all user data locally on the device using localStorage. There is no server-side data collection, meaning user information never leaves their device. Data usage is transparent with clear purposes explained to users, and interactive features like bookmarks and likes are opt-in, giving users full control over what information they choose to save.</p>
-
-            <h3>Inclusivity and Representation</h3>
-            <p>The content strategy ensures diverse representation through sample content that spans multiple cultures and backgrounds. Events represent various communities, tips address the varied backgrounds of international students, and all language throughout the platform is gender-neutral and inclusive. This approach ensures that all students, regardless of their cultural background or identity, can see themselves reflected in the platform's content.</p>
-
-            <h3>Accessibility Equity</h3>
-            <p>The implementation ensures accessibility equity by eliminating barriers to platform access. The platform is designed to work on low-end devices, recognizing that not all international students have access to the latest technology. There is no reliance on high-speed internet, making the platform accessible to students with limited connectivity. Wherever possible, features are designed to be offline-capable, further reducing barriers to access.</p>
+                <p><strong>Subscription plug-in:</strong> Not implemented. Core content remains free to avoid exclusion and data risk. Only non-sensitive preferences are stored locally (bookmarks/likes), aligning with public interest and inclusivity.</p>
+                <p><strong>Cultural sensitivity:</strong> Neutral, inclusive language; diverse examples; bilingual microcopy for common actions.</p>
+                <p><strong>Privacy:</strong> No server-side PII collection; localStorage only, with clear purpose explained in-UI.</p>
             </section>
 
             <section>
-            <h2>Implementation Challenges and Solutions</h2>
-            
-            <h3>Challenge 1: Horizontal Scrolling on Mobile</h3>
-            <p><strong>Problem:</strong> Horizontal card scrolling needed smooth UX and clear affordances to ensure users understood content could be scrolled.</p>
-            <p><strong>Solution:</strong> The implementation uses custom scrollbar styling, scroll snap points, and clear visual indicators that communicate to users that content can be scrolled horizontally. These visual cues help users discover the scrolling functionality while the scroll snap points create a smooth, predictable scrolling experience.</p>
+                <h2>Implementation Challenges & Strategies</h2>
+                <ul>
+                    <li><strong>Horizontal scroll affordance:</strong> Scroll-snap + subtle cues; tested on mobile to ensure discoverability.</li>
+                    <li><strong>State without backend:</strong> Small localStorage module (bookmarks/likes/user posts) to persist interactions.</li>
+                    <li><strong>Efficient rendering:</strong> ES modules, event delegation, and targeted re-renders on filter changes.</li>
+                    <li><strong>Mobile nav clarity:</strong> Emoji icons with <code>aria-label</code>, active state, and consistent order.</li>
+            </ul>
+        </section>
 
-            <h3>Challenge 2: State Management Without Backend</h3>
-            <p><strong>Problem:</strong> The platform needed to persist user interactions such as bookmarks and likes without server-side storage infrastructure.</p>
-            <p><strong>Solution:</strong> A localStorage module was implemented to manage bookmarks, likes, and user-generated content. This client-side storage solution allows the platform to maintain user preferences and interactions without requiring a backend server, while keeping all data on the user's device for privacy.</p>
-
-            <h3>Challenge 3: Dynamic Content Rendering</h3>
-            <p><strong>Problem:</strong> The platform needed to efficiently render and filter large datasets of tips and events without causing performance issues.</p>
-            <p><strong>Solution:</strong> Pure JavaScript filtering algorithms were implemented to handle data manipulation, while template literals were used for DOM generation to create readable and maintainable code. The system only re-renders content when necessary, such as when filters change or new data is loaded, ensuring optimal performance even with large datasets.</p>
-
-            <h3>Challenge 4: Mobile Navigation Clarity</h3>
-            <p><strong>Problem:</strong> The fixed bottom navigation required clear icon affordances that users could easily understand and interact with.</p>
-            <p><strong>Solution:</strong> Emoji icons were chosen for their universal recognition, and each icon has proper aria-labels for screen reader accessibility. Active state indication shows users which page they are currently viewing, and the fixed positioning ensures the navigation is always accessible at the bottom of the screen.</p>
-
-            <h3>Challenge 5: Consistent Spacing Across Pages</h3>
-            <p><strong>Problem:</strong> The initial implementation had inconsistent header spacing that created visual inconsistency across different pages.</p>
-            <p><strong>Solution:</strong> A unified page header component was created with consistent margin-top values and responsive adjustments for different screen sizes. This standardized approach ensures visual consistency while maintaining proper spacing from the fixed navigation bar on both mobile and desktop devices.</p>
+        <section>
+                <h2>API Integration</h2>
+                <p>Reusable GET/POST modules (<code>js/modules/getData.js</code>, <code>postFormData.js</code>) with <code>fetch()</code> + FormData. Community posts use the <em>Generic Chat</em> endpoint; required headers (<code>student_number</code>, <code>uqcloud_zone_id</code>) are included for both POST and GET to ensure reliable reads in deployment. Contact form uses the <em>Simple Community</em> endpoint with graceful localStorage fallback.</p>
             </section>
 
             <section>
-            <h2>Code Quality and Standards</h2>
-            
-            <h3>File Organization</h3>
-            <p>The project follows a semantic folder structure with separate directories for css/, js/, data/, and images/, making it easy to locate and manage different types of files. CSS is organized modularly with page-specific styles in dedicated files, allowing for better maintainability. JavaScript uses ES6 module-based architecture for code organization and reusability. Clear naming conventions are used throughout the codebase to ensure readability and consistency.</p>
+                <h2>Accessibility Audit</h2>
+                <p>Audited with IBM Equal Access Accessibility Checker. Key fixes: moved <code>aria-label</code> from decorative spans to anchors in mobile nav; increased contrast for nav/footer text; verified all interactive controls have accessible names. Violations dropped from 28 to near-zero on tested pages.</p>
+                <figure style="margin:1rem 0;text-align:center">
+                    <img src="images/rationale/image.png" alt="IBM Equal Access audit screenshot: issues before fixes" style="max-width:100%;height:auto;border:1px solid #ddd;border-radius:8px;">
+                    <figcaption>Accessibility audit evidence (pre-fix snapshot); post-fix retest shows substantial reduction.</figcaption>
+                </figure>
+        </section>
 
-            <h3>HTML Best Practices</h3>
-            <p>The implementation uses semantic HTML5 elements that accurately describe the content structure, improving both accessibility and code readability. The document structure follows proper HTML hierarchy with meaningful IDs and classes that clearly indicate their purpose. All markup is validated to ensure compliance with HTML standards and compatibility with assistive technologies.</p>
+        <section>
+                <h2>Code Quality & Deployment</h2>
+                <ul>
+                    <li><strong>Structure:</strong> Modular CSS (tokens/utilities/components/pages) and ES6 modules; semantic HTML throughout.</li>
+                    <li><strong>Version control:</strong> Regular, descriptive commits documenting incremental changes.</li>
+                    <li><strong>Deploy:</strong> UQCloud zone → <code>/work_phase_4</code>; homepage <code>index.html</code>.</li>
+                    <li><strong>Repo:</strong> <a href="https://github.com/isaksjobergUQ/deco7140_development" target="_blank" rel="noopener">GitHub</a></li>
+            </ul>
+        </section>
 
-            <h3>CSS Best Practices</h3>
-            <p>The styling follows a mobile-first responsive design approach, ensuring the platform works well on small screens before scaling up to larger devices. CSS variables are used extensively to maintain consistency in colors, spacing, and other design tokens across all pages. The code is modular and maintainable, with reusable utility classes that reduce duplication and simplify styling across different components.</p>
-
-            <h3>JavaScript Best Practices</h3>
-            <p>JavaScript code is organized using ES6 modules, allowing for better code organization and the ability to import and export functionality as needed. Async/await patterns are used for data fetching to handle asynchronous operations cleanly and avoid callback hell. Event delegation is implemented for performance optimization, reducing the number of event listeners needed. The code follows separation of concerns principles, keeping data handling, DOM manipulation, and event handling in separate modules.</p>
-            </section>
-
-            <section>
-            <h2>API Integration</h2>
-            <p>The site integrates a real API using modular JavaScript. A reusable POST module (<code>js/modules/postFormData.js</code>) submits form data via <code>fetch()</code> as FormData, and a reusable GET module (<code>js/modules/getData.js</code>) retrieves JSON data. The community page uses the <strong>Generic Chat</strong> endpoint (<code>https://damp-castle-86239-1b70ee448fbd.herokuapp.com/decoapi/genericchat/</code>) to submit and fetch public discussion posts. Submissions include required headers (<code>student_number: s4978714</code>, <code>uqcloud_zone_id: 435eba26</code>) and required fields (<code>person_name</code>, <code>chat_post_title</code>, <code>chat_post_content</code>). After a successful POST, the page re-fetches posts from the API and displays them alongside local user posts and static examples. The contact page uses the <strong>Simple Community</strong> endpoint for submit-only behavior (no GET display) and provides a user-friendly fallback to <code>localStorage</code> if the API is temporarily unavailable. In deployment, the API instance required the same headers for GET to return data reliably; the implementation includes these for robustness.</p>
-            </section>
-
-            <section>
-            <h2>Deployment and Repository</h2>
-            <p>This project is deployed to UQCloud and the source code is hosted on GitHub.</p>
-            
-            <h3>Deployment</h3>
-            <p><strong>Host:</strong> UQCloud Zone</p>
-            <p><strong>URL:</strong> https://deco7140-435eba26.uqcloud.net/</p>
-            <p><strong>Folder:</strong> work_phase_4</p>
-
-            <h3>Source Code Repository</h3>
-            <p><strong>GitHub Repository:</strong> <a href="https://github.com/isaksjobergUQ/deco7140_development" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>
-            <p><strong>Commit History:</strong> Regular commits demonstrating incremental development and proper version control practices</p>
-            </section>
-
-            <section>
+        <section>
             <h2>Conclusion</h2>
-            <p>This implementation successfully translates the A3 design proposal into a fully functional, accessible, and ethically-designed platform that serves international students. Through careful consideration of user needs, accessibility standards, and ethical principles, the platform achieves CCI's mission of fostering social cohesion while providing practical support for students adapting to Australian life.</p>
-            
-            <p>Key achievements include responsive design that works across all devices, dynamic features that enhance user engagement, comprehensive accessibility that ensures inclusive access, and ethical design that respects user privacy and cultural diversity.</p>
-
-            <p>The variations from the original A3 design all serve to improve usability, enhance accessibility, and better align with real-world implementation constraints, while maintaining fidelity to the core vision and client requirements.</p>
-            </section>
+                <p>The build faithfully realises the A3 concept, with targeted variations that increase usability and inclusivity. It aligns with CCI's goals, addresses user needs, integrates WCAG 2.2 AA practices, and demonstrates ethical restraint around data and access.</p>
+        </section>
         </div>
     </main>
+      
 
     <footer role="contentinfo">
         <div class="container">

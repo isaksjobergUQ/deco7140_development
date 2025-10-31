@@ -109,5 +109,14 @@ export const storage = {
         posts.push(newPost);
         localStorage.setItem('userPosts', JSON.stringify(posts));
         return newPost;
+    },
+
+    // User profile name
+    getUserName() {
+        return localStorage.getItem('userName') || 'Student';
+    },
+
+    setUserName(name) {
+        localStorage.setItem('userName', name.trim());
     }
 };

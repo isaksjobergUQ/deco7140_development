@@ -39,10 +39,10 @@ async function loadCommunityData() {
         allGroups = groups;
 
         // Filter out test posts (case-insensitive check in title or content)
-        const filteredApiPosts = (apiPosts || []).filter(post => {
-            const title = (post.chat_post_title || '').toLowerCase();
-            const content = (post.chat_post_content || '').toLowerCase();
-            return !title.includes('test') && !content.includes('test');
+        const filteredApiPosts = (apiPosts || []).filter((post) => {
+            const title = (post.chat_post_title || "").toLowerCase();
+            const content = (post.chat_post_content || "").toLowerCase();
+            return !title.includes("test") && !content.includes("test");
         });
 
         const convertedApiPosts = filteredApiPosts.map((post) => {
