@@ -34,7 +34,21 @@
 
 /* Breadcrumb */
 .breadcrumb {
+    margin-top: 1rem;
     margin-bottom: 2rem;
+    padding-top: 1rem;
+}
+
+/* Ensure breadcrumb is visible below fixed navbar on detail pages */
+main .container > .breadcrumb:first-child {
+    margin-top: 0;
+    padding-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    main .container > .breadcrumb:first-child {
+        padding-top: 2rem;
+    }
 }
 
 .breadcrumb ol {
