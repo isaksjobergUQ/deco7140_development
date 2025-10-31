@@ -38,7 +38,14 @@ async function loadCommunityData() {
         allThreads = threads;
         allGroups = groups;
 
-        const convertedApiPosts = (apiPosts || []).map((post) => {
+        // Filter out test posts (case-insensitive check in title or content)
+        const filteredApiPosts = (apiPosts || []).filter(post => {
+            const title = (post.chat_post_title || '').toLowerCase();
+            const content = (post.chat_post_content || '').toLowerCase();
+            return !title.includes('test') && !content.includes('test');
+        });
+
+        const convertedApiPosts = filteredApiPosts.map((post) => {
             let dateStr = post.chat_date_time;
             if (dateStr && !dateStr.includes("T")) {
                 dateStr = dateStr.replace(" ", "T");
