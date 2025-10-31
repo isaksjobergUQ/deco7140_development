@@ -20,8 +20,11 @@ function setupNameEditor() {
     const saveBtn = document.getElementById('save-name-btn');
     const feedback = document.getElementById('name-feedback');
     
-    // Load current name
-    nameInput.value = storage.getUserName();
+    // Load current name only if it exists and is not the default
+    const savedName = localStorage.getItem('userName');
+    if (savedName) {
+        nameInput.value = savedName;
+    }
     
     saveBtn.addEventListener('click', () => {
         const newName = nameInput.value.trim();
